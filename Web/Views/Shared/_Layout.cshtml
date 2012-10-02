@@ -1,0 +1,60 @@
+﻿@using System.Text.RegularExpressions
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <title>Full Tilt Soccer - @ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/themes/custom-theme/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
+        <div id="header" class="outerWrapper">
+		    <div class="pageCenter">                    
+                    @Html.ActionLink(" ", "Index", "Home",null, new { id = "logo" })
+               <div class="login">
+				@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+				@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+			</div>
+		</div>		
+	</div>
+	<div id="topNav" class="outerWrapper">
+		<div class="pageCenter">
+			<ul id="primaryNav">	
+                @*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
+                
+                <li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
+				<li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "UnitedStates" }, new { })</li>
+				<li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
+				<li><a href="">Coaches Corner</a></li>
+				<li><a href="">Camps/Academies</a></li>
+				<li><a href="">Forum</a></li>
+				<li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
+			</ul>
+		</div>
+	</div>
+        <div id="contentArea" class="outerWrapper">
+            <div class="pageCenter">
+                @RenderBody()
+            </div>
+        </div>
+	<div id="bottomNav" class="outerWrapper">
+		<div class="pageCenter">
+			<ul id="footerNav">
+				<li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
+				<li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "UnitedStates" }, new { })</li>
+				<li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
+				<li>@Html.ActionLink("Advertise With Us", "Index", "Contact")</li>
+				<li>@Html.ActionLink("Sign Up", "Index", "Contact")</li>
+				<li><a href="">Site Map</a></li>
+				<li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
+			</ul>
+		</div>
+	</div>
+
+        @Scripts.Render("~/bundles/jquery")
+        
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
