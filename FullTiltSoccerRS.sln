@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullTiltSoccerRS", "Model\FullTiltSoccerRS.csproj", "{0680072D-F732-46C0-B4DC-BFAAD4C182BD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{A240656C-F524-4E32-B797-36B290F767D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullTiltRS", "FullTiltRS\FullTiltRS.csproj", "{67E0DB23-477E-47FF-8A44-8EF4CF271C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0680072D-F732-46C0-B4DC-BFAAD4C182BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0680072D-F732-46C0-B4DC-BFAAD4C182BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0680072D-F732-46C0-B4DC-BFAAD4C182BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0680072D-F732-46C0-B4DC-BFAAD4C182BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

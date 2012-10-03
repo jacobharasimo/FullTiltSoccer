@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FullTiltSoccerRS")]
+[assembly: AssemblyTitle("FullTiltRS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FullTiltSoccerRS")]
+[assembly: AssemblyProduct("FullTiltRS")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("85942feb-9b49-4d8b-b40b-28ba294e661f")]
+[assembly: Guid("3e72d182-e917-4bab-a746-e0e867a98932")]
 
 // Version information for an assembly consists of the following four values:
 //

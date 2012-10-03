@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FullTiltRS;
+
 
 namespace Web.Controllers
 {
     public class TournamentController : Controller
     {
-        public ActionResult Index()
+        public DataAccessService RestService = new DataAccessService();
+        public ActionResult Index(string Country)
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your tournament page.";
+            ViewBag.Country = Country;
+
+
+            var b = RestService.GetRegionsByCountry(1);
+
             return View();
         }
     }

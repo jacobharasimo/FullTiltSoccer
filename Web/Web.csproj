@@ -237,16 +237,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Model\FullTiltSoccerRS.csproj">
-      <Project>{0680072D-F732-46C0-B4DC-BFAAD4C182BD}</Project>
-      <Name>FullTiltSoccerRS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tournament\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FullTiltRS\FullTiltRS.csproj">
+      <Project>{67E0DB23-477E-47FF-8A44-8EF4CF271C39}</Project>
+      <Name>FullTiltRS</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

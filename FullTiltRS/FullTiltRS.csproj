@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0680072D-F732-46C0-B4DC-BFAAD4C182BD}</ProjectGuid>
+    <ProjectGuid>{67E0DB23-477E-47FF-8A44-8EF4CF271C39}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FullTiltSoccerRS</RootNamespace>
-    <AssemblyName>FullTiltSoccerRS</AssemblyName>
+    <RootNamespace>FullTiltRS</RootNamespace>
+    <AssemblyName>FullTiltRS</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -54,15 +54,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\FullTiltSoccerDB.mdf" />
-    <Content Include="App_Data\FullTiltSoccerDB_log.ldf">
-      <DependentUpon>FullTiltSoccerDB.mdf</DependentUpon>
-    </Content>
     <Content Include="Global.asax" />
-    <Content Include="HTMLPage1.htm" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -71,10 +64,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FullTiltSoccer.designer.cs">
+    <Compile Include="FulltiltDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FullTiltSoccer.dbml</DependentUpon>
+      <DependentUpon>FulltiltDataClasses.dbml</DependentUpon>
     </Compile>
     <Compile Include="DataAccessService.cs" />
     <Compile Include="SampleItem.cs" />
@@ -83,11 +76,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="FullTiltSoccer.dbml">
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FulltiltDataClasses.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>FullTiltSoccer.designer.cs</LastGenOutput>
+      <LastGenOutput>FulltiltDataClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -95,8 +90,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FullTiltSoccer.dbml.layout">
-      <DependentUpon>FullTiltSoccer.dbml</DependentUpon>
+    <None Include="FulltiltDataClasses.dbml.layout">
+      <DependentUpon>FulltiltDataClasses.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -107,7 +102,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2368</DevelopmentServerPort>
+          <DevelopmentServerPort>5499</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -3,7 +3,7 @@ using System.ServiceModel.Activation;
 using System.Web;
 using System.Web.Routing;
 
-namespace FullTiltSoccerRS
+namespace FullTiltRS
 {
     public class Global : HttpApplication
     {
@@ -15,7 +15,7 @@ namespace FullTiltSoccerRS
         private void RegisterRoutes()
         {
             // Edit the base address of Service1 by replacing the "Service1" string below
-            RouteTable.Routes.Add(new ServiceRoute("", new WebServiceHostFactory(), typeof(DataAccessService)));
+            RouteTable.Routes.Add(new ServiceRoute("DataAccessService", new WebServiceHostFactory(), typeof(DataAccessService)));
         }
     }
 }

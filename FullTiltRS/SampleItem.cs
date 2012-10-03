@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace FullTiltSoccerRS
+namespace FullTiltRS
 {
     // TODO: Edit the SampleItem class
     public class SampleItem

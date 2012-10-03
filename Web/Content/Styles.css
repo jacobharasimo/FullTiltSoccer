@@ -48,7 +48,7 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 #header .pageCenter .login a:hover{background:url(/images/top_nav_background_on.jpg);color:black;}
 #welcomeStage{border-style: none;border-color: inherit;height: 430px;width: 692px;background-image: url(/images/welcom_stage.jpg);background-repeat: no-repeat;float: left;color: white;font-size: 12px;}
 #welcomeStage p{margin-bottom:1em;}
-#contentArea .pageCenter{margin-top: 20px;}
+#contentArea .pageCenter{margin: 20px auto;}
 .rightAddSpace{background-repeat: no-repeat;float: right;width: 260px;padding-bottom: 20px;margin: 0 5px 0 20px;}
 .rightAddSpace #upcommingEvents{background-repeat: no-repeat;background-image: url(/images/upcoming_events_blank.gif);height: 196px;padding:10px;}
 .blueAdd{margin-top: 15px;}
@@ -77,3 +77,10 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 .contact_us textarea {resize: none;}
 .contact_us textarea,.contact_us input{background-color: #C9DFFF;border: none;border: solid 1px #abadb3;}
 .contact_us textarea,.contact_us input,.contact_us select{outline-color: #529ed2; }
+.content{ width: 59%;margin: 0 1%;height: 500px;}
+.leftColumn.addSpace{ width: 19%;height: 100%;}
+.border{ border: 1px solid black;}
+.outterSearch{ height: 63px;width:100% ;border: 1px solid black;padding: 4px;}
+.innerSearch{ background: black;height: 100%;width: 100%;text-align: center;}
+.innerSearch h2{ margin: 0;color: white;padding-top: 5px;}
+.innerSearch #regionSelection{ margin-top: 1em;width: 80%;}
