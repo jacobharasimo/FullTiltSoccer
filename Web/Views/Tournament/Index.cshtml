@@ -12,6 +12,12 @@
     </div>
 </div>
 <div class="leftColumn content">
+    @{
+        if(ViewBag.Regions.Count>0)
+        {
+            Html.RenderPartial("_regionGridView");
+        }
+    }
     
 </div>
 <div class="leftColumn addSpace">

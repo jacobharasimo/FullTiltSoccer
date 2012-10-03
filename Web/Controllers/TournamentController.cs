@@ -15,10 +15,21 @@ namespace Web.Controllers
         {
             ViewBag.Message = "Your tournament page.";
             ViewBag.Country = Country;
-
-
-            var b = RestService.GetRegionsByCountry(1);
-
+            List<Region> results = new List<Region>();
+            switch (Country)
+            {
+                case "Canada":
+                    results = RestService.GetRegionsByCountry(1);
+                    break;
+                case "United States":
+                    results = RestService.GetRegionsByCountry(2);
+                    break;
+                case "UK/Ireland":
+                    results = RestService.GetRegionsByCountry(3);
+                    break;
+            }
+            ViewBag.Regions = results;
+            
             return View();
         }
     }
