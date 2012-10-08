@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{A240656C-F524-4E32-B797-36B290F767D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullTiltRS", "FullTiltRS\FullTiltRS.csproj", "{67E0DB23-477E-47FF-8A44-8EF4CF271C39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{A240656C-F524-4E32-B797-36B290F767D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A240656C-F524-4E32-B797-36B290F767D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67E0DB23-477E-47FF-8A44-8EF4CF271C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

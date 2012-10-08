@@ -6,12 +6,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{67E0DB23-477E-47FF-8A44-8EF4CF271C39}</ProjectGuid>
+    <ProjectGuid>{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FullTiltRS</RootNamespace>
-    <AssemblyName>FullTiltRS</AssemblyName>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
@@ -64,12 +64,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FulltiltDataClasses.designer.cs">
+    <Compile Include="Listings.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FulltiltDataClasses.dbml</DependentUpon>
+      <DependentUpon>Listings.dbml</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessService.cs" />
+    <Compile Include="ClientAccessService.cs" />
     <Compile Include="SampleItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -80,9 +80,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FulltiltDataClasses.dbml">
+    <None Include="Listings.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>FulltiltDataClasses.designer.cs</LastGenOutput>
+      <LastGenOutput>Listings.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -90,8 +90,8 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FulltiltDataClasses.dbml.layout">
-      <DependentUpon>FulltiltDataClasses.dbml</DependentUpon>
+    <None Include="Listings.dbml.layout">
+      <DependentUpon>Listings.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
@@ -102,7 +102,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>5499</DevelopmentServerPort>
+          <DevelopmentServerPort>18938</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

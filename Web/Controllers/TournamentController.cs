@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FullTiltRS;
+
 
 
 namespace Web.Controllers
 {
     public class TournamentController : Controller
     {
-        public DataAccessService RestService = new DataAccessService();
+       /* public DataAccessService RestService = new DataAccessService();*/
         public ActionResult Index(string Country)
         {
             ViewBag.Message = "Your tournament page.";
             ViewBag.Country = Country;
-            List<Region> results = new List<Region>();
+            /*var results = new List<GetAllRegionsByCountryResult>();
             switch (Country)
             {
                 case "Canada":
-                    results = RestService.GetRegionsByCountry(1);
+                    results = RestService.GetRegionsByCountry("Canada");
                     break;
                 case "United States":
-                    results = RestService.GetRegionsByCountry(2);
+                    results = RestService.GetRegionsByCountry("USA");
                     break;
                 case "UK/Ireland":
-                    results = RestService.GetRegionsByCountry(3);
+                    results = RestService.GetRegionsByCountry("UK/Ireland");
                     break;
             }
-            ViewBag.Regions = results;
+            ViewBag.Regions = results;*/
             
             return View();
         }

@@ -6,7 +6,7 @@ using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace FullTiltRS
+namespace AccessLayer
 {
     // Start the service and browse to http://<machine_name>:<port>/Service1/help to view the service's generated help page
     // NOTE: By default, a new instance of the service is created for each call; change the InstanceContextMode to Single if you want
@@ -15,19 +15,17 @@ namespace FullTiltRS
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     // NOTE: If the service is renamed, remember to update the global.asax.cs file
-    public class DataAccessService
+    public class Service1
     {
-        public FulltiltDataClassesDataContext _dataConnection = new FulltiltDataClassesDataContext();
-
-        
-
-        [WebGet(UriTemplate = "GetRegionsByCountry?Country={id}", ResponseFormat = WebMessageFormat.Json)]
-        public List<Region> GetRegionsByCountry(int? id)
+        // TODO: Implement the collection resource that will contain the SampleItem instances 
+        [WebInvoke(UriTemplate = "{id}", Method = "DELETE")]
+        public void Delete(string id)
         {
-            var a = _dataConnection.Regions.Where(r => r.CountryID == id);
-
-            return new List<Region>(a);            
+            var a = new DataClassesDataContext();
+            
+            // TODO: Remove the instance of SampleItem with the given id from the collection
+            throw new NotImplementedException();
         }
-        
+
     }
 }

@@ -243,12 +243,6 @@
     <Content Include="Views\Tournament\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FullTiltRS\FullTiltRS.csproj">
-      <Project>{67E0DB23-477E-47FF-8A44-8EF4CF271C39}</Project>
-      <Name>FullTiltRS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Tournament\_regionGridView.cshtml" />
   </ItemGroup>
   <PropertyGroup>
