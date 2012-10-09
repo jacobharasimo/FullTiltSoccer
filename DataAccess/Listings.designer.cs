@@ -23,7 +23,7 @@ namespace DataAccess
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="FullTiltSoccer")]
-	public partial class ListingsDataContext : System.Data.Linq.DataContext
+	public partial class MainDataDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -53,31 +53,31 @@ namespace DataAccess
     partial void DeleteTournament(Tournament instance);
     #endregion
 		
-		public ListingsDataContext() : 
+		public MainDataDataContext() : 
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["FullTiltSoccerConnectionString"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ListingsDataContext(string connection) : 
+		public MainDataDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ListingsDataContext(System.Data.IDbConnection connection) : 
+		public MainDataDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ListingsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public MainDataDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
-
-        public ListingsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		
+		public MainDataDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -139,18 +139,18 @@ namespace DataAccess
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFellowRegionsByRegion")]
+		public ISingleResult<GetFellowRegionsByRegionResult> GetFellowRegionsByRegion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string region)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), region);
+			return ((ISingleResult<GetFellowRegionsByRegionResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllCampsBeforeDate")]
 		public ISingleResult<GetAllCampsBeforeDateResult> GetAllCampsBeforeDate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> date)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
 			return ((ISingleResult<GetAllCampsBeforeDateResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetCmsData")]
-		public ISingleResult<GetCmsDataResult> GetCmsData([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string id)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-			return ((ISingleResult<GetCmsDataResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllCampsPostsByUser")]
@@ -200,6 +200,13 @@ namespace DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), region);
 			return ((ISingleResult<GetAllTournamentsByRegionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetCmsData")]
+		public ISingleResult<GetCmsDataResult> GetCmsData([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<GetCmsDataResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1472,7 +1479,7 @@ namespace DataAccess
 		
 		private string _ContactEmail;
 		
-		private string _IsPaidListing;
+		private System.Nullable<bool> _IsPaidListing;
 		
 		private System.Nullable<System.DateTime> _TournamentDescription;
 		
@@ -1520,7 +1527,7 @@ namespace DataAccess
     partial void OnContactNumberChanged();
     partial void OnContactEmailChanging(string value);
     partial void OnContactEmailChanged();
-    partial void OnIsPaidListingChanging(string value);
+    partial void OnIsPaidListingChanging(System.Nullable<bool> value);
     partial void OnIsPaidListingChanged();
     partial void OnTournamentDescriptionChanging(System.Nullable<System.DateTime> value);
     partial void OnTournamentDescriptionChanged();
@@ -1829,8 +1836,8 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="VarChar(50)")]
-		public string IsPaidListing
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="Bit")]
+		public System.Nullable<bool> IsPaidListing
 		{
 			get
 			{
@@ -2038,6 +2045,86 @@ namespace DataAccess
 		}
 	}
 	
+	public partial class GetFellowRegionsByRegionResult
+	{
+		
+		private System.Guid _RegionID;
+		
+		private string _RegionName;
+		
+		private string _Image;
+		
+		private System.Guid _CountryID;
+		
+		public GetFellowRegionsByRegionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid RegionID
+		{
+			get
+			{
+				return this._RegionID;
+			}
+			set
+			{
+				if ((this._RegionID != value))
+				{
+					this._RegionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionName", DbType="VarChar(50)")]
+		public string RegionName
+		{
+			get
+			{
+				return this._RegionName;
+			}
+			set
+			{
+				if ((this._RegionName != value))
+				{
+					this._RegionName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(50)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this._Image = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid CountryID
+		{
+			get
+			{
+				return this._CountryID;
+			}
+			set
+			{
+				if ((this._CountryID != value))
+				{
+					this._CountryID = value;
+				}
+			}
+		}
+	}
+	
 	public partial class GetAllCampsBeforeDateResult
 	{
 		
@@ -2149,32 +2236,6 @@ namespace DataAccess
 				if ((this._ImageSource != value))
 				{
 					this._ImageSource = value;
-				}
-			}
-		}
-	}
-	
-	public partial class GetCmsDataResult
-	{
-		
-		private string _Data;
-		
-		public GetCmsDataResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string Data
-		{
-			get
-			{
-				return this._Data;
-			}
-			set
-			{
-				if ((this._Data != value))
-				{
-					this._Data = value;
 				}
 			}
 		}
@@ -2953,7 +3014,7 @@ namespace DataAccess
 		
 		private string _ContactEmail;
 		
-		private string _IsPaidListing;
+		private System.Nullable<bool> _IsPaidListing;
 		
 		private System.Nullable<System.DateTime> _TournamentDescription;
 		
@@ -3193,8 +3254,8 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="VarChar(50)")]
-		public string IsPaidListing
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="Bit")]
+		public System.Nullable<bool> IsPaidListing
 		{
 			get
 			{
@@ -3321,7 +3382,7 @@ namespace DataAccess
 		
 		private string _ContactEmail;
 		
-		private string _IsPaidListing;
+		private System.Nullable<bool> _IsPaidListing;
 		
 		private System.Nullable<System.DateTime> _TournamentDescription;
 		
@@ -3561,8 +3622,8 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="VarChar(50)")]
-		public string IsPaidListing
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="Bit")]
+		public System.Nullable<bool> IsPaidListing
 		{
 			get
 			{
@@ -3653,6 +3714,32 @@ namespace DataAccess
 				if ((this._TournamentImageUrl != value))
 				{
 					this._TournamentImageUrl = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetCmsDataResult
+	{
+		
+		private string _Data;
+		
+		public GetCmsDataResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string Data
+		{
+			get
+			{
+				return this._Data;
+			}
+			set
+			{
+				if ((this._Data != value))
+				{
+					this._Data = value;
 				}
 			}
 		}

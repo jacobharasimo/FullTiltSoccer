@@ -1,1 +1,11 @@
-﻿there are @ViewBag.Regions.Count Regions in @ViewBag.Country
+﻿@using DataAccess
+<ol class="regionsList">
+    @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
+    {        
+        <li>
+            
+            <a href="@Url.Action("Region", "Tournament", new {Region = r.RegionName })"><img src="~/@r.Image" alt="@r.RegionName" title="@r.RegionName" /></a>
+        </li>
+    }    
+</ol>
+<div class="clear"></div>

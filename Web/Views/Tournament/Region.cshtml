@@ -1,0 +1,30 @@
+﻿@using DataAccess
+@{
+    ViewBag.Title = ViewBag.Country + " Tournaments";
+}
+<div class="leftColumn addSpace">
+    <div class="outterSearch">
+        <div class="innerSearch">
+            <h2>SEARCH BY REGION</h2>
+            <select id="regionSelection">
+                <option>-Please Select-</option>
+                @foreach (GetFellowRegionsByRegionResult r in ViewBag.Regions)
+                {
+                    <option value="@r.RegionName">@r.RegionName</option>   
+                }     
+            </select>
+        </div>
+    </div>
+</div>
+<div class="leftColumn content">
+    <h1>@ViewBag.Region</h1>
+    @foreach (GetAllTournamentsByRegionResult t in ViewBag.FreeTournaments)
+    {
+        
+        Html.RenderPartial("_FreeTournament", ViewData["Tournament"] = t);
+    }    
+</div>
+<div class="leftColumn addSpace">
+    
+</div>
+<div class="clear"></div>

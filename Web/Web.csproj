@@ -174,6 +174,106 @@
     <Content Include="Images\iasa_add.jpg" />
     <Content Include="Images\logo_lg.jpg" />
     <Content Include="Images\logo_lg.png" />
+    <Content Include="Images\Region\Alberta.jpg" />
+    <Content Include="Images\Region\Bandera_Western_Isles.jpg" />
+    <Content Include="Images\Region\Berkshire_flag.jpg" />
+    <Content Include="Images\Region\British_Columbia.jpg" />
+    <Content Include="Images\Region\Derbyshire_flag.jpg" />
+    <Content Include="Images\Region\England.jpg" />
+    <Content Include="Images\Region\FlagOfHuntingdonshire.jpg" />
+    <Content Include="Images\Region\FlagOfLancashire.jpg" />
+    <Content Include="Images\Region\FlagOfMiddlesex.jpg" />
+    <Content Include="Images\Region\FlagOfPembrokeshire.jpg" />
+    <Content Include="Images\Region\FlagOfYorkshire.jpg" />
+    <Content Include="Images\Region\Flag_of_Alabama.jpg" />
+    <Content Include="Images\Region\Flag_of_Alaska.jpg" />
+    <Content Include="Images\Region\Flag_of_Arizona.jpg" />
+    <Content Include="Images\Region\Flag_of_Arkansas.jpg" />
+    <Content Include="Images\Region\Flag_of_Bedfordshire.jpg" />
+    <Content Include="Images\Region\Flag_of_California.jpg" />
+    <Content Include="Images\Region\Flag_of_Colorado.jpg" />
+    <Content Include="Images\Region\Flag_of_Connacht.jpg" />
+    <Content Include="Images\Region\Flag_of_Connecticut.jpg" />
+    <Content Include="Images\Region\Flag_of_Cornwall.jpg" />
+    <Content Include="Images\Region\Flag_of_Delaware.jpg" />
+    <Content Include="Images\Region\Flag_of_Devon.jpg" />
+    <Content Include="Images\Region\Flag_of_East_Anglia.jpg" />
+    <Content Include="Images\Region\Flag_of_Essex.jpg" />
+    <Content Include="Images\Region\Flag_of_Florida.jpg" />
+    <Content Include="Images\Region\Flag_of_Georgia.jpg" />
+    <Content Include="Images\Region\Flag_of_Hawaii.jpg" />
+    <Content Include="Images\Region\Flag_of_Idaho.jpg" />
+    <Content Include="Images\Region\Flag_of_Illinois.jpg" />
+    <Content Include="Images\Region\Flag_of_Indiana.jpg" />
+    <Content Include="Images\Region\Flag_of_Iowa.jpg" />
+    <Content Include="Images\Region\Flag_of_Kansas.jpg" />
+    <Content Include="Images\Region\Flag_of_Kent.jpg" />
+    <Content Include="Images\Region\Flag_of_Kentucky.jpg" />
+    <Content Include="Images\Region\Flag_of_Leinster.jpg" />
+    <Content Include="Images\Region\Flag_of_Lincolnshire.jpg" />
+    <Content Include="Images\Region\Flag_of_Louisiana.jpg" />
+    <Content Include="Images\Region\Flag_of_Maine.jpg" />
+    <Content Include="Images\Region\Flag_of_Maryland.jpg" />
+    <Content Include="Images\Region\Flag_of_Massachusetts.jpg" />
+    <Content Include="Images\Region\Flag_of_Michigan.jpg" />
+    <Content Include="Images\Region\Flag_of_Minnesota.jpg" />
+    <Content Include="Images\Region\Flag_of_Mississippi.jpg" />
+    <Content Include="Images\Region\Flag_of_Missouri.jpg" />
+    <Content Include="Images\Region\Flag_of_Montana.jpg" />
+    <Content Include="Images\Region\Flag_of_Munster.jpg" />
+    <Content Include="Images\Region\Flag_of_Nebraska.jpg" />
+    <Content Include="Images\Region\Flag_of_Nevada.jpg" />
+    <Content Include="Images\Region\Flag_of_New_Hampshire.jpg" />
+    <Content Include="Images\Region\Flag_of_New_Jersey.jpg" />
+    <Content Include="Images\Region\Flag_of_New_Mexico.jpg" />
+    <Content Include="Images\Region\Flag_of_New_York.jpg" />
+    <Content Include="Images\Region\Flag_of_Northumberland.jpg" />
+    <Content Include="Images\Region\Flag_of_Northumbria.jpg" />
+    <Content Include="Images\Region\Flag_of_North_Carolina.jpg" />
+    <Content Include="Images\Region\Flag_of_North_Dakota.jpg" />
+    <Content Include="Images\Region\Flag_of_Ohio.jpg" />
+    <Content Include="Images\Region\Flag_of_Oklahoma.jpg" />
+    <Content Include="Images\Region\Flag_of_Oregon.jpg" />
+    <Content Include="Images\Region\Flag_of_Orkney.jpg" />
+    <Content Include="Images\Region\Flag_of_Pennsylvania.jpg" />
+    <Content Include="Images\Region\Flag_of_Rhode_Island.jpg" />
+    <Content Include="Images\Region\Flag_of_Shetland.jpg" />
+    <Content Include="Images\Region\Flag_of_South_Carolina.jpg" />
+    <Content Include="Images\Region\Flag_of_South_Dakota.jpg" />
+    <Content Include="Images\Region\Flag_of_Tennessee.jpg" />
+    <Content Include="Images\Region\Flag_of_Texas.jpg" />
+    <Content Include="Images\Region\Flag_of_the_Isle_of_Wight.jpg" />
+    <Content Include="Images\Region\Flag_of_Ulster.jpg" />
+    <Content Include="Images\Region\Flag_of_Utah.jpg" />
+    <Content Include="Images\Region\Flag_of_Vermont.jpg" />
+    <Content Include="Images\Region\Flag_of_Virginia.jpg" />
+    <Content Include="Images\Region\Flag_of_Wales.jpg" />
+    <Content Include="Images\Region\Flag_of_Washington.jpg" />
+    <Content Include="Images\Region\Flag_of_Wessex.jpg" />
+    <Content Include="Images\Region\Flag_of_West_Virginia.jpg" />
+    <Content Include="Images\Region\Flag_of_Wisconsin.jpg" />
+    <Content Include="Images\Region\Flag_of_Wyoming.jpg" />
+    <Content Include="Images\Region\Ireland.jpg" />
+    <Content Include="Images\Region\Manitoba.jpg" />
+    <Content Include="Images\Region\Newfoundland_and_Labrador.jpg" />
+    <Content Include="Images\Region\New_Brunswick.jpg" />
+    <Content Include="Images\Region\Northwest_Territories.jpg" />
+    <Content Include="Images\Region\Nova_Scotia.jpg" />
+    <Content Include="Images\Region\Nunavut.jpg" />
+    <Content Include="Images\Region\Ontario.jpg" />
+    <Content Include="Images\Region\Prince_Edward_Island.jpg" />
+    <Content Include="Images\Region\Quebec.jpg" />
+    <Content Include="Images\Region\Saint_Alban%27s_cross.jpg" />
+    <Content Include="Images\Region\Saint_Wite%27s_Cross.jpg" />
+    <Content Include="Images\Region\Saskatchewan.jpg" />
+    <Content Include="Images\Region\ScillonianCross.jpg" />
+    <Content Include="Images\Region\Scotland.jpg" />
+    <Content Include="Images\Region\Severn_Cross.jpg" />
+    <Content Include="Images\Region\SuffolkSaintEdmunds.jpg" />
+    <Content Include="Images\Region\SussexFlag.jpg" />
+    <Content Include="Images\Region\wales.jpg" />
+    <Content Include="Images\Region\Wiltshire_flag.jpg" />
+    <Content Include="Images\Region\Yukon.jpg" />
     <Content Include="Images\sign_up_now.jpg" />
     <Content Include="Images\top_nav_background.jpg" />
     <Content Include="Images\top_nav_background_on.jpg" />
@@ -229,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Clubs\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -244,6 +345,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Tournament\_regionGridView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Region\Thumbs.db" />
+    <Content Include="Views\Tournament\Region.cshtml" />
+    <Content Include="Views\Tournament\_FreeTournament.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

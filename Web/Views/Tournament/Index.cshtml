@@ -1,4 +1,5 @@
-﻿@{
+﻿@using DataAccess
+@{
     ViewBag.Title = ViewBag.Country + " Tournaments";
 }
 <div class="leftColumn addSpace">
@@ -7,16 +8,18 @@
             <h2>SEARCH BY REGION</h2>
             <select id="regionSelection">
                 <option>-Please Select-</option>
+                @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
+                {
+                 <option value="@r.RegionName">@r.RegionName</option>   
+                }                
             </select>
         </div>
     </div>
 </div>
 <div class="leftColumn content">
+    <h1>@ViewBag.Country</h1>
     @{
-        if(ViewBag.Regions.Count>0)
-        {
-            Html.RenderPartial("_regionGridView");
-        }
+        Html.RenderPartial("_regionGridView");           
     }
     
 </div>

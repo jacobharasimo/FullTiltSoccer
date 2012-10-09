@@ -17,14 +17,96 @@ namespace DataAccess
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall)]
     // NOTE: If the service is renamed, remember to update the global.asax.cs file
     public class ClientAccessService
-    {
+    {        
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllCampsBeforeDate?Date={date}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllCampsBeforeDateResult> GetAllCampsBeforeDate(DateTime date)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllCampsBeforeDate(date);
+            return new List<GetAllCampsBeforeDateResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllCampsPostsByUser?UserID={ID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllCampsPostsByUserResult> GetAllCampsPostsByUser(Guid? userID)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllCampsPostsByUser(userID);
+            return new List<GetAllCampsPostsByUserResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllCoachesCornerByRegion?Region={region}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllCoachesCornerByRegionResult> GetAllCoachesCornerByRegion(string region)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllCoachesCornerByRegion(region);
+            return new List<GetAllCoachesCornerByRegionResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllCoachesCornerPostsByUser?UserID={ID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllCoachesCornerPostsByUserResult> GetAllCoachesCornerPostsByUser(Guid? userID)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllCoachesCornerPostsByUser(userID);
+            return new List<GetAllCoachesCornerPostsByUserResult>(result);
+        }
+
         [OperationContract]
         [WebGet(UriTemplate = "GetAllCountries", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         public List<GetAllCountriesResult> GetAllCountries()
         {
-            var a = new ListingsDataContext();
+            var a = new MainDataDataContext();
             var result = a.GetAllCountries();
-            return new List<GetAllCountriesResult>(result); 
+            return new List<GetAllCountriesResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllRegionsByCountry?Country={country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllRegionsByCountryResult> GetAllRegionsByCountry(string country)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllRegionsByCountry(country);
+            return new List<GetAllRegionsByCountryResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllTournamentPostsByUser?UserID={id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllTournamentPostsByUserResult> GetAllTournamentPostsByUser(Guid? id)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllTournamentPostsByUser(id);
+            return new List<GetAllTournamentPostsByUserResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetAllTournamentsByRegion?Region={region}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetAllTournamentsByRegionResult> GetAllTournamentsByRegion(string region)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAllTournamentsByRegion(region);
+            return new List<GetAllTournamentsByRegionResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetCmsData?ID={id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetCmsDataResult> GetCmsData(string id)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetCmsData(id);
+            return new List<GetCmsDataResult>(result);
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetFellowRegionsByRegion?Region={region}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public List<GetFellowRegionsByRegionResult> GetFellowRegionsByRegion(string region)
+        {
+
+            var a = new MainDataDataContext();
+            var result = a.GetFellowRegionsByRegion(region);
+            return new List<GetFellowRegionsByRegionResult>(result);
         }
 
     }

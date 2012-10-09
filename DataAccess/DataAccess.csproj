@@ -70,7 +70,6 @@
       <DependentUpon>Listings.dbml</DependentUpon>
     </Compile>
     <Compile Include="ClientAccessService.cs" />
-    <Compile Include="SampleItem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
