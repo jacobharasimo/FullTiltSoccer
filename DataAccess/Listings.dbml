@@ -17,6 +17,7 @@
       <Column Name="Aspnet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="User_Camp" Member="Camps" ThisKey="UserID" OtherKey="UserID" Type="Camp" />
       <Association Name="User_CoachesCorner" Member="CoachesCorners" ThisKey="UserID" OtherKey="UserID" Type="CoachesCorner" />
+      <Association Name="User_Raiting" Member="Raitings" ThisKey="UserID" OtherKey="UserID" Type="Raiting" />
       <Association Name="User_Tournament" Member="Tournaments" ThisKey="UserID" OtherKey="UserID" Type="Tournament" />
     </Type>
   </Table>
@@ -53,6 +54,15 @@
       <Association Name="Country_Region" Member="Regions" ThisKey="CountryID" OtherKey="CountryID" Type="Region" />
     </Type>
   </Table>
+  <Table Name="dbo.Raiting" Member="Raitings">
+    <Type Name="Raiting">
+      <Column Name="TournamentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TournamentRaiting" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Association Name="User_Raiting" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+      <Association Name="Tournament_Raiting" Member="Tournament" ThisKey="TournamentID" OtherKey="TournamentID" Type="Tournament" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Region" Member="Regions">
     <Type Name="Region">
       <Column Name="RegionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -80,24 +90,16 @@
       <Column Name="ContactNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="IsPaidListing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TournamentDescription" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TournamentGender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentClubSite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentFormat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentImageUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TournamentDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Tournament_Raiting" Member="Raitings" ThisKey="TournamentID" OtherKey="TournamentID" Type="Raiting" />
       <Association Name="Region_Tournament" Member="Region" ThisKey="RegionID" OtherKey="RegionID" Type="Region" IsForeignKey="true" />
       <Association Name="User_Tournament" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.GetFellowRegionsByRegion" Method="GetFellowRegionsByRegion">
-    <Parameter Name="region" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="GetFellowRegionsByRegionResult">
-      <Column Name="RegionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CountryID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetAllCampsBeforeDate" Method="GetAllCampsBeforeDate">
     <Parameter Name="date" Type="System.DateTime" DbType="Date" />
     <ElementType Name="GetAllCampsBeforeDateResult">
@@ -107,6 +109,15 @@
       <Column Name="ExpirationDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="URL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ImageSource" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetFellowRegionsByRegion" Method="GetFellowRegionsByRegion">
+    <Parameter Name="region" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetFellowRegionsByRegionResult">
+      <Column Name="RegionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.GetAllCampsPostsByUser" Method="GetAllCampsPostsByUser">
@@ -190,11 +201,11 @@
       <Column Name="ContactNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="IsPaidListing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TournamentDescription" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TournamentGender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentClubSite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentFormat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentImageUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TournamentDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </ElementType>
   </Function>
   <Function Name="dbo.GetAllTournamentsByRegion" Method="GetAllTournamentsByRegion">
@@ -215,11 +226,17 @@
       <Column Name="ContactNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="IsPaidListing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="TournamentDescription" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TournamentGender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentClubSite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentFormat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TournamentImageUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TournamentDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating">
+    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetAverageTournamentRatingResult">
+      <Column Name="AverageRaiting" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.GetCmsData" Method="GetCmsData">

@@ -278,6 +278,7 @@
     <Content Include="Images\top_nav_background.jpg" />
     <Content Include="Images\top_nav_background_on.jpg" />
     <Content Include="Images\top_nav_spacer.jpg" />
+    <Content Include="Images\Tournament\testImage.jpg" />
     <Content Include="Images\upcoming_events_blank.gif" />
     <Content Include="Images\welcom_stage.jpg" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
@@ -356,6 +357,7 @@
     <None Include="Images\Region\Thumbs.db" />
     <Content Include="Views\Tournament\Region.cshtml" />
     <Content Include="Views\Tournament\_FreeTournament.cshtml" />
+    <Content Include="Views\Tournament\_PaidTournament.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

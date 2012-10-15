@@ -42,8 +42,8 @@ namespace Web.Controllers
             ViewBag.Region = Region;
             ViewBag.Regions = RestService.GetFellowRegionsByRegion(Region).OrderBy(a => a.RegionName);
             
-            ViewBag.FreeTournaments = RestService.GetAllTournamentsByRegion(Region).Where(e => e.IsPaidListing == true);
-            ViewBag.PaidTournaments = RestService.GetAllTournamentsByRegion(Region).Where(e => e.IsPaidListing == false);
+            ViewBag.FreeTournaments = RestService.GetAllTournamentsByRegion(Region).Where(e => e.IsPaidListing == false);
+            ViewBag.PaidTournaments = RestService.GetAllTournamentsByRegion(Region).Where(e => e.IsPaidListing == true);
             return View();
         }
        

@@ -18,9 +18,12 @@
 </div>
 <div class="leftColumn content">
     <h1>@ViewBag.Region</h1>
+    @foreach (GetAllTournamentsByRegionResult t in ViewBag.PaidTournaments)
+    {        
+        Html.RenderPartial("_PaidTournament", ViewData["Tournament"] = t);
+    }    
     @foreach (GetAllTournamentsByRegionResult t in ViewBag.FreeTournaments)
-    {
-        
+    {        
         Html.RenderPartial("_FreeTournament", ViewData["Tournament"] = t);
     }    
 </div>

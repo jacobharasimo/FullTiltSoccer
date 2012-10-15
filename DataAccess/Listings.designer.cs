@@ -123,6 +123,14 @@ namespace DataAccess
 			}
 		}
 		
+		public System.Data.Linq.Table<Raiting> Raitings
+		{
+			get
+			{
+				return this.GetTable<Raiting>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Region> Regions
 		{
 			get
@@ -139,18 +147,18 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFellowRegionsByRegion")]
-		public ISingleResult<GetFellowRegionsByRegionResult> GetFellowRegionsByRegion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string region)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), region);
-			return ((ISingleResult<GetFellowRegionsByRegionResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllCampsBeforeDate")]
 		public ISingleResult<GetAllCampsBeforeDateResult> GetAllCampsBeforeDate([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> date)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date);
 			return ((ISingleResult<GetAllCampsBeforeDateResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFellowRegionsByRegion")]
+		public ISingleResult<GetFellowRegionsByRegionResult> GetFellowRegionsByRegion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string region)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), region);
+			return ((ISingleResult<GetFellowRegionsByRegionResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAllCampsPostsByUser")]
@@ -200,6 +208,13 @@ namespace DataAccess
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), region);
 			return ((ISingleResult<GetAllTournamentsByRegionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAverageTournamentRating")]
+		public ISingleResult<GetAverageTournamentRatingResult> GetAverageTournamentRating([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
+			return ((ISingleResult<GetAverageTournamentRatingResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetCmsData")]
@@ -1242,6 +1257,69 @@ namespace DataAccess
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Raiting")]
+	public partial class Raiting
+	{
+		
+		private System.Guid _TournamentID;
+		
+		private System.Guid _UserID;
+		
+		private decimal _TournamentRaiting;
+		
+		public Raiting()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid TournamentID
+		{
+			get
+			{
+				return this._TournamentID;
+			}
+			set
+			{
+				if ((this._TournamentID != value))
+				{
+					this._TournamentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentRaiting", DbType="Decimal(5,2) NOT NULL")]
+		public decimal TournamentRaiting
+		{
+			get
+			{
+				return this._TournamentRaiting;
+			}
+			set
+			{
+				if ((this._TournamentRaiting != value))
+				{
+					this._TournamentRaiting = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Region")]
 	public partial class Region : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1481,8 +1559,6 @@ namespace DataAccess
 		
 		private System.Nullable<bool> _IsPaidListing;
 		
-		private System.Nullable<System.DateTime> _TournamentDescription;
-		
 		private string _TournamentGender;
 		
 		private string _TournamentClubSite;
@@ -1490,6 +1566,8 @@ namespace DataAccess
 		private string _TournamentFormat;
 		
 		private string _TournamentImageUrl;
+		
+		private string _TournamentDescription;
 		
 		private EntityRef<Region> _Region;
 		
@@ -1529,8 +1607,6 @@ namespace DataAccess
     partial void OnContactEmailChanged();
     partial void OnIsPaidListingChanging(System.Nullable<bool> value);
     partial void OnIsPaidListingChanged();
-    partial void OnTournamentDescriptionChanging(System.Nullable<System.DateTime> value);
-    partial void OnTournamentDescriptionChanged();
     partial void OnTournamentGenderChanging(string value);
     partial void OnTournamentGenderChanged();
     partial void OnTournamentClubSiteChanging(string value);
@@ -1539,6 +1615,8 @@ namespace DataAccess
     partial void OnTournamentFormatChanged();
     partial void OnTournamentImageUrlChanging(string value);
     partial void OnTournamentImageUrlChanged();
+    partial void OnTournamentDescriptionChanging(string value);
+    partial void OnTournamentDescriptionChanged();
     #endregion
 		
 		public Tournament()
@@ -1856,26 +1934,6 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Date")]
-		public System.Nullable<System.DateTime> TournamentDescription
-		{
-			get
-			{
-				return this._TournamentDescription;
-			}
-			set
-			{
-				if ((this._TournamentDescription != value))
-				{
-					this.OnTournamentDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._TournamentDescription = value;
-					this.SendPropertyChanged("TournamentDescription");
-					this.OnTournamentDescriptionChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentGender", DbType="VarChar(50)")]
 		public string TournamentGender
 		{
@@ -1952,6 +2010,26 @@ namespace DataAccess
 					this._TournamentImageUrl = value;
 					this.SendPropertyChanged("TournamentImageUrl");
 					this.OnTournamentImageUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string TournamentDescription
+		{
+			get
+			{
+				return this._TournamentDescription;
+			}
+			set
+			{
+				if ((this._TournamentDescription != value))
+				{
+					this.OnTournamentDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._TournamentDescription = value;
+					this.SendPropertyChanged("TournamentDescription");
+					this.OnTournamentDescriptionChanged();
 				}
 			}
 		}
@@ -2041,86 +2119,6 @@ namespace DataAccess
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	public partial class GetFellowRegionsByRegionResult
-	{
-		
-		private System.Guid _RegionID;
-		
-		private string _RegionName;
-		
-		private string _Image;
-		
-		private System.Guid _CountryID;
-		
-		public GetFellowRegionsByRegionResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid RegionID
-		{
-			get
-			{
-				return this._RegionID;
-			}
-			set
-			{
-				if ((this._RegionID != value))
-				{
-					this._RegionID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionName", DbType="VarChar(50)")]
-		public string RegionName
-		{
-			get
-			{
-				return this._RegionName;
-			}
-			set
-			{
-				if ((this._RegionName != value))
-				{
-					this._RegionName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(50)")]
-		public string Image
-		{
-			get
-			{
-				return this._Image;
-			}
-			set
-			{
-				if ((this._Image != value))
-				{
-					this._Image = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid CountryID
-		{
-			get
-			{
-				return this._CountryID;
-			}
-			set
-			{
-				if ((this._CountryID != value))
-				{
-					this._CountryID = value;
-				}
 			}
 		}
 	}
@@ -2236,6 +2234,86 @@ namespace DataAccess
 				if ((this._ImageSource != value))
 				{
 					this._ImageSource = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetFellowRegionsByRegionResult
+	{
+		
+		private System.Guid _RegionID;
+		
+		private string _RegionName;
+		
+		private string _Image;
+		
+		private System.Guid _CountryID;
+		
+		public GetFellowRegionsByRegionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid RegionID
+		{
+			get
+			{
+				return this._RegionID;
+			}
+			set
+			{
+				if ((this._RegionID != value))
+				{
+					this._RegionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionName", DbType="VarChar(50)")]
+		public string RegionName
+		{
+			get
+			{
+				return this._RegionName;
+			}
+			set
+			{
+				if ((this._RegionName != value))
+				{
+					this._RegionName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="VarChar(50)")]
+		public string Image
+		{
+			get
+			{
+				return this._Image;
+			}
+			set
+			{
+				if ((this._Image != value))
+				{
+					this._Image = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CountryID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid CountryID
+		{
+			get
+			{
+				return this._CountryID;
+			}
+			set
+			{
+				if ((this._CountryID != value))
+				{
+					this._CountryID = value;
 				}
 			}
 		}
@@ -3016,8 +3094,6 @@ namespace DataAccess
 		
 		private System.Nullable<bool> _IsPaidListing;
 		
-		private System.Nullable<System.DateTime> _TournamentDescription;
-		
 		private string _TournamentGender;
 		
 		private string _TournamentClubSite;
@@ -3025,6 +3101,8 @@ namespace DataAccess
 		private string _TournamentFormat;
 		
 		private string _TournamentImageUrl;
+		
+		private string _TournamentDescription;
 		
 		public GetAllTournamentPostsByUserResult()
 		{
@@ -3270,22 +3348,6 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Date")]
-		public System.Nullable<System.DateTime> TournamentDescription
-		{
-			get
-			{
-				return this._TournamentDescription;
-			}
-			set
-			{
-				if ((this._TournamentDescription != value))
-				{
-					this._TournamentDescription = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentGender", DbType="VarChar(50)")]
 		public string TournamentGender
 		{
@@ -3349,6 +3411,22 @@ namespace DataAccess
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string TournamentDescription
+		{
+			get
+			{
+				return this._TournamentDescription;
+			}
+			set
+			{
+				if ((this._TournamentDescription != value))
+				{
+					this._TournamentDescription = value;
+				}
+			}
+		}
 	}
 	
 	public partial class GetAllTournamentsByRegionResult
@@ -3384,8 +3462,6 @@ namespace DataAccess
 		
 		private System.Nullable<bool> _IsPaidListing;
 		
-		private System.Nullable<System.DateTime> _TournamentDescription;
-		
 		private string _TournamentGender;
 		
 		private string _TournamentClubSite;
@@ -3393,6 +3469,8 @@ namespace DataAccess
 		private string _TournamentFormat;
 		
 		private string _TournamentImageUrl;
+		
+		private string _TournamentDescription;
 		
 		public GetAllTournamentsByRegionResult()
 		{
@@ -3638,22 +3716,6 @@ namespace DataAccess
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Date")]
-		public System.Nullable<System.DateTime> TournamentDescription
-		{
-			get
-			{
-				return this._TournamentDescription;
-			}
-			set
-			{
-				if ((this._TournamentDescription != value))
-				{
-					this._TournamentDescription = value;
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentGender", DbType="VarChar(50)")]
 		public string TournamentGender
 		{
@@ -3714,6 +3776,48 @@ namespace DataAccess
 				if ((this._TournamentImageUrl != value))
 				{
 					this._TournamentImageUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string TournamentDescription
+		{
+			get
+			{
+				return this._TournamentDescription;
+			}
+			set
+			{
+				if ((this._TournamentDescription != value))
+				{
+					this._TournamentDescription = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetAverageTournamentRatingResult
+	{
+		
+		private System.Nullable<decimal> _AverageRaiting;
+		
+		public GetAverageTournamentRatingResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRaiting", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> AverageRaiting
+		{
+			get
+			{
+				return this._AverageRaiting;
+			}
+			set
+			{
+				if ((this._AverageRaiting != value))
+				{
+					this._AverageRaiting = value;
 				}
 			}
 		}
