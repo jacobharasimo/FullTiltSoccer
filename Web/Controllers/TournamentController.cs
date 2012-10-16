@@ -13,9 +13,10 @@ namespace Web.Controllers
     public class TournamentController : Controller
     {
         public ClientAccessService RestService = new ClientAccessService();
-
+        
         public ActionResult Index(string Country)
         {
+            
             ViewBag.Message = "Your tournament page.";
             ViewBag.Country = Country;
             var results = new List<GetAllRegionsByCountryResult>();
@@ -38,7 +39,8 @@ namespace Web.Controllers
 
         public ActionResult Region(string Region)
         {
-            ViewBag.Message = "Your tournament page.";
+            ViewBag.Message = "Your tournament page.";            
+            
             ViewBag.Region = Region;
             ViewBag.Regions = RestService.GetFellowRegionsByRegion(Region).OrderBy(a => a.RegionName);
             
@@ -46,6 +48,5 @@ namespace Web.Controllers
             ViewBag.PaidTournaments = RestService.GetAllTournamentsByRegion(Region).Where(e => e.IsPaidListing == true);
             return View();
         }
-       
     }
 }

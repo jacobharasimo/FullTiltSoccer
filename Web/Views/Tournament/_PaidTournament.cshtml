@@ -1,17 +1,27 @@
 ﻿@using DataAccess
+
 @{
     var tournament = new GetAllTournamentsByRegionResult();
-    tournament = ViewData["Tournament"] as GetAllTournamentsByRegionResult;    
+    tournament = ViewData["Tournament"] as GetAllTournamentsByRegionResult;
+    var accessLayer = new ClientAccessService();
+    var averageResults = accessLayer.GetAverageTournamentRating(tournament.TournamentID);
+    
 }
 
 <div class="tournamentListing">
     <div class="tournamentImage">
-        <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" />    
+        <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" />  
+        <br />  
+        <div>
+            <div id="@tournament.TournamentID" class="tournamentRaiting"></div>
+            <div style="display:inline-block;" class="tournamentAverageRaiting">(<span title="Number of Votes">@averageResults.NumberOfVotes</span>)</div>
+        </div>
     </div>    
     <div class="tournamentDescription">
         <h3>@tournament.TournamentName</h3>
         <p>@tournament.TournamentDescription</p>
         
     </div>    
+    
     <div class="clear"></div>
 </div>

@@ -210,18 +210,32 @@ namespace DataAccess
 			return ((ISingleResult<GetAllTournamentsByRegionResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAverageTournamentRating")]
-		public ISingleResult<GetAverageTournamentRatingResult> GetAverageTournamentRating([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
-			return ((ISingleResult<GetAverageTournamentRatingResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetCmsData")]
 		public ISingleResult<GetCmsDataResult> GetCmsData([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string id)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((ISingleResult<GetCmsDataResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTournamentRaitingFromUser")]
+		public ISingleResult<GetTournamentRaitingFromUserResult> GetTournamentRaitingFromUser([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID, userID);
+			return ((ISingleResult<GetTournamentRaitingFromUserResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAverageTournamentRating")]
+		public ISingleResult<GetAverageTournamentRatingResult1> GetAverageTournamentRating1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
+			return ((ISingleResult<GetAverageTournamentRatingResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetAverageTournamentRating")]
+		public ISingleResult<GetAverageTournamentRatingResult> GetAverageTournamentRating([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
+			return ((ISingleResult<GetAverageTournamentRatingResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3797,32 +3811,6 @@ namespace DataAccess
 		}
 	}
 	
-	public partial class GetAverageTournamentRatingResult
-	{
-		
-		private System.Nullable<decimal> _AverageRaiting;
-		
-		public GetAverageTournamentRatingResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRaiting", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> AverageRaiting
-		{
-			get
-			{
-				return this._AverageRaiting;
-			}
-			set
-			{
-				if ((this._AverageRaiting != value))
-				{
-					this._AverageRaiting = value;
-				}
-			}
-		}
-	}
-	
 	public partial class GetCmsDataResult
 	{
 		
@@ -3844,6 +3832,102 @@ namespace DataAccess
 				if ((this._Data != value))
 				{
 					this._Data = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetTournamentRaitingFromUserResult
+	{
+		
+		private decimal _TournamentRaiting;
+		
+		public GetTournamentRaitingFromUserResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentRaiting", DbType="Decimal(5,2) NOT NULL")]
+		public decimal TournamentRaiting
+		{
+			get
+			{
+				return this._TournamentRaiting;
+			}
+			set
+			{
+				if ((this._TournamentRaiting != value))
+				{
+					this._TournamentRaiting = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetAverageTournamentRatingResult1
+	{
+		
+		private System.Nullable<decimal> _AverageRaiting;
+		
+		public GetAverageTournamentRatingResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRaiting", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> AverageRaiting
+		{
+			get
+			{
+				return this._AverageRaiting;
+			}
+			set
+			{
+				if ((this._AverageRaiting != value))
+				{
+					this._AverageRaiting = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetAverageTournamentRatingResult
+	{
+		
+		private System.Nullable<decimal> _AverageRaiting;
+		
+		private System.Nullable<int> _NumberOfVotes;
+		
+		public GetAverageTournamentRatingResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AverageRaiting", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> AverageRaiting
+		{
+			get
+			{
+				return this._AverageRaiting;
+			}
+			set
+			{
+				if ((this._AverageRaiting != value))
+				{
+					this._AverageRaiting = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NumberOfVotes", DbType="Int")]
+		public System.Nullable<int> NumberOfVotes
+		{
+			get
+			{
+				return this._NumberOfVotes;
+			}
+			set
+			{
+				if ((this._NumberOfVotes != value))
+				{
+					this._NumberOfVotes = value;
 				}
 			}
 		}

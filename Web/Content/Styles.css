@@ -94,3 +94,8 @@ filter:alpha(opacity=70); /* For IE8 and earlier */}
 .tournamentListing .tournamentImage{ float: left;}
 .tournamentListing{ margin: 10px 10px 20px 10px;border-bottom: 1px solid #CDCDCD;padding-bottom: 20px;}
 .tournamentListing h3{font-weight: bold;margin-bottom: 1em;text-transform:capitalize;}
+.tournamentRaiting{ display: inline-block;}
+.tournamentRaiting img{display: inline-block;border: none;margin: 0;padding: 0;}
+.tournamentAverageRaiting{display: inline-block;line-height: 18px;vertical-align: top;}
+.tournamentAverageRaiting span{text-decoration: underline;     }
+.tournamentAverageRaiting span:hover{ cursor: pointer;}

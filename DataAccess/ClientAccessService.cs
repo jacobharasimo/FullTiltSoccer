@@ -108,6 +108,21 @@ namespace DataAccess
             var result = a.GetFellowRegionsByRegion(region);
             return new List<GetFellowRegionsByRegionResult>(result);
         }
+        [WebGet(UriTemplate = "GetTournamentRaitingFromUser?TournamentID={tournamentID}&UserID={@userID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public GetTournamentRaitingFromUserResult GetTournamentRaitingFromUser(Guid? tournamentID, Guid? userID)
+        {
 
+            var a = new MainDataDataContext();
+            var result = a.GetTournamentRaitingFromUser(tournamentID, userID).First();
+            return result;
+        }
+        [WebGet(UriTemplate = "GetAverageTournamentRating?TournamentID={tournamentID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public GetAverageTournamentRatingResult GetAverageTournamentRating(Guid? tournamentID)
+        {
+
+            var a = new MainDataDataContext();
+            var result = a.GetAverageTournamentRating(tournamentID).First();
+            return result;
+        }
     }
 }

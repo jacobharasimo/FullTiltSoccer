@@ -233,16 +233,30 @@
       <Column Name="TournamentDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating">
-    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
-    <ElementType Name="GetAverageTournamentRatingResult">
-      <Column Name="AverageRaiting" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetCmsData" Method="GetCmsData">
     <Parameter Name="id" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="GetCmsDataResult">
       <Column Name="Data" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetTournamentRaitingFromUser" Method="GetTournamentRaitingFromUser">
+    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetTournamentRaitingFromUserResult">
+      <Column Name="TournamentRaiting" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating1">
+    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetAverageTournamentRatingResult1">
+      <Column Name="AverageRaiting" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating">
+    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetAverageTournamentRatingResult">
+      <Column Name="AverageRaiting" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="NumberOfVotes" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -8,6 +8,8 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                
         @Styles.Render("~/Content/themes/base/css", "~/Content/css", "~/Content/themes/custom-theme/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery") 
+        @RenderSection("headScripts", required: false)
     </head>
     <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
         <div id="header" class="outerWrapper">
@@ -50,7 +52,7 @@
 			</ul>
 		</div>
 	</div>
-    @Scripts.Render("~/bundles/jquery")        
+           
     @RenderSection("scripts", required: false)
     </body>
 </html>

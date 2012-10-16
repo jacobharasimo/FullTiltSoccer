@@ -13,6 +13,9 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/raty").Include(
+                        "~/Scripts/raty/jquery.raty.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
