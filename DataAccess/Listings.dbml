@@ -259,4 +259,29 @@
       <Column Name="NumberOfVotes" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.GetTournamentByTournamentID" Method="GetTournamentByTournamentID">
+    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="GetTournamentByTournamentIDResult">
+      <Column Name="TournamentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RegionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TournamentName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentLocation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TournamentTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="TournamentHostingClub" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentAgeGroup" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentTeamFee" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TournamentRegistrationDeadline" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ContactName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsPaidListing" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TournamentGender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentClubSite" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentFormat" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TournamentImageUrl" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TournamentDescription" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
 </Database>

@@ -237,6 +237,13 @@ namespace DataAccess
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
 			return ((ISingleResult<GetAverageTournamentRatingResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetTournamentByTournamentID")]
+		public ISingleResult<GetTournamentByTournamentIDResult> GetTournamentByTournamentID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="UniqueIdentifier")] System.Nullable<System.Guid> tournamentID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tournamentID);
+			return ((ISingleResult<GetTournamentByTournamentIDResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Camp")]
@@ -3928,6 +3935,374 @@ namespace DataAccess
 				if ((this._NumberOfVotes != value))
 				{
 					this._NumberOfVotes = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetTournamentByTournamentIDResult
+	{
+		
+		private System.Guid _TournamentID;
+		
+		private System.Guid _RegionID;
+		
+		private System.Guid _UserID;
+		
+		private string _TournamentName;
+		
+		private string _TournamentLocation;
+		
+		private System.Nullable<System.DateTime> _TournamentDate;
+		
+		private System.Nullable<System.TimeSpan> _TournamentTime;
+		
+		private string _TournamentHostingClub;
+		
+		private string _TournamentAgeGroup;
+		
+		private System.Nullable<decimal> _TournamentTeamFee;
+		
+		private System.Nullable<System.DateTime> _TournamentRegistrationDeadline;
+		
+		private string _ContactName;
+		
+		private string _ContactNumber;
+		
+		private string _ContactEmail;
+		
+		private System.Nullable<bool> _IsPaidListing;
+		
+		private string _TournamentGender;
+		
+		private string _TournamentClubSite;
+		
+		private string _TournamentFormat;
+		
+		private string _TournamentImageUrl;
+		
+		private string _TournamentDescription;
+		
+		public GetTournamentByTournamentIDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid TournamentID
+		{
+			get
+			{
+				return this._TournamentID;
+			}
+			set
+			{
+				if ((this._TournamentID != value))
+				{
+					this._TournamentID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid RegionID
+		{
+			get
+			{
+				return this._RegionID;
+			}
+			set
+			{
+				if ((this._RegionID != value))
+				{
+					this._RegionID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentName", DbType="VarChar(50)")]
+		public string TournamentName
+		{
+			get
+			{
+				return this._TournamentName;
+			}
+			set
+			{
+				if ((this._TournamentName != value))
+				{
+					this._TournamentName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentLocation", DbType="VarChar(50)")]
+		public string TournamentLocation
+		{
+			get
+			{
+				return this._TournamentLocation;
+			}
+			set
+			{
+				if ((this._TournamentLocation != value))
+				{
+					this._TournamentLocation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDate", DbType="Date")]
+		public System.Nullable<System.DateTime> TournamentDate
+		{
+			get
+			{
+				return this._TournamentDate;
+			}
+			set
+			{
+				if ((this._TournamentDate != value))
+				{
+					this._TournamentDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentTime", DbType="Time")]
+		public System.Nullable<System.TimeSpan> TournamentTime
+		{
+			get
+			{
+				return this._TournamentTime;
+			}
+			set
+			{
+				if ((this._TournamentTime != value))
+				{
+					this._TournamentTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentHostingClub", DbType="VarChar(50)")]
+		public string TournamentHostingClub
+		{
+			get
+			{
+				return this._TournamentHostingClub;
+			}
+			set
+			{
+				if ((this._TournamentHostingClub != value))
+				{
+					this._TournamentHostingClub = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentAgeGroup", DbType="VarChar(50)")]
+		public string TournamentAgeGroup
+		{
+			get
+			{
+				return this._TournamentAgeGroup;
+			}
+			set
+			{
+				if ((this._TournamentAgeGroup != value))
+				{
+					this._TournamentAgeGroup = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentTeamFee", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> TournamentTeamFee
+		{
+			get
+			{
+				return this._TournamentTeamFee;
+			}
+			set
+			{
+				if ((this._TournamentTeamFee != value))
+				{
+					this._TournamentTeamFee = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentRegistrationDeadline", DbType="Date")]
+		public System.Nullable<System.DateTime> TournamentRegistrationDeadline
+		{
+			get
+			{
+				return this._TournamentRegistrationDeadline;
+			}
+			set
+			{
+				if ((this._TournamentRegistrationDeadline != value))
+				{
+					this._TournamentRegistrationDeadline = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactName", DbType="VarChar(50)")]
+		public string ContactName
+		{
+			get
+			{
+				return this._ContactName;
+			}
+			set
+			{
+				if ((this._ContactName != value))
+				{
+					this._ContactName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactNumber", DbType="VarChar(50)")]
+		public string ContactNumber
+		{
+			get
+			{
+				return this._ContactNumber;
+			}
+			set
+			{
+				if ((this._ContactNumber != value))
+				{
+					this._ContactNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ContactEmail", DbType="VarChar(50)")]
+		public string ContactEmail
+		{
+			get
+			{
+				return this._ContactEmail;
+			}
+			set
+			{
+				if ((this._ContactEmail != value))
+				{
+					this._ContactEmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsPaidListing", DbType="Bit")]
+		public System.Nullable<bool> IsPaidListing
+		{
+			get
+			{
+				return this._IsPaidListing;
+			}
+			set
+			{
+				if ((this._IsPaidListing != value))
+				{
+					this._IsPaidListing = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentGender", DbType="VarChar(50)")]
+		public string TournamentGender
+		{
+			get
+			{
+				return this._TournamentGender;
+			}
+			set
+			{
+				if ((this._TournamentGender != value))
+				{
+					this._TournamentGender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentClubSite", DbType="VarChar(50)")]
+		public string TournamentClubSite
+		{
+			get
+			{
+				return this._TournamentClubSite;
+			}
+			set
+			{
+				if ((this._TournamentClubSite != value))
+				{
+					this._TournamentClubSite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentFormat", DbType="VarChar(50)")]
+		public string TournamentFormat
+		{
+			get
+			{
+				return this._TournamentFormat;
+			}
+			set
+			{
+				if ((this._TournamentFormat != value))
+				{
+					this._TournamentFormat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentImageUrl", DbType="VarChar(MAX)")]
+		public string TournamentImageUrl
+		{
+			get
+			{
+				return this._TournamentImageUrl;
+			}
+			set
+			{
+				if ((this._TournamentImageUrl != value))
+				{
+					this._TournamentImageUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TournamentDescription", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string TournamentDescription
+		{
+			get
+			{
+				return this._TournamentDescription;
+			}
+			set
+			{
+				if ((this._TournamentDescription != value))
+				{
+					this._TournamentDescription = value;
 				}
 			}
 		}

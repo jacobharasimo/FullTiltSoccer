@@ -8,9 +8,10 @@
     
 }
 
-<div class="tournamentListing">
+<a href="@Url.Action("Details", "Tournament", new { TournamentID = tournament.TournamentID })" class="paidTournamentListing fancybox.ajax" >
+    
     <div class="tournamentImage">
-        <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" />  
+        <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" class="tournamentLogo" />  
         <br />  
         <div>
             <div id="@tournament.TournamentID" class="tournamentRaiting"></div>
@@ -24,4 +25,5 @@
     </div>    
     
     <div class="clear"></div>
-</div>
+    
+</a>

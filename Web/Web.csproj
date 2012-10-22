@@ -171,6 +171,9 @@
     <Content Include="Images\advertise_blank.jpg" />
     <Content Include="Images\advertise_with_us.jpg" />
     <Content Include="Images\bottom_add_space.jpg" />
+    <Content Include="Images\Camps\AC Milan camp9841a7c3ff9947f481917ff9b8d91932.JPG" />
+    <Content Include="Images\Camps\DPS academybc48f3c236a144f8b14e8e65e2d77e2d.JPG" />
+    <Content Include="Images\Camps\IASA soccer28dce2613c5e4d98b662e855109e92e0.JPG" />
     <Content Include="Images\cancel-off.png" />
     <Content Include="Images\cancel-on.png" />
     <Content Include="Images\footer_nav_spacer.jpg" />
@@ -284,9 +287,34 @@
     <Content Include="Images\top_nav_background.jpg" />
     <Content Include="Images\top_nav_background_on.jpg" />
     <Content Include="Images\top_nav_spacer.jpg" />
+    <Content Include="Images\Tournament\AC douglas9a637886b68f4c3b8a8d759733e99772.JPG" />
+    <Content Include="Images\Tournament\BMO157e0ca53699481e813d87bc33ad3d5d.jpeg" />
+    <Content Include="Images\Tournament\Cobras FCd1576db9f9d442a7b6e94913870f1053.JPG" />
+    <Content Include="Images\Tournament\FC  united Floridadc5da10fe24c421cb97be7429699e392.jpeg" />
+    <Content Include="Images\Tournament\FTS Logo 27ba389a89b3b46039281d1cff308110f.jpg" />
+    <Content Include="Images\Tournament\FTS Logo 2a8bf900647024b3c87e58889a51da023.jpg" />
+    <Content Include="Images\Tournament\Liverpool209c4ed483a0423f987e93cfbb98e648.jpg" />
+    <Content Include="Images\Tournament\Loch Lomond Logo9920b421834043408ea0c8c31ae9777c.jpg" />
+    <Content Include="Images\Tournament\mayors cup 24a93a5abb0154937b50ee57c802b9ef8.jpg" />
+    <Content Include="Images\Tournament\Sherwood park AB1546ac55b6ce4c23800686598983245c.JPG" />
     <Content Include="Images\Tournament\testImage.jpg" />
+    <Content Include="Images\Tournament\Umbro beach86ca2ed4564a4fe29078a5f6c5774891.JPG" />
+    <Content Include="Images\Tournament\Welsh super cup2a777181c4184125ac89fbb2e0b55bab.JPG" />
     <Content Include="Images\upcoming_events_blank.gif" />
     <Content Include="Images\welcom_stage.jpg" />
+    <Content Include="Scripts\fancybox\blank.gif" />
+    <Content Include="Scripts\fancybox\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox\fancybox_sprite.png" />
+    <Content Include="Scripts\fancybox\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-media.js" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\fancybox\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.css" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.js" />
+    <Content Include="Scripts\fancybox\jquery.fancybox.pack.js" />
     <Content Include="Scripts\jquery-1.6.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.22.custom.min.js" />
@@ -317,6 +345,21 @@
     <Content Include="Content\Styles.css" />
     <Content Include="Scripts\raty\jquery.raty.js" />
     <Content Include="Scripts\raty\jquery.raty.min.js" />
+    <Content Include="Views\Tournament\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Tournament\Region.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Tournament\_FreeTournament.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Tournament\_PaidTournament.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Tournament\_regionGridView.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -338,7 +381,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Clubs\" />
+    <Folder Include="uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -350,12 +393,6 @@
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Tournament\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Tournament\_regionGridView.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{501AFBE0-AE12-4EE7-B5DD-F57901A53CF8}</Project>
       <Name>DataAccess</Name>
@@ -363,9 +400,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Region\Thumbs.db" />
-    <Content Include="Views\Tournament\Region.cshtml" />
-    <Content Include="Views\Tournament\_FreeTournament.cshtml" />
-    <Content Include="Views\Tournament\_PaidTournament.cshtml" />
+    <Content Include="Views\Tournament\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -383,7 +418,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>14082</DevelopmentServerPort>
+          <DevelopmentServerPort>31997</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

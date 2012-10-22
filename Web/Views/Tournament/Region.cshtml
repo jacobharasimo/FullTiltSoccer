@@ -25,9 +25,9 @@
         var accessLayer = new ClientAccessService();
         Guid currentUser = new Guid("d2b2cedb-4f8d-4702-b48d-c147f7425efd");
         var currentVote = accessLayer.GetAverageTournamentRating(t.TournamentID);
-        bool canVote = accessLayer.GetTournamentRaitingFromUser(t.TournamentID, currentUser).TournamentRaiting>0;
+        bool canVote = accessLayer.GetTournamentRaitingFromUser(t.TournamentID, currentUser).TournamentRaiting<=0;
         var raty = "$('#" + t.TournamentID + "').raty({ readOnly: true,half: true, path: '/Images/', number: '5', score: '" + currentVote.AverageRaiting + "' });";
-        if (User.Identity.IsAuthenticated && canVote)
+        if (!User.Identity.IsAuthenticated && canVote)
         {
             raty = "$('#" + t.TournamentID + "').raty({ half: true, path: '/Images/', number: '5', score: '" + currentVote.AverageRaiting + "' });";    
         }
@@ -49,16 +49,33 @@
 <div class="clear"></div>
 @section HeadScripts{
     @Scripts.Render("~/bundles/raty") 
+    <style>
+        
+    </style>
 }
 
 @section Scripts {
-     
+    @Scripts.Render("~/bundles/fancybox")
+    @Styles.Render("~/Content/fancybox/css")
     @{
         
     }
     <script>
-        $(document).ready(function () {
-            
+        $(document).ready(function () {            
+            $(".tournamentRaiting img").click(function (e) {
+                e.preventDefault();
+            });
+            $(".paidTournamentListing").fancybox({
+                maxWidth: 800,
+                maxHeight: 600,
+                fitToView: false,
+                width: '70%',
+                height: '70%',
+                autoSize: false,
+                closeClick: false,
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
         });
     </script>   
 }

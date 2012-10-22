@@ -4,12 +4,29 @@
     tournament = ViewData["Tournament"] as GetAllTournamentsByRegionResult;    
 }
 
-<div class="tournamentListing">
-    <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" />
+<div class="freeTournamentListing">    
     <div>
-        <h3>@tournament.TournamentName</h3>
-        <p>@tournament.TournamentDescription</p>
-        
+        <ul>
+            <h3>@tournament.TournamentName</h3>
+            <li style="float: left;width: 50%;">
+                <ul>
+                    
+                    <li><strong>Date:</strong> @tournament.TournamentDate</li>
+                    <li><strong>Location:</strong> @tournament.TournamentLocation</li>
+                    <li><strong>Contact Info:</strong> @tournament.ContactName</li>
+                    <li><strong>Email:</strong> <a class="emailAddress" title="@tournament.ContactEmail.Trim()" href="mailto:@tournament.ContactEmail.Trim()">@tournament.ContactEmail.Trim()</a></li>
+                </ul>
+            </li>
+            <li style="float: right;width: 50%;">
+                <ul>
+                    
+                    <li><strong>@tournament.TournamentGender / @tournament.TournamentFormat</strong></li>
+                    <li><strong>Fee:</strong> $@tournament.TournamentTeamFee</li>
+                    <li><strong>Association:</strong> @tournament.TournamentHostingClub</li>
+                    <li><strong>URL:</strong> <a title="@tournament.TournamentClubSite.Trim()" href="@tournament.TournamentClubSite.Trim()">@tournament.TournamentClubSite.Trim()</a></li>
+                </ul>
+            </li>
+        </ul>        
     </div>    
     <div class="clear"></div>
 </div>

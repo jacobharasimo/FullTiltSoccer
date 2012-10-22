@@ -23,6 +23,9 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/fancybox").Include(
+                        "~/Scripts/fancybox/jquery.fancybox.*"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(                
                 "~/Content/Styles.css"
                 ));
@@ -43,6 +46,9 @@ namespace Web
 
             bundles.Add(new StyleBundle("~/Content/themes/custom-theme/css").Include(
                         "~/Content/themes/custom-theme/jquery-ui-1.8.22.custom.css"));
+
+            bundles.Add(new StyleBundle("~/Content/fancybox/css").Include(
+                        "~/Scripts/fancybox/jquery.fancybox.css"));
         }
     }
 }

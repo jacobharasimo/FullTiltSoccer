@@ -1,11 +1,13 @@
 ﻿@using DataAccess
-<ol class="regionsList">
+<ul class="regionsList">
     @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
     {        
-        <li>
-            
-            <a href="@Url.Action("Region", "Tournament", new {Region = r.RegionName })"><img src="~/@r.Image" alt="@r.RegionName" title="@r.RegionName" /></a>
+        <li>            
+            <a href="@Url.Action("Region", "Tournament", new {Region = r.RegionName })">
+                <img src="~/@r.Image" alt="@r.RegionName" title="@r.RegionName" />
+                <p>@r.RegionName</p>
+            </a>
         </li>
     }    
-</ol>
+</ul>
 <div class="clear"></div>

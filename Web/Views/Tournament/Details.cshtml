@@ -1,0 +1,41 @@
+﻿@using DataAccess
+@{
+    ViewBag.Title = ViewBag.Country + " Tournaments";
+    Layout = null;
+    GetTournamentByTournamentIDResult Tournament = ViewBag.Tournament;
+}
+<div class="fullTournamentDetails">    
+    <ul class="details">
+        <img src="@Tournament.TournamentImageUrl" alt="" title="" class="largeTournamentImage"/>
+        <li>@Tournament.ContactEmail</li>
+        <li>@Tournament.ContactName</li>
+        <li>@Tournament.ContactNumber</li>
+        <li>@Tournament.TournamentAgeGroup</li>
+        <li>@Tournament.TournamentClubSite</li>
+        <li>@Tournament.TournamentDate</li>
+        <li>@Tournament.TournamentDescription</li>
+        <li>@Tournament.TournamentFormat</li>
+        <li>@Tournament.TournamentGender</li>
+        <li>@Tournament.TournamentHostingClub</li>
+        <li>@Tournament.TournamentLocation</li>
+        <li>@Tournament.TournamentName</li>
+        <li>@Tournament.TournamentRegistrationDeadline</li>
+        <li>@Tournament.TournamentTeamFee</li>
+        <li>@Tournament.TournamentTime</li>
+    </ul>
+</div>
+@section HeadScripts{
+    
+}
+
+@section Scripts {
+     
+    @{
+        
+    }
+    <script>
+        $(document).ready(function () {
+           
+        });
+    </script>   
+}

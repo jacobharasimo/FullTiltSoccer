@@ -91,12 +91,21 @@ namespace DataAccess
         }
 
         [OperationContract]
-        [WebGet(UriTemplate = "GetCmsData?ID={id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        public List<GetCmsDataResult> GetCmsData(string id)
+        [WebGet(UriTemplate = "GetTournamentByTournamentID?TournamentID={id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public GetTournamentByTournamentIDResult GetTournamentByTournamentID(Guid? TournamentID)
         {
             var a = new MainDataDataContext();
-            var result = a.GetCmsData(id);
-            return new List<GetCmsDataResult>(result);
+            var result = a.GetTournamentByTournamentID(TournamentID).FirstOrDefault();
+            return result;
+        }
+
+        [OperationContract]
+        [WebGet(UriTemplate = "GetCmsData?ID={id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public string GetCmsData(string id)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetCmsData(id).FirstOrDefault();
+            return result.Data;
         }
 
         [OperationContract]
@@ -113,15 +122,16 @@ namespace DataAccess
         {
 
             var a = new MainDataDataContext();
-            var result = a.GetTournamentRaitingFromUser(tournamentID, userID).First();
-            return result;
+            var result = a.GetTournamentRaitingFromUser(tournamentID, userID).FirstOrDefault();
+            return result ?? new GetTournamentRaitingFromUserResult(){TournamentRaiting = 0};
+            
         }
         [WebGet(UriTemplate = "GetAverageTournamentRating?TournamentID={tournamentID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         public GetAverageTournamentRatingResult GetAverageTournamentRating(Guid? tournamentID)
         {
 
             var a = new MainDataDataContext();
-            var result = a.GetAverageTournamentRating(tournamentID).First();
+            var result = a.GetAverageTournamentRating(tournamentID).FirstOrDefault();
             return result;
         }
     }
