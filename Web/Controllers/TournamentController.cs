@@ -12,6 +12,15 @@ namespace Web.Controllers
 {
     public class TournamentController : Controller
     {
+        public static string MaxLenght(string s, int lenght)
+        {
+            var result = s;
+            if(s.Length>lenght)
+            {
+                result=s.Substring(0, lenght);
+            }
+            return result;
+        }
         public ClientAccessService RestService = new ClientAccessService();
        
         public ActionResult Index(string Country)
@@ -47,12 +56,21 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult Details(Guid? TournamentID)
+        public ActionResult Details(Guid? TournamentID, bool Layout)
         {            
             ViewBag.Message = "Tournament detail page.";
-            
+            ViewBag.UseLayout = Layout;
             ViewBag.Tournament = RestService.GetTournamentByTournamentID(TournamentID);
             return View();
         }
+
+        public ActionResult Details(Guid? TournamentID)
+        {
+            ViewBag.Message = "Tournament detail page.";
+            ViewBag.UseLayout = true;
+            ViewBag.Tournament = RestService.GetTournamentByTournamentID(TournamentID);
+            return View();
+        }
+        
     }
 }
