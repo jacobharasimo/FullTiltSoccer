@@ -1,0 +1,81 @@
+﻿    @using System.Text.RegularExpressions
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <title>Full Tilt Soccer - @ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                
+        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
+        @Styles.Render("~/Content/fancybox/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery") 
+        @Scripts.Render("~/bundles/jqueryui")             
+        @Scripts.Render("~/bundles/fancybox")
+        <script src="~/Scripts/raty/jquery.raty.min.js" type="text/javascript"></script>
+                
+    </head>
+    <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
+        <header id="header" class="outerWrapper">
+		    <div class="pageCenter">                    
+               @Html.ActionLink(" ", "Index", "Home",null, new { id = "logo" })
+                <section class="login">
+                    @Html.Partial("_LoginPartial")
+                    @*@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "fancybox.ajax" })
+				@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" }) *@               
+                </section>
+		</div>		
+	</header>
+	<div id="topNav" class="outerWrapper">
+        <div class="pageCenter">
+            <nav>
+            <ul id="primaryNav">	
+                <li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
+                <li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "United States" }, new { })</li>
+                <li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
+                <li>@Html.ActionLink("Coaches Corner", "Index", "CoachesCorner")</li>
+                <li><a href="">Camps/Academies</a></li>
+                <li><a href="">Forum</a></li>
+                <li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
+            </ul>
+            </nav>
+        </div>
+	</div>
+        <div id="contentArea" class="outerWrapper">
+            <div class="pageCenter">
+                @RenderBody()
+            </div>
+        </div>
+	<footer id="bottomNav" class="outerWrapper">
+		<div class="pageCenter">
+			<ul id="footerNav">
+				<li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
+				<li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "UnitedStates" }, new { })</li>
+				<li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
+				<li>@Html.ActionLink("Advertise With Us", "Index", "Contact")</li>
+				<li>@Html.ActionLink("Sign Up", "Index", "Contact")</li>
+				<li><a href="">Site Map</a></li>
+				<li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
+			</ul>
+		</div>
+	</footer>
+           
+    @RenderSection("scripts", required: false)
+    
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#loginLink").fancybox({
+                    maxWidth: '250',
+                    maxHeight: '250',
+                    fitToView: false,
+                    width: '70%',
+                    autoSize: false,
+                    closeClick: false,
+                    openEffect: 'none',
+                    closeEffect: 'none'
+                });
+
+            });
+        </script>
+    </body>
+</html>

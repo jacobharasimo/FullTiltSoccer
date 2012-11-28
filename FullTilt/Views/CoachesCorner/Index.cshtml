@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Coaches Corner";
+}
+<div class="leftColumn addSpace">
+    @Html.Partial("_LeftAddList")
+</div>
+<div class="leftColumn content">
+    <div class="welcomeMessage">
+        @Html.Raw(ViewBag.WelcomeMessage)
+    </div>    
+    <div class="line"></div>
+    <div class="searchControls">
+        <ul class="ageSearchControl">
+            <li><span class="ageBlock age10"></span>Age 10</li>
+            <li><span class="ageBlock age11"></span>Age 11</li>
+            <li><span class="ageBlock age12"></span>Age 12</li>
+            <li><span class="ageBlock age13"></span>Age 13</li>
+            <li><span class="ageBlock age14"></span>Age 14</li>
+            <li><span class="ageBlock age15"></span>Age 15</li>
+            <li><span class="ageBlock age16"></span>Age 16</li>
+        </ul>
+        <ul class="ageSearchControl alt">
+            <li>
+                <span>Country </span>
+
+                @Html.DropDownList("Countries")
+            </li>
+            <li>
+                <span>Region </span>
+                @Html.DropDownList("Regions")
+            </li>
+            <li>
+                <span>Age </span>
+                @Html.DropDownList("Age")
+            </li>
+            <li>
+                <a id="searchButton" href="#">Search</a>
+                <a id="clearButton" href="#">Reset</a>
+            </li>
+        </ul>
+        
+    </div>
+    <div class="results">
+        @{
+            Html.RenderPartial("_Listing");
+        }        
+    </div>
+</div>
+<div class="leftColumn addSpace">
+    @Html.Partial("_FeaturedTournaments")
+</div>
+<div class="clear"></div>
+@section scripts
+{
+    <script type="text/javascript">
+        $("#searchButton").button();
+        if($("#Countries").find(":selected").val()=="0") {
+            $("#Regions").attr("disabled", "disabled");
+        }
+        if ($("#Regions").find(":selected").val() == "0") {
+            $("#Age").attr("disabled", "disabled");
+        }
+        $("#Countries").change(function () {
+            window.location = ('/CoachesCorner?Country=' + $("#Countries").val());                
+        });
+        $("#Regions").change(function () {
+            window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val());                
+        });
+        $("#Age").change(function () {
+            window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val() + '&Age=' + $("#Age").val());
+        });
+        $("#clearButton").click(function () {
+            window.location = ('/CoachesCorner');
+        });
+    </script>
+}

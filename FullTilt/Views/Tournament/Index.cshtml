@@ -1,0 +1,38 @@
+﻿@using DataAccess
+@{
+    ViewBag.Title = ViewBag.Country + " Tournaments";
+}
+<div class="leftColumn addSpace">
+    <div class="outterSearch">
+        <div class="innerSearch">
+            <h2>SEARCH BY REGION</h2>
+            <select id="regionSelection">
+                <option>-Please Select-</option>
+                @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
+                {
+                    <option value="@r.RegionName">@r.RegionName</option>   
+                }                
+            </select>
+        </div>
+    </div>
+     @Html.Partial("_LeftAddList")
+</div>
+<div class="leftColumn content">
+    <h1>@ViewBag.Country</h1>
+    @{
+        Html.RenderPartial("_regionGridView");           
+    }
+    
+</div>
+<div class="leftColumn addSpace">
+    @Html.Partial("_FeaturedTournaments")
+</div>
+<div class="clear"></div>
+@section scripts
+{
+    <script type="text/javascript">
+        $("#regionSelection").change(function(){
+            window.location=('/Tournament/Region?Region=' + $(this).val());
+        });
+    </script>
+}

@@ -1,3 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FullTiltSoccer" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=JACOB-PC\SQLSERVER;Initial Catalog=FullTiltSoccer;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FullTiltSoccerConnectionString" Provider="System.Data.SqlClient" />
-</Database>

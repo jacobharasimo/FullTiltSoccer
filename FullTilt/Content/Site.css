@@ -1,0 +1,429 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+html {background-color: #e2e2e2;margin: 0;padding: 0;}
+body {background-color: #fff;color: #333;font-family: Helvetica,Arial, Sans-Serif;margin: 0;padding: 0;}
+a {color: #333;outline: none;text-decoration: underline;}
+header, footer, hgroup,nav, section {display: block;}
+mark {background-color: #a6dbed;padding-left: 5px;padding-right: 5px;}
+.float-left {float: left;}
+.float-right {float: right;}
+.clear-fix:after {content: ".";clear: both;display: block;height: 0;visibility: hidden;}
+h1, h2, h3,h4, h5, h6 {color: #000;margin-bottom: 0;padding-bottom: 0;}
+h1 {font-size: 2em;}
+h2 {font-size: 1.2em;}
+h3 {font-size: 1.2em;}
+h4 {font-size: 1.1em;}
+h5, h6 {font-size: 1em;}
+h5 a:link, h5 a:visited, h5 a:active {padding: 0;text-decoration: none;}
+/* main layout
+----------------------------------------------------------*/
+.content-wrapper {margin: 0 auto;max-width: 960px;}
+#body {background-color: #efeeef;clear: both;padding-bottom: 35px;}
+header .content-wrapper {padding-top: 20px; }
+footer {clear: both;background-color: #e2e2e2;font-size: .8em;height: 100px;}
+/* site title
+----------------------------------------------------------*/
+.site-title a, .site-title a:hover, .site-title a:active {background: none;color: #c8c8c8;outline: none;text-decoration: none;}
+/* menu
+----------------------------------------------------------*/
+ul#menu {font-size: 1.3em;font-weight: 600;margin: 0 0 5px;padding: 0;text-align: right;}
+ul#menu li {display: inline;list-style: none;padding-left: 15px;}
+ul#menu li a {background: none;color: #999;text-decoration: none;}
+ul#menu li a:hover {color: #333;text-decoration: none;}
+/* page elements
+----------------------------------------------------------*/
+/* featured */
+.featured {background-color: #fff;}
+.featured hgroup.title h1, .featured hgroup.title h2 {color: #fff;}
+.featured p {font-size: 1.1em;}
+/* page titles */
+hgroup.title {margin-bottom: 10px;}
+hgroup.title h1, hgroup.title h2 {display: inline;}
+hgroup.title h2 {font-weight: normal;margin-left: 3px;}
+/* features */
+section.feature {width: 300px;float: left;padding: 10px;}
+/* ordered list */
+ol.round {list-style-type: none;padding-left: 0;}
+ol.round li {margin: 25px 0;padding-left: 45px;}
+/* content */
+article {float: left;width: 70%;}
+aside {float: right;width: 25%;}
+aside ul {list-style: none;padding: 0;}
+.label {font-weight: 700;}
+/* login page */
+#loginForm .validation-error {display: block;margin-left: 15px;}
+#loginForm .validation-summary-errors ul {margin: 0;padding: 0;}
+#loginForm .validation-summary-errors li {display: inline;list-style: none;margin: 0;}
+#loginForm input {width: 250px;}
+#loginForm input[type="checkbox"],#loginForm input[type="submit"],#loginForm input[type="button"],#loginForm button {width: auto;}
+#socialLoginForm {margin-left: 40px;float: left;width: 40%;}
+#socialLoginForm h2 {margin-bottom:  5px;}
+#socialLoginList button {margin-bottom: 12px;}
+#logoutForm {display: inline;}
+/* contact */
+.contact h3 {font-size: 1.2em;}
+.contact p {margin: 5px 0 0 10px;}
+.contact iframe {border: 1px solid #333;margin: 5px 0 0 10px;}
+/* forms */
+fieldset {border: none;margin: 0;padding: 0;}
+fieldset legend {display: none;}
+fieldset ol {padding: 0;list-style: none;}
+fieldset ol li {padding-bottom: 5px;}
+label {display: block;font-size: 1.2em;font-weight: 600;}
+label.checkbox {display: inline;}
+input, textarea {border: 1px solid #e2e2e2;background: #fff;color: #333;font-size: 1.2em;margin: 5px 0 6px 0;padding: 5px;width: 300px;}
+textarea {font-family: inherit;width: 500px;}
+input:focus, textarea:focus {border: 1px solid #7ac0da;}
+input[type="checkbox"] {background: transparent;border: inherit;width: auto;}
+input[type="submit"],input[type="button"],button {background-color: #d3dce0;border: 1px solid #787878;cursor: pointer;font-size: 1.2em;font-weight: 600;padding: 7px;margin-right: 8px;width: auto;}
+td input[type="submit"],td input[type="button"],td button {font-size: 1em;padding: 4px;margin-right: 4px;}
+/* info and errors */
+.message-info {border: 1px solid;clear: both;padding: 10px 20px;}
+.message-error {clear: both;color: #e80c4d;font-size: 1.1em;font-weight: bold;margin: 20px 0 10px 0;}
+.message-success {color: #7ac0da;font-size: 1.3em;font-weight: bold;margin: 20px 0 10px 0;}
+.error {color: #e80c4d;}
+/* styles for validation helpers */
+.field-validation-error {color: #e80c4d;font-weight: bold;}
+.field-validation-valid {display: none;}
+input.input-validation-error {border: 1px solid #e80c4d;}
+input[type="checkbox"].input-validation-error {border: 0 none;}
+.validation-summary-errors {color: #e80c4d;font-weight: bold;font-size: 1.1em;}
+.validation-summary-valid {display: none;}
+/* tables
+----------------------------------------------------------*/
+table {border-collapse: collapse;border-spacing: 0;margin-top: 0.75em;border: 0 none;}
+th {font-size: 1.2em;text-align: left;border: none 0px;padding-left: 0;}
+th a {display: block;position: relative;}
+th a:link, th a:visited, th a:active, th a:hover {color: #333;font-weight: 600;text-decoration: none;padding: 0;}
+th a:hover {color: #000;}
+th.asc a, th.desc a {margin-right: .75em;}
+th.asc a:after, th.desc a:after {display: block;position: absolute;right: 0em;top: 0;font-size: 0.75em;}
+th.asc a:after {content: '▲';}
+th.desc a:after {content: '▼';}
+td {padding: 0.25em 2em 0.25em 0em;border: 0 none;}
+tr.pager td {padding: 0 0.25em 0 0;}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+p{margin-bottom:1em;line-height: 1.1;display: block;-webkit-margin-before: 1em;-webkit-margin-after: 1em;-webkit-margin-start: 0px;-webkit-margin-end: 0px;}
+html{font-family:Arial, Helvetica, Sans-Serif;font-size: 14px;background-color: white;}
+.pageCenter{width:990px;margin-left:auto;margin-right:auto;}
+.outerWrapper{width:100%;}
+#header{background-color:#539fd3;}
+.noBorder{border:none;}
+#topNav{background-image: url(/images/top_nav_background.jpg);background-repeat:repeat-x;}
+ul#primaryNav{height:34px;line-height:34px; font-size:13px;width:825px;margin:0 auto; overflow:hidden;}
+#primaryNav li{line-height:34px;display:inline; padding:0 10px; background:url(/images/top_nav_spacer.jpg) right center no-repeat;}
+#primaryNav li a{text-decoration: none; color:white; text-transform: uppercase;font-weight:bold;display:inline-block;}
+#primaryNav li a:hover{color:#05B11D;}
+#bottomNav{background-color:#000;position: fixed;bottom: 0}
+ul li.last{background:none!important;}
+ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 675px; margin: 0 auto; overflow:hidden;}
+#footerNav li{line-height:34px;display:inline; padding:0 10px; background:url(/images/footer_nav_spacer.jpg) right center no-repeat;}
+#footerNav li a{text-decoration: none; color:white; text-transform: uppercase;font-weight:bold;display:inline-block;}
+#footerNav li a:hover{color:#05B11D;}
+#header .pageCenter{background:url(/images/logo_lg.png) top center no-repeat;height:115px; position:relative;}
+#header .pageCenter a#logo{height: 65px;width: 250px;display: block;left: 110px;top: 22px;position: absolute;}
+.login{ position: absolute;right: 0;top: 0;}
+.login ul li{ display: inline-block;}
+.login a{text-decoration: none;color:white;background:url(/images/top_nav_background.jpg);border: 1px outset #9F9F9F;-webkit-border-radius: 0px 0px 10px 10px;border-radius: 0px 0px 10px 10px;line-height:35px;padding:9px;border-top:none}
+.login a:hover{ color:#05B11D}
+#welcomeStage{border-style: none;border-color: inherit;height: 430px;width: 692px;background-image: url(/images/welcom_stage.jpg);background-repeat: no-repeat;float: left;color: white;font-size: 12px;}
+#welcomeStage p{margin-bottom:1em;}
+#contentArea .pageCenter{margin: 20px auto;}
+.rightAddSpace{background-repeat: no-repeat;float: right;width: 260px;padding-bottom: 20px;margin: 0 5px 0 20px;}
+.rightAddSpace #upcommingEvents{background-repeat: no-repeat;background-image: url(/images/upcoming_events_blank.gif);height: 196px;padding:10px;}
+.blueAdd{margin-top: 15px;}
+.clear{clear: both;}
+.leftColumn{float:left}
+.rightColumn{float:right;}
+.bottomAddSpace {margin-bottom:100px;}
+.welcomeContent h1{font-family: "Bauhaus 93";font-size: 28px;color: #F87811;margin-bottom:1em;}
+.welcomeContent p{line-height:125%;}
+.welcomeContent{margin-top: 52px;margin-left: 88px;width: 518px;height: 300px;overflow:hidden;text-overflow: ellipsis;}
+#contact_left{float: left;height: 438px;width: 182px;background-color: #C2C2C2;margin-right: 20px;padding: 10px;}
+#contact_left h3{ font-weight: bold;}
+#contact_left a{ margin-bottom: 1em;color: black;display: block;text-decoration: none;}
+#contact_left a:hover{ text-decoration: underline;}
+.contact_us h1 {font-family: "Bauhaus 93";font-size: 33px;margin-bottom: .5em;}
+.contact_us p{line-height:117%}
+.contact_us p a{color: #789AC1;text-decoration: none;}
+.contact_us p a:hover{text-decoration: underline;}
+.contact_us label{ width: 75px;display: inline-block;vertical-align: middle;}
+.contact_us label.message{vertical-align: top;}
+.contact_us input{padding:5px 0}
+#contentArea{margin-bottom: 100px;}
+.formLine{margin-bottom:.5em}
+.contactUsForm{ margin-top: 2em;}
+.sendButton{margin-left: 78px;background-color: #7FB2FF;color: white;width: 84px;height: 27px;cursor: pointer;border: none;}
+.contact_us textarea {resize: none;}
+.contact_us textarea,.contact_us input{background-color: #C9DFFF;border: none;border: solid 1px #abadb3;}
+.contact_us textarea,.contact_us input,.contact_us select{outline-color: #529ed2; }
+.content{ width: 586px;margin: 0 1em;min-height: 500px;}
+.leftColumn.addSpace{ width: 188px;height: 100%;display: block;min-height: 1px;overflow: hidden;}
+.border{ border: 1px solid black;}
+.outterSearch{border: 1px solid black;padding: 4px;}
+.innerSearch{ background: black;height: 100%;width: 100%;text-align: center;}
+.innerSearch h2{ margin: 0;color: white;padding-top: 5px;}
+.innerSearch #regionSelection{ margin-top: 1em;width: 80%;margin-bottom: .5em;}
+.regionsList{display:block;width:585px;}
+.regionsList li{ display: block;float: left;margin: 5px;width: 135px;height: 105px;text-align: center;background: #C2C2C2;}
+.regionsList li a{ display: block;padding: 5px;text-decoration: none;color: black;}
+.regionsList li a:hover{opacity:.7;filter:alpha(opacity=70); /* For IE8 and earlier */}
+.regionsList li a:visited,.regionsList li a:active{ color: black;}
+.regionsList li a img{display: block;margin: 0}
+.regionsList li p{margin: .3em 0 0 0;font-size: .9em;line-height: 1.2;height: 2em;}
+.content h1{font-family: 'Bauhaus 93';font-size: 33px;line-height: 33px;}
+.paidTournamentListing{ padding: 15px 10px 30px 10px;border-bottom: 1px solid #CDCDCD;display: block;text-decoration: none;color: black;position: relative;}
+.paidTournamentListing:active,.paidTournamentListing:visited{ color: black;}
+.paidTournamentListing:hover{background: #e2e2e2;}
+.paidTournamentListing .tournamentLogo{ border: 1px solid #acacac;padding: 5px;margin-right: 10px;max-width: 288px;max-height: 180px;}
+.paidTournamentListing .tournamentImage{ float: left;}
+.paidTournamentListing h3{font-weight: bold;margin-bottom: 1em;text-transform:capitalize;font-size: 14px;}
+.paidTournamentListing .tournamentAverageRaiting{display: inline-block;line-height: 18px;vertical-align: top;}
+.paidTournamentListing .tournamentAverageRaiting span{text-decoration: underline;     }
+.paidTournamentListing .tournamentAverageRaiting span:hover{ cursor: pointer;}
+.paidTournamentListing .addthis_toolbox{position: absolute;bottom: 10px;right: 100px;width: 162px;}
+.paidTournamentListing .readMore{ position: absolute;right: 15px;bottom: 10px;}
+.paidTournamentListing .readMore{ color: #539FD3;text-decoration: none;}
+.paidTournamentListing .readMore:hover{ text-decoration: underline;}
+.paidTournamentListing .readMore:visited{ color: #539FD3;}
+.tournamentRaiting{ display: inline-block;}
+.tournamentRaiting img{display: inline-block;border: none;margin: 0;padding: 0;}
+.freeTournamentListing{margin: 10px 10px 20px 10px;border-bottom: 1px solid #CDCDCD;padding-bottom: 20px;}
+.freeTournamentListing .emailAddress{ color: black;text-decoration: none;}
+.freeTournamentListing .emailAddress:hover{ text-decoration: underline;}
+.freeTournamentListing h3{font-size: 16px;font-weight: bold;text-transform: capitalize;margin-bottom: 1em;}
+.freeTournamentListing li strong{ font-weight: bold;}
+.title h1{font-size: 33px;line-height: 33px;font-weight: bold;}
+.fullTournamentDetails .largeTournamentImage{max-width: 280px;max-height: 360px;float: left;}
+.fullTournamentDetails h1{ font-weight: bold;font-size: 28px;margin-bottom: 1em;}
+.fullTournamentDetails .details strong{ font-weight: bold;}
+.fullTournamentDetails .details{float: right;width: 476px;}
+.logIn li label{ width: 75px;display: inline-block;}
+.logIn .title{ text-align: center;}
+.logIn h1{font-size: 24px;margin-bottom: 1em;}
+.logIn h2{ margin-bottom: 1em;}
+.logIn .button{ margin:1em 0;}
+.logIn .center{ text-align: center;}
+.logIn .autoWidth{ width: auto;}
+.text.ui-widget-content.ui-corner-all{padding:0 4px}
+.small{ font-size: small;}
+.validation-summary-errors{ color: red;}
+#loginForm{ padding-left: 1em;padding-top: 1em;}
+#FeaturedEvents {text-align: center;padding: 5px;width: 176px;border: 1px solid #ADADAD;}
+#FeaturedEvents .featureList{background: #259F00;text-align: left;color: white;padding: 5px;}
+.featureZone{background: #259F00;}
+#FeaturedEvents h2 {margin: 0px;padding: 0px;padding-top: 2px;font-family: "Bauhaus 93";font-size: 24px;font-weight: normal;color: white;display: inline;line-height: 24px;}
+#FeaturedEvents .featureZone {border-bottom-style: solid;border-bottom-width: 2px;border-bottom-color: #C2C2C2;}
+.addList li{ margin: 3px 0;}
+.addList li img{ max-width: 188px;display: inline-block;}
+.line {height: 1em;width: 99%;margin-right: auto;margin-left: auto;border-top: 1px solid #CDCDCD;}
+.addList li a{ display: block;}
+.searchControls{ padding-left: 1em;}
+.ageBlock{height: 20px;width: 20px;display: inline-block;vertical-align: middle;margin-right:5px;}
+.ageSearchControl{ width: 100%;}
+.ageSearchControl:first-child{}
+
+.ageSearchControl li{display: inline-block;width: 13%;}
+.ageSearchControl.alt{ margin-top: 1em;}
+.ageSearchControl.alt li{width: auto;}
+.ageSearchControl.alt li select{ width: 100px;}
+.age10{background-color:#208F56}
+.age11{background-color:#448CCB}
+.age12{background-color:#D0252B}
+.age13{background-color:#FEF66A}
+.age14{background-color:#75439B}
+.age15{background-color:#D35F37}
+.age16{background-color:#C22D6F}
+
+
+
+/********************
+*   Mobile Styles   *
+********************/
+@media only screen and (max-width: 850px) {
+
+    /* header
+    ----------------------------------------------------------*/
+    header .float-left,
+    header .float-right {
+        float: none;
+    }
+
+    /* logo */
+    header .site-title {
+        margin: 10px;
+        text-align: center;
+    }
+
+    /* login */
+    #login {
+        font-size: .85em;
+        margin: 0 0 12px;
+        text-align: center;
+    }
+
+    #login ul {
+        margin: 5px 0;
+        padding: 0;
+    }
+
+    #login li {
+        display: inline;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #login a {
+        background: none;
+        color: #999;
+        font-weight: 600;
+        margin: 2px;
+        padding: 0;
+    }
+
+    #login a:hover {
+        color: #333;
+    }
+
+    /* menu */
+    nav {
+        margin-bottom: 5px;
+    }
+
+    ul#menu {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    ul#menu li {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    /* main layout
+    ----------------------------------------------------------*/
+    .main-content,
+    .featured + .main-content {
+        background-position: 10px 0;
+    }
+
+    .content-wrapper {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .featured .content-wrapper {
+        padding: 10px;
+    }
+
+    /* page content */
+    article, aside {
+        float: none;
+        width: 100%;
+    }
+
+    /* ordered list */
+    ol.round {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ol.round li {
+        padding-left: 10px;
+        margin: 25px 0;
+    }
+
+    ol.round li.zero,
+    ol.round li.one,
+    ol.round li.two,
+    ol.round li.three,
+    ol.round li.four,
+    ol.round li.five,
+    ol.round li.six,
+    ol.round li.seven,
+    ol.round li.eight,
+    ol.round li.nine {
+        background: none;
+    }
+
+     /* features */
+     section.feature {
+        float: none;
+        padding: 10px;
+        width: auto;
+     }
+
+    section.feature img {
+        color: #999;
+        content: attr(alt);
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+
+    /* forms */
+    input {
+        width: 90%;
+    }
+
+    /* login page */
+    #loginForm {
+        border-right: none;
+        float: none;
+        width: auto;
+    }
+
+    #loginForm .validation-error {
+        display: block;
+        margin-left: 15px;
+    }
+
+    #socialLoginForm {
+        margin-left: 0;
+        float: none;
+        width: auto;
+    }
+
+    /* footer
+    ----------------------------------------------------------*/
+    footer .float-left,
+    footer .float-right {
+        float: none;
+    }
+
+    footer {
+        text-align: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    footer p {
+        margin: 0;
+    }
+}
