@@ -463,7 +463,6 @@
     <Content Include="Views\CoachesCorner\Index.cshtml" />
     <Content Include="Views\Shared\_LeftAddList.cshtml" />
     <Content Include="Views\Shared\_FeaturedTournaments.cshtml" />
-    <Content Include="Views\CoachesCorner\_Listing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DataAccess\DataAccess.csproj">

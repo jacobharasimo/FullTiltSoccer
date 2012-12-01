@@ -106,7 +106,9 @@ input[type="checkbox"].input-validation-error {border: 0 none;}
 .validation-summary-valid {display: none;}
 /* tables
 ----------------------------------------------------------*/
-table {border-collapse: collapse;border-spacing: 0;margin-top: 0.75em;border: 0 none;}
+table {border-collapse: collapse;border-spacing: 0;margin-top: 0;border: 0 none;}
+.topGap{ margin-top: 0.75em;}
+
 th {font-size: 1.2em;text-align: left;border: none 0px;padding-left: 0;}
 th a {display: block;position: relative;}
 th a:link, th a:visited, th a:active, th a:hover {color: #333;font-weight: 600;text-decoration: none;padding: 0;}
@@ -115,10 +117,8 @@ th.asc a, th.desc a {margin-right: .75em;}
 th.asc a:after, th.desc a:after {display: block;position: absolute;right: 0em;top: 0;font-size: 0.75em;}
 th.asc a:after {content: '▲';}
 th.desc a:after {content: '▼';}
-td {padding: 0.25em 2em 0.25em 0em;border: 0 none;}
+td {padding: 0.25em 0em 0.25em 0em;border: 0 none;}
 tr.pager td {padding: 0 0.25em 0 0;}
-
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 body {line-height: 1;}
@@ -259,7 +259,30 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 .age15{background-color:#D35F37}
 .age16{background-color:#C22D6F}
 
+.age10 .ageListingHeadRight{background-color:#00a651}
+.age11 .ageListingHeadRight{background-color:#68aeec}
+.age12 .ageListingHeadRight{background-color:#ee121a}
+.age13 .ageListingHeadRight{background-color:#FFF200}
+.age14 .ageListingHeadRight{background-color:#963ed9}
+.age15 .ageListingHeadRight{background-color:#fc6a37}
+.age16 .ageListingHeadRight{background-color:#ff318d}
 
+.age10 .ageListingBodyRight{background-color:#b9fb9d}
+.age11 .ageListingBodyRight{background-color:#8fbce3}
+.age12 .ageListingBodyRight{background-color:#ff6c6c}
+.age13 .ageListingBodyRight{background-color:#fcf8ae}
+.age14 .ageListingBodyRight{background-color:#deb6fd}
+.age15 .ageListingBodyRight{background-color:#ffb9a0}
+.age16 .ageListingBodyRight{background-color:#ffb9d8}
+.ageListingBodyLeft{ background-color: white;}
+
+.ageListingHeadLeft{ width: 50%;padding-left: 10px;}
+.ageListingHeadRight{padding-left: 10px;}
+.ageListingBodyLeft{ padding: 10px;}
+.ageListingBodyRight{padding: 10px;}
+.coachesCornerListing  h3{ font-weight: bold;}
+.coachesCornerTruncate{ white-space: nowrap;overflow: hidden;max-width: 174px;display: inline-block;text-overflow: ellipsis;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;}
+.leftRow{ width: 36%;}
 
 /********************
 *   Mobile Styles   *

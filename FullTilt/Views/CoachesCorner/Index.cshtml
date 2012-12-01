@@ -40,10 +40,78 @@
         </ul>
         
     </div>
-    <div class="results">
-        @{
-            Html.RenderPartial("_Listing");
-        }        
+    <div class="results">        
+        <h4>@ViewBag.CoachesCorner.Count</h4>
+        <ul>
+            @foreach(var listing in ViewBag.CoachesCorner)
+            {
+                <li class="coachesCornerListing @String.Format("{0}{1}","age",listing.AgeGroup)">
+                    <table style="width:100%;border-collapse:collapse;" class="topGap">
+                    <tbody>
+                        <tr class="ageListingHead">
+                            <td class="ageListingHeadLeft">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><h3>@listing.AgeGroup</h3></td>
+                                            <td><h3>@listing.TeamName / @listing.Gender</h3></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td class="ageListingHeadRight">
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td><h3>Date Posted:</h3></td>
+                                            <td>@listing.DatePosted.ToShortDateString()</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr class="ageListingBody">
+                            <td class="ageListingBodyLeft">
+                                <h3>@listing.TeamName/@listing.ClubName</h3>
+                                <p>@listing.Description</p>
+                            </td>
+                            <td class="ageListingBodyRight">
+                            <table style="width:100%;border-collapse:collapse;">
+                                <tbody>
+                                <tr title="@listing.City">
+                                    <td class="leftRow"><h3>City:</h3></td>
+                                    <td><span class="coachesCornerTruncate" style="white-space: nowrap;">@listing.City</span></td>
+                                </tr>
+                                    <tr title="Ontario, Canada    ">
+                                        <td class="leftRow"><h3>Region:</h3></td>
+                                        <td><span class="coachesCornerTruncate" style="white-space: nowrap;">Ontario, Canada    </span></td>
+                                    </tr>
+                                    <tr title="@listing.Contactname">
+                                        <td class="leftRow"><h3>Contact:</h3></td>
+                                        <td><span class="coachesCornerTruncate">@listing.Contactname</span></td>
+                                    </tr>
+                                    <tr title="@listing.PhoneNumber">
+                                        <td class="leftRow"><h3>Phone:</h3></td>
+                                        <td><span class="coachesCornerTruncate">@listing.PhoneNumber</span></td>
+                                    </tr>
+                                    <tr title="Coach @listing.Email">
+                                        <td class="leftRow"><h3>Email:</h3></td>
+                                        <td><a class="coachesCornerTruncate" href="mailto:@listing.Email">@listing.Email</a></td>
+                                    </tr>
+                                    <tr title="@listing.Website">
+                                        <td class="leftRow"><h3>Website:</h3></td>
+                                        <td><a class="coachesCornerTruncate" href="@listing.Website">@listing.Website</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
+                </li>
+            }   
+        </ul>     
     </div>
 </div>
 <div class="leftColumn addSpace">

@@ -7,7 +7,6 @@
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="1341" fromTop="22" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_regionGridView.cshtml" caret="440" fromTop="12" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="171" fromTop="10" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_PaidTournament.cshtml" caret="19" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:App_Start/f:BundleConfig.cs" caret="753" fromTop="19" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_LeftAddList.cshtml" caret="26" fromTop="1" />
@@ -16,21 +15,21 @@
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Index.cshtml" caret="609" fromTop="17" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:HomeController.cs" caret="229" fromTop="11" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Home/f:Index.cshtml" caret="147" fromTop="6" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="15398" fromTop="47" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_FreeTournament.cshtml" caret="1559" fromTop="27" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Region.cshtml" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:TournamentController.cs" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_Layout.cshtml" caret="670" fromTop="13" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:_Listing.cshtml" caret="0" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="1520" fromTop="12" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:CoachesCornerController.cs" caret="608" fromTop="19" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Details.cshtml" caret="0" fromTop="0" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:CoachesCornerController.cs" caret="3456" fromTop="37" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_PaidTournament.cshtml" caret="163" fromTop="5" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Region.cshtml" caret="0" fromTop="0" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="1774" fromTop="6" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="16832" fromTop="35" />
   </RecentFiles>
   <RecentEdits>
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:ContactController.cs" caret="132" fromTop="6" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:HomeController.cs" caret="527" fromTop="17" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="999" fromTop="13" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/f:Web.config" caret="971" fromTop="11" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_PaidTournament.cshtml" caret="19" fromTop="1" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:App_Start/f:BundleConfig.cs" caret="753" fromTop="19" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:TournamentController.cs" caret="1386" fromTop="18" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="171" fromTop="10" />
@@ -39,9 +38,9 @@
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_FeaturedTournaments.cshtml" caret="406" fromTop="16" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Region.cshtml" caret="2305" fromTop="38" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Index.cshtml" caret="609" fromTop="17" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="15398" fromTop="47" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:_Listing.cshtml" caret="0" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="832" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:CoachesCornerController.cs" caret="680" fromTop="19" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:CoachesCornerController.cs" caret="2604" fromTop="37" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_PaidTournament.cshtml" caret="127" fromTop="5" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="1774" fromTop="6" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="16832" fromTop="35" />
   </RecentEdits>
 </RecentFiles>

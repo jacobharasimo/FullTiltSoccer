@@ -14,10 +14,16 @@ namespace FullTilt.Controllers
         // GET: /CoachesCorner/
         public ClientAccessService RestService = new ClientAccessService();
         public ActionResult Index(string Country, string Region, string Age)
-        {
-            var results = new object();
+        {            
+            var selectAll = new SelectListItem {Text = "All",Value = "0"};
             ViewBag.WelcomeMessage = RestService.GetCmsData("CoachesCornerWelcome");
-           var a = RestService.GetAllCoachesCornerByRegionAndAge("Albertal", "16");
+            
+            var cItems = new List<SelectListItem> {selectAll};
+            var rItems = new List<SelectListItem> {selectAll};
+            var aItems = new List<SelectListItem> {selectAll};
+            //var a = RestService.GetAllCoachesCornerByRegionAndAge("Albertal", "16");
+            
+            
             if(String.IsNullOrEmpty(Country))
             {
                 Country = "All";
@@ -31,25 +37,6 @@ namespace FullTilt.Controllers
                 Age = "All";
             }
 
-            var cItems = new List<SelectListItem>();
-            cItems.Add(new SelectListItem()
-            {
-                Text = "All",
-                Value = "0"
-            });
-            var rItems = new List<SelectListItem>();
-            rItems.Add(new SelectListItem()
-            {
-                Text = "All",
-                Value = "0"
-            });
-            var aItems = new List<SelectListItem>();
-            aItems.Add(new SelectListItem()
-            {
-                Text = "All",
-                Value = "0"
-            });
-
             foreach (var n in RestService.GetAllCountries().Select(c => new SelectListItem{Text = c.CountryName,Value = c.CountryName}))
             {
                 if(n.Text==Country)
@@ -57,21 +44,22 @@ namespace FullTilt.Controllers
                     n.Selected = true;
                 }
                 cItems.Add(n);
-            }            
+            }      
+
             if(Country!="All")
-            {                                
-                foreach (var n in RestService.GetAllRegionsByCountry(Country).Select(c => new SelectListItem{Text = c.RegionName,Value = c.RegionName}))
+            {
+                foreach (var n in RestService.GetAllRegionsByCountry(Country).Select(c => new SelectListItem { Text = c.RegionName, Value = c.RegionName }))
                 {
                     if (n.Text == Region)
                     {
                         n.Selected = true;
                     }
                     rItems.Add(n);
-                }                
+                }                  
             }
-            if (Region != "All")
-            {                
-                for (var i = 10; i < 17;++i )
+            if(Region!="All")
+            {
+                for (var i = 10; i < 17; ++i)
                 {
                     var n = new SelectListItem()
                     {
@@ -82,38 +70,34 @@ namespace FullTilt.Controllers
                     {
                         n.Selected = true;
                     }
-
                     aItems.Add(n);
-                }                
+                }   
             }
-            if(!string.IsNullOrEmpty(Age))
-            {
-                
-            }
-            else
-            {
-                if (!string.IsNullOrEmpty(Region))
-                {
-                    results = RestService.GetAllCoachesCornerByRegion(Region);
-                }
-                else
-                {
-                    if(!string.IsNullOrEmpty(Country))
-                    {
-                        results = RestService.GetAllCoachesCornerByCountry(Country);
-                    }
-                    else
-                    {
-                        results = RestService.GetAllCoachesCorner();
-                    }
-                }
-            }
+            
                         
             ViewBag.Countries = cItems;
             ViewBag.Regions = rItems;
             ViewBag.Age = aItems;
-            ViewBag.CoachesCorner = results;
 
+            if(Country=="All")
+            {
+                ViewBag.CoachesCorner = RestService.GetAllCoachesCorner();
+                return View();
+            }
+
+            if(Region=="All")
+            {
+                ViewBag.CoachesCorner = RestService.GetAllCoachesCornerByCountry(Country);
+                return View();
+            }
+
+            if(Age=="All")
+            {
+                ViewBag.CoachesCorner = RestService.GetAllCoachesCornerByRegion(Region);                
+                return View();
+            }
+
+            ViewBag.CoachesCorner = RestService.GetAllCoachesCornerByRegionAndAge(Region, Age);            
             return View();
         }
         
