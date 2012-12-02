@@ -9,8 +9,6 @@
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
         @Styles.Render("~/Content/fancybox/css")
         @Scripts.Render("~/bundles/modernizr")
-       
-                
     </head>
     <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
         <header id="header" class="outerWrapper">
@@ -40,7 +38,16 @@
 	</div>
         <div id="contentArea" class="outerWrapper">
             <div class="pageCenter">
-                @RenderBody()
+                <div class="leftColumn addSpace">
+                    @Html.Partial("_LeftAddList")
+                </div>
+                <div class="leftColumn content">
+                    @RenderBody()
+                </div>
+                <div class="leftColumn addSpace">
+                    @Html.Partial("_FeaturedTournaments")
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
 	<footer id="bottomNav" class="outerWrapper">

@@ -87,6 +87,7 @@ fieldset ol li {padding-bottom: 5px;}
 label {display: block;font-size: 1.2em;font-weight: 600;}
 label.checkbox {display: inline;}
 input, textarea {border: 1px solid #e2e2e2;background: #fff;color: #333;font-size: 1.2em;margin: 5px 0 6px 0;padding: 5px;width: 300px;}
+.contact_us select{ width: 300px;}
 textarea {font-family: inherit;width: 500px;}
 input:focus, textarea:focus {border: 1px solid #7ac0da;}
 input[type="checkbox"] {background: transparent;border: inherit;width: auto;}
@@ -173,15 +174,16 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 .contact_us p a:hover{text-decoration: underline;}
 .contact_us label{ width: 75px;display: inline-block;vertical-align: middle;}
 .contact_us label.message{vertical-align: top;}
-.contact_us input{padding:5px 0}
+.contact_us input[type="text"]{padding:5px 0}
 #contentArea{margin-bottom: 100px;}
 .formLine{margin-bottom:.5em}
 .contactUsForm{ margin-top: 2em;}
-.sendButton{margin-left: 78px;background-color: #7FB2FF;color: white;width: 84px;height: 27px;cursor: pointer;border: none;}
+input.sendButton{margin-left: 78px;background-color: white;}
 .contact_us textarea {resize: none;}
 .contact_us textarea,.contact_us input{background-color: #C9DFFF;border: none;border: solid 1px #abadb3;}
 .contact_us textarea,.contact_us input,.contact_us select{outline-color: #529ed2; }
-.content{ width: 586px;margin: 0 1em;min-height: 500px;}
+.content{ width: 586px;margin: 0 1em;min-height: 500px;margin-bottom: 10px;}
+.greenBG{background: #259F00}
 .leftColumn.addSpace{ width: 188px;height: 100%;display: block;min-height: 1px;overflow: hidden;}
 .border{ border: 1px solid black;}
 .outterSearch{border: 1px solid black;padding: 4px;}
@@ -237,7 +239,12 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 #FeaturedEvents .featureList{background: #259F00;text-align: left;color: white;padding: 5px;}
 .featureZone{background: #259F00;}
 #FeaturedEvents h2 {margin: 0px;padding: 0px;padding-top: 2px;font-family: "Bauhaus 93";font-size: 24px;font-weight: normal;color: white;display: inline;line-height: 24px;}
-#FeaturedEvents .featureZone {border-bottom-style: solid;border-bottom-width: 2px;border-bottom-color: #C2C2C2;}
+#FeaturedEvents .featureZone {border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #C2C2C2;width: 95%;
+margin-left: auto;
+margin-right: auto;}
+h4.error{ font-size: xx-large;}
+.ageSearchControl.alt li{ padding-left: 10px;}
+.ageSearchControl.alt li:first-child{ padding-left: 0;}
 .addList li{ margin: 3px 0;}
 .addList li img{ max-width: 188px;display: inline-block;}
 .line {height: 1em;width: 99%;margin-right: auto;margin-left: auto;border-top: 1px solid #CDCDCD;}
@@ -275,7 +282,7 @@ ul#footerNav{padding:20px 0;height:34px;line-height:34px; font-size:11px;width: 
 .age15 .ageListingBodyRight{background-color:#ffb9a0}
 .age16 .ageListingBodyRight{background-color:#ffb9d8}
 .ageListingBodyLeft{ background-color: white;}
-
+.titleName{ padding-left: 2em;}
 .ageListingHeadLeft{ width: 50%;padding-left: 10px;}
 .ageListingHeadRight{padding-left: 10px;}
 .ageListingBodyLeft{ padding: 10px;}

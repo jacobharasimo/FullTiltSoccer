@@ -1,4 +1,5 @@
-﻿@{
+﻿@model FullTilt.Models.ContactViewModel
+@{
     ViewBag.Title = "Contact Us";
 }
 
@@ -21,38 +22,78 @@
 <div id="contact_right">
     <h1>CONTACT US</h1>
     <p>Full Tilt Soccer is a new service offering free and paid listings to all Soccer Associations and Tournament organizors. We are still growing and evolving but at this time we ask that you email us at <a href="mailto:info@fulltiltsoccer.com">info@fulltiltsoccer.com</a> to receive info about how to have your Tournament posted or select one of our other contacts for more info about the other features on this site.</p>
-    <form method="post" class="contactUsForm" action="ProcessRequest.cshtml">
+    
+@using (Html.BeginForm()) { 
+    @Html.ValidationSummary(true) 
+    <fieldset>
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.To) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.To) 
+            @Html.ValidationMessageFor(model => model.To) 
+        </div> 
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.From) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.From) 
+            @Html.ValidationMessageFor(model => model.From) 
+        </div> 
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.Subject) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.Subject) 
+            @Html.ValidationMessageFor(model => model.Subject) 
+        </div> 
+        <div class="editor-label"> 
+            @Html.LabelFor(model => model.Message) 
+        </div> 
+        <div class="editor-field"> 
+            @Html.TextBoxFor(model => model.Message) 
+            @Html.ValidationMessageFor(model => model.Message) 
+        </div> 
+        <p> 
+            <input type="submit" value="Send" /> 
+        </p> 
+    </fieldset> 
+}    
+    
+    @*
+    <form method="post" class="contactUsForm" action="">
         <div class="formLine">
             <label for="contactWho">Contact: </label>
             <select name="contactWho" class="contact_list email_fileds" style="height:28px;width:170px;">
-	            <option selected="selected" value="select">- Choose One -</option>
-	            <option value="sales@fulltiltsoccer.com">Sales</option>
-	            <option value="coaches@fulltiltsoccer.com">Coaches Corner</option>
-	            <option value="camps@fulltiltsoccer.com">Camps Information</option>
-	            <option value="tournament@fulltiltsoccer.com">Tournament Information</option>
-	            <option value="info@fulltiltsoccer.com">General Information</option>
+                <option selected="selected" value="select">- Choose One -</option>
+                <option value="sales@fulltiltsoccer.com">Sales</option>
+                <option value="coaches@fulltiltsoccer.com">Coaches Corner</option>
+                <option value="camps@fulltiltsoccer.com">Camps Information</option>
+                <option value="tournament@fulltiltsoccer.com">Tournament Information</option>
+                <option value="info@fulltiltsoccer.com">General Information</option>
             </select>
         </div>
 
         <div class="formLine">
-            <label for="customerEmail">E-mail: </label>
-            <input type="text" name="customerEmail" class="email_fileds" style="width:327px;">
+            <label for="Email">E-mail: </label>
+            <input type="text" name="Email" class="email_fileds" style="width:327px;">
         </div>
 
         <div class="formLine">
-            <label for="customerSubject">Subject: </label>
-            <input type="text" name="customerSubject" class="email_fileds" style="width:327px;">
+            <label for="Subject">Subject: </label>
+            <input type="text" name="Subject" class="email_fileds" style="width:327px;">
         </div>
 
         <div class="formLine">
-            <label for="customerSubject" class="message">Message: </label>
-            <textarea name="customerSubject" rows="2" cols="20" class="email_fileds" style="height:140px;width:388px;"></textarea>
+            <label for="Message" class="message">Message: </label>
+            <textarea name="Message" rows="2" cols="20" class="email_fileds" style="height:140px;width:388px;"></textarea>
         </div>
 
         <div class="formLine">
             <input type="submit" name="submitButton" value="SEND" class="sendButton">    
         </div>
     </form>
+*@
 </div>
 <div class="clear"></div>
 @section scripts{

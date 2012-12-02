@@ -1,127 +1,128 @@
 ﻿@{
     ViewBag.Title = "Coaches Corner";
+    Layout = "~/Views/Shared/_InnerLayout.cshtml";
 }
-<div class="leftColumn addSpace">
-    @Html.Partial("_LeftAddList")
-</div>
-<div class="leftColumn content">
-    <div class="welcomeMessage">
-        @Html.Raw(ViewBag.WelcomeMessage)
-    </div>    
-    <div class="line"></div>
-    <div class="searchControls">
-        <ul class="ageSearchControl">
-            <li><span class="ageBlock age10"></span>Age 10</li>
-            <li><span class="ageBlock age11"></span>Age 11</li>
-            <li><span class="ageBlock age12"></span>Age 12</li>
-            <li><span class="ageBlock age13"></span>Age 13</li>
-            <li><span class="ageBlock age14"></span>Age 14</li>
-            <li><span class="ageBlock age15"></span>Age 15</li>
-            <li><span class="ageBlock age16"></span>Age 16</li>
-        </ul>
-        <ul class="ageSearchControl alt">
-            <li>
-                <span>Country </span>
 
-                @Html.DropDownList("Countries")
-            </li>
-            <li>
-                <span>Region </span>
-                @Html.DropDownList("Regions")
-            </li>
-            <li>
-                <span>Age </span>
-                @Html.DropDownList("Age")
-            </li>
-            <li>
-                <a id="searchButton" href="#">Search</a>
-                <a id="clearButton" href="#">Reset</a>
-            </li>
-        </ul>
+<div class="welcomeMessage">
+    @Html.Raw(ViewBag.WelcomeMessage)
+</div>    
+<div class="line"></div>
+<div class="searchControls">
+    <ul class="ageSearchControl">
+        <li><span class="ageBlock age10"></span>Age 10</li>
+        <li><span class="ageBlock age11"></span>Age 11</li>
+        <li><span class="ageBlock age12"></span>Age 12</li>
+        <li><span class="ageBlock age13"></span>Age 13</li>
+        <li><span class="ageBlock age14"></span>Age 14</li>
+        <li><span class="ageBlock age15"></span>Age 15</li>
+        <li><span class="ageBlock age16"></span>Age 16</li>
+    </ul>
+    <ul class="ageSearchControl alt">
+        <li>
+            <span>Country </span>
+            @Html.DropDownList("Countries")
+        </li>
+        <li>
+            <span>Region </span>
+            @Html.DropDownList("Regions")
+        </li>
+        <li>
+            <span>Age </span>
+            @Html.DropDownList("Age")
+        </li>
+        <li>            
+            <a id="clearButton" href="#">Reset</a>
+        </li>
+    </ul>
         
-    </div>
-    <div class="results">        
-        <h4>@ViewBag.CoachesCorner.Count</h4>
-        <ul>
-            @foreach(var listing in ViewBag.CoachesCorner)
-            {
-                <li class="coachesCornerListing @String.Format("{0}{1}","age",listing.AgeGroup)">
-                    <table style="width:100%;border-collapse:collapse;" class="topGap">
-                    <tbody>
-                        <tr class="ageListingHead">
-                            <td class="ageListingHeadLeft">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td><h3>@listing.AgeGroup</h3></td>
-                                            <td><h3>@listing.TeamName / @listing.Gender</h3></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                            <td class="ageListingHeadRight">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td><h3>Date Posted:</h3></td>
-                                            <td>@listing.DatePosted.ToShortDateString()</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                        <tr class="ageListingBody">
-                            <td class="ageListingBodyLeft">
-                                <h3>@listing.TeamName/@listing.ClubName</h3>
-                                <p>@listing.Description</p>
-                            </td>
-                            <td class="ageListingBodyRight">
-                            <table style="width:100%;border-collapse:collapse;">
+</div>
+<div class="results">            
+    @if (ViewBag.CoachesCorner.Count > 0)
+    {
+          <ul>
+        @foreach (var listing in ViewBag.CoachesCorner)
+        {
+            <li class="coachesCornerListing @String.Format("{0}{1}", "age", listing.AgeGroup)">
+                <table style="width:100%;border-collapse:collapse;" class="topGap">
+                <tbody>
+                    <tr class="ageListingHead">
+                        <td class="ageListingHeadLeft">
+                            <table>
                                 <tbody>
-                                <tr title="@listing.City">
-                                    <td class="leftRow"><h3>City:</h3></td>
-                                    <td><span class="coachesCornerTruncate" style="white-space: nowrap;">@listing.City</span></td>
-                                </tr>
-                                    <tr title="Ontario, Canada    ">
-                                        <td class="leftRow"><h3>Region:</h3></td>
-                                        <td><span class="coachesCornerTruncate" style="white-space: nowrap;">Ontario, Canada    </span></td>
-                                    </tr>
-                                    <tr title="@listing.Contactname">
-                                        <td class="leftRow"><h3>Contact:</h3></td>
-                                        <td><span class="coachesCornerTruncate">@listing.Contactname</span></td>
-                                    </tr>
-                                    <tr title="@listing.PhoneNumber">
-                                        <td class="leftRow"><h3>Phone:</h3></td>
-                                        <td><span class="coachesCornerTruncate">@listing.PhoneNumber</span></td>
-                                    </tr>
-                                    <tr title="Coach @listing.Email">
-                                        <td class="leftRow"><h3>Email:</h3></td>
-                                        <td><a class="coachesCornerTruncate" href="mailto:@listing.Email">@listing.Email</a></td>
-                                    </tr>
-                                    <tr title="@listing.Website">
-                                        <td class="leftRow"><h3>Website:</h3></td>
-                                        <td><a class="coachesCornerTruncate" href="@listing.Website">@listing.Website</a></td>
+                                    <tr>
+                                        <td><h3>@listing.AgeGroup</h3></td>
+                                        <td class="titleName"><h3>@listing.TeamName / @listing.Gender</h3></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                    
-                </li>
-            }   
-        </ul>     
-    </div>
+                        </td>
+                        <td class="ageListingHeadRight">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><h3>Date Posted:</h3></td>
+                                        <td>@listing.DatePosted.ToShortDateString()</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="ageListingBody">
+                        <td class="ageListingBodyLeft">
+                            <h3>@listing.TeamName/@listing.ClubName</h3>
+                            <p>@listing.Description</p>
+                        </td>
+                        <td class="ageListingBodyRight">
+                        <table style="width:100%;border-collapse:collapse;">
+                            <tbody>
+                            <tr title="@listing.City">
+                                <td class="leftRow"><h3>City:</h3></td>
+                                <td><span class="coachesCornerTruncate" style="white-space: nowrap;">@listing.City</span></td>
+                            </tr>
+                                <tr title="Ontario, Canada    ">
+                                    <td class="leftRow"><h3>Region:</h3></td>
+                                    <td><span class="coachesCornerTruncate" style="white-space: nowrap;">Ontario, Canada    </span></td>
+                                </tr>
+                                <tr title="@listing.Contactname">
+                                    <td class="leftRow"><h3>Contact:</h3></td>
+                                    <td><span class="coachesCornerTruncate">@listing.Contactname</span></td>
+                                </tr>
+                                <tr title="@listing.PhoneNumber">
+                                    <td class="leftRow"><h3>Phone:</h3></td>
+                                    <td><span class="coachesCornerTruncate">@listing.PhoneNumber</span></td>
+                                </tr>
+                                <tr title="Coach @listing.Email">
+                                    <td class="leftRow"><h3>Email:</h3></td>
+                                    <td><a class="coachesCornerTruncate" href="mailto:@listing.Email">@listing.Email</a></td>
+                                </tr>
+                                <tr title="@listing.Website">
+                                    <td class="leftRow"><h3>Website:</h3></td>
+                                    <td><a class="coachesCornerTruncate" href="@listing.Website">@listing.Website</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </li>
+        }   
+    </ul>       
+    }
+    else
+    {
+        <h4 class="error">No Results Found</h4>
+    }
+  
 </div>
-<div class="leftColumn addSpace">
-    @Html.Partial("_FeaturedTournaments")
-</div>
-<div class="clear"></div>
+
 @section scripts
 {
     <script type="text/javascript">
-        $("#searchButton").button();
+        $("#clearButton").button({ disabled: true }); ;
+        if (window.location.toString().indexOf('?') != -1) {
+            $("#clearButton").button("option", "disabled", false);
+        }
         if($("#Countries").find(":selected").val()=="0") {
             $("#Regions").attr("disabled", "disabled");
         }
