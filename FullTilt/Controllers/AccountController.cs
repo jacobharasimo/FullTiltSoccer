@@ -5,11 +5,14 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using DataAccess;
+using DataAccess.Class;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using FullTilt.Filters;
 using FullTilt.Models;
+using UserProfile = FullTilt.Models.UserProfile;
 
 namespace FullTilt.Controllers
 {
@@ -17,6 +20,8 @@ namespace FullTilt.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+
+        public ClientAccessService RestService = new ClientAccessService();
         //
         // GET: /Account/Login
 
@@ -78,9 +83,17 @@ namespace FullTilt.Controllers
             {
                 // Attempt to register the user
                 try
-                {
+                {                    
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     WebSecurity.Login(model.UserName, model.Password);
+                    UserRequest newUser = new UserRequest(){UserFirstName = "",UserLastName = "",UserName = model.UserName};
+
+                    var canCreateUser = RestService.CreateNewUser(newUser);
+
+                    if (!canCreateUser)
+                    {
+                        throw new MembershipCreateUserException("Error creating user linkage.");
+                    }
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

@@ -73,9 +73,22 @@ namespace FullTilt.Models
 
     public class RegisterModel
     {
-        [Required]
+        [Required(ErrorMessage = "Please enter a first name.")]
+        [Display(Name = "First name")]
+        public string UserFirstName { get; set; }
+
+        [Required(ErrorMessage = "Please enter a last name.")]
+        [Display(Name = "Last name")]
+        public string UserLastName { get; set; }
+
+        [Required(ErrorMessage = "Please choose a username.")]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+        
+        [Required(ErrorMessage = "Please provide your email")]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress,ErrorMessage = "Invalid email address.")]        
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]

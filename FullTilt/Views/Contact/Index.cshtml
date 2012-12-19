@@ -30,8 +30,8 @@
             @Html.LabelFor(model => model.To) 
         </div> 
         <div class="editor-field"> 
-            @Html.TextBoxFor(model => model.To) 
-            @Html.ValidationMessageFor(model => model.To) 
+             @Html.DropDownListFor(x => x.To, Model.ToList, "- Choose One -")
+             @Html.ValidationMessageFor(model => model.To) 
         </div> 
         <div class="editor-label"> 
             @Html.LabelFor(model => model.From) 
@@ -65,7 +65,7 @@
         <div class="formLine">
             <label for="contactWho">Contact: </label>
             <select name="contactWho" class="contact_list email_fileds" style="height:28px;width:170px;">
-                <option selected="selected" value="select">- Choose One -</option>
+                <option selected="selected" value="">- Choose One -</option>
                 <option value="sales@fulltiltsoccer.com">Sales</option>
                 <option value="coaches@fulltiltsoccer.com">Coaches Corner</option>
                 <option value="camps@fulltiltsoccer.com">Camps Information</option>

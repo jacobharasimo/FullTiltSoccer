@@ -11,16 +11,6 @@
       <Association Name="User_Camp" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Aspnet_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="User_Camp" Member="Camps" ThisKey="UserID" OtherKey="UserID" Type="Camp" />
-      <Association Name="User_CoachesCorner" Member="CoachesCorners" ThisKey="UserID" OtherKey="UserID" Type="CoachesCorner" />
-      <Association Name="User_Raiting" Member="Raitings" ThisKey="UserID" OtherKey="UserID" Type="Raiting" />
-      <Association Name="User_Tournament" Member="Tournaments" ThisKey="UserID" OtherKey="UserID" Type="Tournament" />
-    </Type>
-  </Table>
   <Table Name="dbo.CmsData" Member="CmsDatas">
     <Type Name="CmsData">
       <Column Name="CmsID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -59,8 +49,8 @@
       <Column Name="TournamentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
       <Column Name="TournamentRaiting" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
-      <Association Name="User_Raiting" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
       <Association Name="Tournament_Raiting" Member="Tournament" ThisKey="TournamentID" OtherKey="TournamentID" Type="Tournament" IsForeignKey="true" />
+      <Association Name="User_Raiting" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Region" Member="Regions">
@@ -98,6 +88,62 @@
       <Association Name="Tournament_Raiting" Member="Raitings" ThisKey="TournamentID" OtherKey="TournamentID" Type="Raiting" />
       <Association Name="Region_Tournament" Member="Region" ThisKey="RegionID" OtherKey="RegionID" Type="Region" IsForeignKey="true" />
       <Association Name="User_Tournament" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserProfile" Member="UserProfiles">
+    <Type Name="UserProfile">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(56) NOT NULL" CanBeNull="false" />
+      <Association Name="UserProfile_webpages_UsersInRole" Member="webpages_UsersInRoles" ThisKey="UserId" OtherKey="UserId" Type="webpages_UsersInRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.webpages_UsersInRoles" Member="webpages_UsersInRoles">
+    <Type Name="webpages_UsersInRole">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="UserProfile_webpages_UsersInRole" Member="UserProfile" ThisKey="UserId" OtherKey="UserId" Type="UserProfile" IsForeignKey="true" />
+      <Association Name="webpages_Role_webpages_UsersInRole" Member="webpages_Role" ThisKey="RoleId" OtherKey="RoleId" Type="webpages_Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.webpages_Membership" Member="webpages_Memberships">
+    <Type Name="webpages_Membership">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ConfirmationToken" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="IsConfirmed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LastPasswordFailureDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PasswordFailuresSinceLastSuccess" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordChangedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PasswordSalt" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="PasswordVerificationToken" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="PasswordVerificationTokenExpirationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.webpages_OAuthMembership" Member="webpages_OAuthMemberships">
+    <Type Name="webpages_OAuthMembership">
+      <Column Name="Provider" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProviderUserId" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.webpages_Roles" Member="webpages_Roles">
+    <Type Name="webpages_Role">
+      <Column Name="RoleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="webpages_Role_webpages_UsersInRole" Member="webpages_UsersInRoles" ThisKey="RoleId" OtherKey="RoleId" Type="webpages_UsersInRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserProfileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserFirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserLastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_Camp" Member="Camps" ThisKey="UserID" OtherKey="UserID" Type="Camp" />
+      <Association Name="User_CoachesCorner" Member="CoachesCorners" ThisKey="UserID" OtherKey="UserID" Type="CoachesCorner" />
+      <Association Name="User_Raiting" Member="Raitings" ThisKey="UserID" OtherKey="UserID" Type="Raiting" />
+      <Association Name="User_Tournament" Member="Tournaments" ThisKey="UserID" OtherKey="UserID" Type="Tournament" />
     </Type>
   </Table>
   <Function Name="dbo.GetAllCampsBeforeDate" Method="GetAllCampsBeforeDate">
@@ -359,5 +405,9 @@
       <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CountryID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.CreateNewUser" Method="CreateNewUser">
+    <Parameter Name="value" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

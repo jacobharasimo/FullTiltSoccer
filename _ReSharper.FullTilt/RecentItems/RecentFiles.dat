@@ -1,12 +1,6 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="0" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:HTMLPage1.htm" caret="0" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Index.cshtml" caret="609" fromTop="17" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:HomeController.cs" caret="229" fromTop="11" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Home/f:Index.cshtml" caret="147" fromTop="6" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_FreeTournament.cshtml" caret="1559" fromTop="27" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:TournamentController.cs" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Details.cshtml" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:_PaidTournament.cshtml" caret="163" fromTop="5" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Region.cshtml" caret="0" fromTop="0" />
@@ -16,28 +10,30 @@
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_Layout.cshtml" caret="3238" fromTop="22" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_InnerLayout.cshtml" caret="2606" fromTop="22" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Shared/f:_FeaturedTournaments.cshtml" caret="310" fromTop="12" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:ThankYou.cshtml" caret="59" fromTop="4" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="0" fromTop="0" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="4258" fromTop="38" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="636" fromTop="16" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:AccountController.cs" caret="848" fromTop="25" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CampsAcademies/f:Index.cshtml" caret="206" fromTop="7" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Error.cshtml" caret="70" fromTop="5" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Class/f:Email.cs" caret="388" fromTop="16" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:ContactViewModel.cs" caret="383" fromTop="16" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CampsAcademies/f:Index.cshtml" caret="0" fromTop="0" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Class/f:Contact.cs" caret="235" fromTop="11" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:ContactController.cs" caret="840" fromTop="15" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Index.cshtml" caret="1496" fromTop="33" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Index.cshtml" caret="4312" fromTop="41" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:ContactViewModel.cs" caret="302" fromTop="12" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:ContactController.cs" caret="749" fromTop="9" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="1607" fromTop="42" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="792" fromTop="12" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/f:Listings.designer.cs" caret="22280" fromTop="25" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:TournamentController.cs" caret="518" fromTop="23" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/f:ClientAccessService.cs" caret="9096" fromTop="29" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/d:Class/f:UserRequest.cs" caret="434" fromTop="17" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:AccountController.cs" caret="2624" fromTop="23" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="17226" fromTop="28" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:AccountModels.cs" caret="2814" fromTop="36" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Register.cshtml" caret="1202" fromTop="29" />
   </RecentFiles>
   <RecentEdits>
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:HomeController.cs" caret="527" fromTop="17" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="999" fromTop="13" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/f:Web.config" caret="971" fromTop="11" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:App_Start/f:BundleConfig.cs" caret="753" fromTop="19" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:TournamentController.cs" caret="1386" fromTop="18" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="171" fromTop="10" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Region.cshtml" caret="2305" fromTop="38" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Tournament/f:Index.cshtml" caret="609" fromTop="17" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:CoachesCornerController.cs" caret="2604" fromTop="37" />
@@ -50,12 +46,20 @@
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CampsAcademies/f:Index.cshtml" caret="206" fromTop="7" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:CoachesCorner/f:Index.cshtml" caret="791" fromTop="21" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:ThankYou.cshtml" caret="35" fromTop="1" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="4258" fromTop="38" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Error.cshtml" caret="70" fromTop="5" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Class/f:Contact.cs" caret="235" fromTop="11" />
     <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Class/f:Email.cs" caret="388" fromTop="16" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:ContactViewModel.cs" caret="383" fromTop="16" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:ContactController.cs" caret="781" fromTop="14" />
-    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Index.cshtml" caret="1496" fromTop="33" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:ContactController.cs" caret="477" fromTop="11" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Contact/f:Index.cshtml" caret="1465" fromTop="11" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:ContactViewModel.cs" caret="302" fromTop="12" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Login.cshtml" caret="1567" fromTop="43" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/f:Web.config" caret="792" fromTop="12" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/f:Listings.designer.cs" caret="22280" fromTop="25" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/d:Class/f:UserRequest.cs" caret="434" fromTop="17" />
+    <File id="501AFBE0-AE12-4EE7-B5DD-F57901A53CF8/f:ClientAccessService.cs" caret="9096" fromTop="29" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Controllers/f:AccountController.cs" caret="2624" fromTop="23" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Content/f:Site.css" caret="17226" fromTop="28" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Models/f:AccountModels.cs" caret="2808" fromTop="36" />
+    <File id="84624A33-44BD-4FF5-8110-2F93A79FC1E8/d:Views/d:Account/f:Register.cshtml" caret="1202" fromTop="29" />
   </RecentEdits>
 </RecentFiles>

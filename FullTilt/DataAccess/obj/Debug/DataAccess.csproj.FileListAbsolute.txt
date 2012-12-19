@@ -8,3 +8,8 @@ C:\inetpub\wwwroot\FullTilt\FullTilt\FullTilt\DataAccess\bin\DataAccess.pdb
 C:\inetpub\wwwroot\FullTilt\FullTilt\FullTilt\DataAccess\obj\Debug\ResolveAssemblyReference.cache
 C:\inetpub\wwwroot\FullTilt\FullTilt\FullTilt\DataAccess\obj\Debug\DataAccess.dll
 C:\inetpub\wwwroot\FullTilt\FullTilt\FullTilt\DataAccess\obj\Debug\DataAccess.pdb
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\bin\DataAccess.dll
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\bin\DataAccess.pdb
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Debug\DataAccess.dll
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Debug\DataAccess.pdb

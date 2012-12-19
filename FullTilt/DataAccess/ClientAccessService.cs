@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Web.Script.Services;
+using DataAccess.Class;
 
 namespace DataAccess
 {
@@ -147,5 +149,31 @@ namespace DataAccess
             var result = a.GetAllCoachesCornerByRegionAndAge(regionyName, ageGroup);
             return new List<GetAllCoachesCornerByRegionAndAgeResult>(result);
         }
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]        
+        /*[WebGet(UriTemplate = "CreateNewUser?userID={@userName}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]*/
+        public bool CreateNewUser(UserRequest User)
+        {
+            
+            // get the user id from the name
+            var a = new MainDataDataContext();            
+            try
+            {
+                var user = a.UserProfiles.FirstOrDefault(u => u.UserName == User.UserName);
+                if(user==null)
+                {
+                    throw new Exception("User Not Registered");
+                }
+                var userID = user.UserId;
+                a.CreateNewUser(userID);
+            }
+            catch(Exception e)
+            {
+                return false;
+            }            
+            return true;
+        }
     }
+    
 }

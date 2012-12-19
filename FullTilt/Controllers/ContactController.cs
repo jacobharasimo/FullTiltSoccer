@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,8 +15,10 @@ namespace FullTilt.Controllers
     {
         public ActionResult Index()
         {
+            var model = new ContactViewModel();
+            
             ViewBag.Message = "Your contact page.";
-            return View();
+            return View(model);
         }
         
         [HttpPost]
