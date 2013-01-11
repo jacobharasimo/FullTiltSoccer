@@ -4,8 +4,7 @@
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
+    <h1>@ViewBag.Title.</h1>    
 </hgroup>
 
 @using (Html.BeginForm()) {
@@ -36,7 +35,7 @@
                 <ul>
                     <li>
                         @Html.LabelFor(m => m.Email)
-                        @Html.PasswordFor(m => m.Email)                        
+                        @Html.TextBoxFor(m => m.Email)                        
                     </li>
                     <li>
                         @Html.LabelFor(m => m.Password)

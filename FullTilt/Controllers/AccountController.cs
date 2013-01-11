@@ -83,17 +83,10 @@ namespace FullTilt.Controllers
             {
                 // Attempt to register the user
                 try
-                {                    
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                {                                        
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password,new{FirstName=model.UserFirstName,LastName=model.UserLastName,Email=model.Email});
                     WebSecurity.Login(model.UserName, model.Password);
-                    UserRequest newUser = new UserRequest(){UserFirstName = "",UserLastName = "",UserName = model.UserName};
-
-                    var canCreateUser = RestService.CreateNewUser(newUser);
-
-                    if (!canCreateUser)
-                    {
-                        throw new MembershipCreateUserException("Error creating user linkage.");
-                    }
+                    Roles.AddUserToRole(model.UserName,"Free");
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

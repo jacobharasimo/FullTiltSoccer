@@ -292,12 +292,6 @@
       <Column Name="TournamentRaiting" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating1">
-    <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
-    <ElementType Name="GetAverageTournamentRatingResult1">
-      <Column Name="AverageRaiting" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.GetAverageTournamentRating" Method="GetAverageTournamentRating">
     <Parameter Name="tournamentID" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType Name="GetAverageTournamentRatingResult">

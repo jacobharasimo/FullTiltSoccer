@@ -1,0 +1,34 @@
+﻿@model FullTilt.Models.ContactViewModel
+@{
+    ViewBag.Title = "Profile";
+}
+<ul class="ControlPanel">
+    <li>@Html.ActionLink("Profile", "Index", "ControlPanel",new{@Class="active"})</li>
+    <li>@Html.ActionLink("Tournaments", "Tournaments", "ControlPanel")</li>
+    <li>@Html.ActionLink("Coaches Corner", "CoachesCorner", "ControlPanel")</li>
+    <li>@Html.ActionLink("Camps/Academies", "CampsAcademies", "ControlPanel")</li>
+</ul>
+<div class="content" id="profileControls">
+    <h1 class="title">@ViewBag.Title</h1>
+    
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{ 
+    @Html.Partial("_SetPasswordPartial")
+}   
+</div>
+
+    
+
+
+@section scripts{
+    
+    <script type="text/javascript">
+        $(function () {
+            $("#tabs").tabs();
+        });
+    </script>   
+}

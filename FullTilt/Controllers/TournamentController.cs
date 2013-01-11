@@ -29,19 +29,7 @@ namespace FullTilt.Controllers
             ViewBag.Message = "Your tournament page.";
             ViewBag.Country = Country;
             var results = new List<GetAllRegionsByCountryResult>();
-            switch (Country)
-            {
-                case "Canada":
-
-                    results = RestService.GetAllRegionsByCountry("Canada");
-                    break;
-                case "United States":
-                    results = RestService.GetAllRegionsByCountry("USA");
-                    break;
-                case "UK/Ireland":
-                    results = RestService.GetAllRegionsByCountry("UK/Ireland");
-                    break;
-            }
+            results = RestService.GetAllRegionsByCountry(Country);            
             ViewBag.Regions = results.OrderBy(a => a.RegionName);            
             return View();
         }

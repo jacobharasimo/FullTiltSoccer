@@ -34,6 +34,7 @@
         Html.RenderPartial("_PaidTournament", ViewData["Tournament"] = t);
         var accessLayer = new ClientAccessService();
         Guid currentUser = new Guid("d2b2cedb-4f8d-4702-b48d-c147f7425efd");
+        
         var currentVote = accessLayer.GetAverageTournamentRating(t.TournamentID);
         bool canVote = accessLayer.GetTournamentRaitingFromUser(t.TournamentID, currentUser).TournamentRaiting <= 0;
         var raty = "$('#" + t.TournamentID + "').raty({ readOnly: true,half: true, path: '/Images/', number: '5', score: '" + currentVote.AverageRaiting + "' });";

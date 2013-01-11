@@ -9,6 +9,7 @@
         @Styles.Render("~/Content/themes/base/css", "~/Content/css")
         @Styles.Render("~/Content/fancybox/css")
         @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery") 
     </head>
     <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
         <header id="header" class="outerWrapper">
@@ -27,7 +28,7 @@
             <ul id="primaryNav">	
                 <li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
                 <li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "United States" }, new { })</li>
-                <li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
+                <li>@Html.ActionLink("UK/Europe", "Index", "Tournament", new { Country = "UK/Europe" }, new { })</li>
                 <li>@Html.ActionLink("Coaches Corner", "Index", "CoachesCorner")</li>
                 <li>@Html.ActionLink("Camps/Academies", "Index", "CampsAcademies")</li>
                 <li><a href="#">Forum</a></li>
@@ -63,7 +64,7 @@
 			</ul>
 		</div>
 	</footer>
-    @Scripts.Render("~/bundles/jquery") 
+    
     @Scripts.Render("~/bundles/jqueryui")             
     @Scripts.Render("~/bundles/fancybox")
     <script src="~/Scripts/raty/jquery.raty.min.js" type="text/javascript"></script>

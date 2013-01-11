@@ -12,6 +12,8 @@ namespace DataAccess.Class
         [DataMember]
         public string UserLastName { get; set; }
         [DataMember]
+        public string Email { get; set; }
+        [DataMember]
         public string UserFirstName { get; set; }
         [DataMember]
         public string UserName { get; set; }

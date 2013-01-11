@@ -128,6 +128,14 @@ namespace DataAccess
             return result ?? new GetTournamentRaitingFromUserResult(){TournamentRaiting = 0};
             
         }
+        [WebGet(UriTemplate = "GetAverageTournamentRating?TournamentID={tournamentID}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        public GetAverageTournamentRatingResult GetAverageTournamentRating(Guid? tournamentID)
+        {
+            var a = new MainDataDataContext();
+            var result = a.GetAverageTournamentRating(tournamentID).FirstOrDefault();
+            return result ?? new GetAverageTournamentRatingResult() {AverageRaiting = 0};
+        }
+
         [WebGet(UriTemplate = "GetAllCoachesCorner", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         public List<GetAllCoachesCornerResult> GetAllCoachesCorner()
         {
@@ -164,9 +172,8 @@ namespace DataAccess
                 if(user==null)
                 {
                     throw new Exception("User Not Registered");
-                }
-                var userID = user.UserId;
-                a.CreateNewUser(userID);
+                }                
+                a.CreateNewUser(user.UserId);
             }
             catch(Exception e)
             {
@@ -174,6 +181,8 @@ namespace DataAccess
             }            
             return true;
         }
+
+       
     }
     
 }
