@@ -1,79 +1,105 @@
 ﻿    @using System.Text.RegularExpressions
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />    
         <title>Full Tilt Soccer - @ViewBag.Title</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                
-        @Styles.Render("~/Content/themes/base/css", "~/Content/css")
-        @Styles.Render("~/Content/fancybox/css")
-        @Scripts.Render("~/bundles/modernizr")
-        @Scripts.Render("~/bundles/jquery") 
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                    
+    @Styles.Render("~/Style/foundation")        
+    @Scripts.Render("~/bundles/modernizr")
+    <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+                      
+        
                 
     </head>
-    <body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
-        <header id="header" class="outerWrapper">
-		    <div class="pageCenter">                    
-               @Html.ActionLink(" ", "Index", "Home",null, new { id = "logo" })
-                <section class="login">
-                    @Html.Partial("_LoginPartial")                    
-                </section>
-		</div>		
-	</header>
-	<div id="topNav" class="outerWrapper">
-        <div class="pageCenter">
-            <nav>
-            <ul id="primaryNav">	
-                <li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
-                <li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "United States" }, new { })</li>
-                <li>@Html.ActionLink("UK/Europe", "Index", "Tournament", new { Country = "UK/Europe" }, new { })</li>
-                <li>@Html.ActionLink("Coaches Corner", "Index", "CoachesCorner")</li>
-                <li>@Html.ActionLink("Camps/Academies", "Index", "CampsAcademies")</li>
-                <li><a href="#">Forum</a></li>
-                <li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
-            </ul>
-            </nav>
+<body class="@Regex.Replace(ViewBag.Title, @" ", "_").ToLower()">
+    <!-- Header and Nav -->    
+    <div class="logo">
+        <div class="row">
+            @Html.ActionLink(" ", "Index", "Home",null, new { id = "logo",title="Full Tilt Soccer" })      
         </div>
-	</div>
-        <div id="contentArea" class="outerWrapper">
-            <div class="pageCenter">
-                @RenderBody()
-            </div>
+    </div>                
+    <nav class="top-bar">
+        <div class="row">
+            
+                <!-- Left Nav Section -->
+                <ul class="left">                
+                    
+                    <li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "United States" }, new { })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("UK/Europe", "Index", "Tournament", new { Country = "UK/Europe" }, new { })</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Coaches Corner", "Index", "CoachesCorner")</li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Camps/Academies", "Index", "CampsAcademies")</li>
+                    <li class="divider"></li>
+                    <li><a href="#">Forum</a></li>
+                    <li class="divider"></li>
+                    <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                    
+                </ul>
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            
         </div>
-	<footer id="bottomNav" class="outerWrapper">
-		<div class="pageCenter">
-			<ul id="footerNav">
-				<li>@Html.ActionLink("Canada", "Index", "Tournament", new {Country="Canada"}, new { })</li>
-				<li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "UnitedStates" }, new { })</li>
-				<li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Ireland" }, new { })</li>
-				<li>@Html.ActionLink("Advertise With Us", "Index", "Contact")</li>
-				<li>@Html.ActionLink("Sign Up", "Index", "Contact")</li>
-				<li><a href="">Site Map</a></li>
-				<li class="last">@Html.ActionLink("Contact", "Index", "Contact")</li>
-			</ul>
-		</div>
-	</footer>
-   
-    @Scripts.Render("~/bundles/jqueryui")             
-    @Scripts.Render("~/bundles/fancybox")
-    <script src="~/Scripts/raty/jquery.raty.min.js" type="text/javascript"></script>
-    @RenderSection("scripts", required: false)
+    </nav>
+    <!-- End Header and Nav -->
     
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#loginLink").fancybox({
-                    maxWidth: '250',
-                    maxHeight: '250',
-                    fitToView: false,
-                    width: '70%',
-                    autoSize: false,
-                    closeClick: false,
-                    openEffect: 'none',
-                    closeEffect: 'none'
-                });
+    <!-- Body and Content -->
+    <div class="content">
+        @RenderBody()
+    </div>
+    
+    <!-- End Body and Content -->
+    
+     <!-- Footer -->
+     <div class="footer fixed bottom">
+         <div class="row">
+             <ul class="footerNav">                
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("Canada", "Index", "Tournament", new { Country = "Canada" }, new { })</li>
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("United States", "Index", "Tournament", new { Country = "UnitedStates" }, new { })</li>
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("UK/Ireland", "Index", "Tournament", new { Country = "UK/Europe" }, new { })</li>
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("Advertise With Us", "Index", "Contact")</li>
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("Sign Up", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                 <li class="divider"></li>
+                 <li><a href="#">Forum</a></li>
+                 <li class="divider"></li>
+                 <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+                 <li class="divider"></li>
+             </ul>      
+         </div>
+     </div>  
 
-            });
-        </script>
-    </body>
+     <!-- End Footer -->   
+    @Scripts.Render("~/bundles/jquery")     
+    @Scripts.Render("~/bundles/foundationDebug")    
+    @Scripts.Render("~/bundles/raty")     
+      
+        
+    @RenderSection("scripts", required: false)        
+</body>
 </html>

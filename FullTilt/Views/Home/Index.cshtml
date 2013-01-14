@@ -1,28 +1,49 @@
 ﻿@{
     ViewBag.Title = "Home";
 }
-
-	<div id="welcomeStage">
+<div class="row">        
+    <div class="nine columns">
+        <div id="welcomeStage">
         <div class="welcomeContent">
             @Html.Raw(ViewBag.WelcomeMessage)         
         </div>
 	</div>
-	<div class="rightAddSpace">
-		<div id="upcommingEvents">
-		</div>
-		<div class="blueAdd" id="signUp">
-			<img src="/images/sign_up_now.jpg" alt="Sign Up Now"/>
-		</div>
-		<div class="blueAdd" id="advertise">
-			<img src="/images/advertise_with_us.jpg" alt="Advertise With Us"/>
-		</div>				
-	</div>
-	<div class="bottomAddSpace clear">
-		<div class="leftColumn">
-			<img src="/images/bottom_add_space.jpg" alt="Place Your Add Here" />
-		</div>
-		<div class="rightColumn">
-			<img src="/images/iasa_add.jpg" alt="Place Your add here" />
-		</div>
-		<div class="clear"></div>
-	</div>
+        
+    </div>
+    <div class="three columns adds">
+        <div class="row">
+            <div id="upcommingEvents">
+                <div class="green box">
+                    <h2>UPCOMING EVENTS</h2>
+                    <h4>UPCOMING EVENTS</h4>
+                    <hr/>
+                    <ul>
+                        <li></li>                        
+                    </ul>
+                </div>
+            </div>            
+        </div>
+        <div class="row signUp">
+            <a href="~/Contact/" class="advertisingLink">
+                <img src="/images/sign_up_now.jpg" alt="Sign Up Now"/>                
+            </a>            
+        </div>
+        <div class="row signUp">
+            <a href="~/Contact/" class="advertisingLink">
+                <img src="/images/advertise_with_us.jpg" alt="Advertise With Us"/>
+            </a>
+        </div>
+        <div class="row">
+            <a href="~/Contact/" class="advertisingLink">
+                <img src="/images/iasa_add.jpg" alt="Place Your add here" />
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="twelve columns">
+        <a href="~/Contact/" class="advertisingLink">
+            <img src="/images/bottom_add_space.jpg" alt="Place Your Add Here" />    
+        </a>
+    </div>         
+</div>

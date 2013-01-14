@@ -1,0 +1,79 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+/* -----------------------------------------
+   global Styles
+----------------------------------------- */
+.advertisingLink img{ border: none;}
+.content{ margin-bottom: 4em;}
+/* -----------------------------------------
+   Override Styles
+----------------------------------------- */
+.top-bar{ background: #222;}
+.top-bar ul > li.divider{ height: 80%;margin-top: .5%;}
+#logo{height: 65px;width: 250px;display: block;margin-left: 82px;margin-top: 23px;}
+.logo{background:url(/images/logo_lg.png) top center no-repeat #549DD0;height:115px; position:relative;}
+.top-bar a:hover{color:#04b51d!important}
+.row{ width: 1000px;}
+.fixed.bottom{ top: auto;bottom: 0;}
+.top-bar ul.right > li.divider{ margin-top: 2.5%;}
+/* -----------------------------------------
+   welcome page
+----------------------------------------- */
+.welcomeContent h1{font-family: "Bauhaus 93";font-size: 28px;color: #F87811;margin-bottom:1em;margin-top: 0;}
+.welcomeContent p a{ text-decoration: underline;}
+.welcomeContent p{line-height:125%;font-size: 12px;}
+.welcomeContent{margin-top: 52px;margin-left: 88px;overflow:hidden;text-overflow: ellipsis;width: 518px;}
+#welcomeStage{border-style: none;border-color: inherit;height: 430px;background-image: url(/images/welcom_stage.jpg);background-repeat: no-repeat;float: left;color: white;font-size: 12px;width: 100%;}
+.adds .row{margin:.5em 0}
+#upcommingEvents{ border: solid 1px #aaaaaa;padding: 5px;text-align: center;}
+#upcommingEvents h2{font-family: "Bauhaus 93";font-size: 24px;color: #FFFFFF;font-weight: normal;margin: 0px;}
+#upcommingEvents h4{font-family: "Myriad Pro";font-size: 14px;font-weight: normal;color: #FFFFFF;padding: 0px;margin: 0px;}
+.green.box{background: #259F00;height: 100%;padding: 5px 0;}
+#upcommingEvents hr {width: 90%;margin: 1em auto;}
+#upcommingEvents ul{ text-align: left;padding: 0 10px;color: white;}
+#upcommingEvents ul > li{ list-style: none;}
+.adds .row a{ display: block;}
+
+/* -----------------------------------------
+   Footer Style
+----------------------------------------- */
+.footer ul.footerNav > li.divider {background: #000;-webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.1);-moz-box-shadow: 1px 0 0 rgba(255,255,255,0.1);box-shadow: 1px 0 0 rgba(255,255,255,0.1);height: 100%;margin-right: 1px;width: 1px;height: 20px;padding: 0;}
+footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45px;list-style: none;}
+.footer ul.footerNav > li{ display: inline-block;vertical-align: middle;padding: 0 1em;}
+.footer ul.footerNav{ display: inline;}
+.footer .row{ text-align: center;}
+.footer{ background: #222;padding: .75em 0;}
+.footer ul.footerNav > li > a{ color: white;}
+.footer ul.footerNav >li > a:hover{color:#04b51d!important}
+
+
+@media screen and (max-width: 980px) 
+{
+    #welcomeStage{border: solid 1px #aaaaaa;padding: 5px;background: white;width: auto;height: auto;}
+    .welcomeContent{background: #c04c27; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNjMDRjMjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmYyMDFiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-radial-gradient(center, ellipse cover,  #c04c27 0%, #6f201b 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#c04c27), color-stop(100%,#6f201b)); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  #c04c27 0%,#6f201b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  #c04c27 0%,#6f201b 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  #c04c27 0%,#6f201b 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  #c04c27 0%,#6f201b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c04c27', endColorstr='#6f201b',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+;width: auto;margin: 0;padding: 10px;}
+    .content{ margin-top: 1em;}
+    
+}
+@media screen and (max-width: 767px) 
+{
+    .adds .signUp{ display: inline-block;text-align: center;width: 49%;}
+    .fixed.bottom{ position: static;}
+}
