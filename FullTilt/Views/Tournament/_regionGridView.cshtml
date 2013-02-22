@@ -1,5 +1,5 @@
 ﻿@using DataAccess
-<ul class="regionsList">
+<ul class="regionsList clearfix">
     @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
     {        
         <li>            
@@ -10,4 +10,3 @@
         </li>
     }    
 </ul>
-<div class="clear"></div>

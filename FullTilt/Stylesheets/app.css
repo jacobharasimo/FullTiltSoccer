@@ -13,6 +13,26 @@
 ----------------------------------------- */
 .advertisingLink img{ border: none;}
 .content{ margin-bottom: 4em;}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
 /* -----------------------------------------
    Override Styles
 ----------------------------------------- */
@@ -24,6 +44,12 @@
 .row{ width: 1000px;}
 .fixed.bottom{ top: auto;bottom: 0;}
 .top-bar ul.right > li.divider{ margin-top: 2.5%;}
+.top-bar{ background: black;}
+.footer.bottom{background: black;bottom:0}
+html{ background: black;}
+ul > li{list-style: none}
+.outterBorder{border-style: solid;border-width: 1px;border-color: #aaa;padding: 5px;}
+.tight{ padding: 0;margin: 0;}
 /* -----------------------------------------
    welcome page
 ----------------------------------------- */
@@ -41,7 +67,21 @@
 #upcommingEvents ul{ text-align: left;padding: 0 10px;color: white;}
 #upcommingEvents ul > li{ list-style: none;}
 .adds .row a{ display: block;}
+/* -----------------------------------------
+   Region Search panel
+----------------------------------------- */
+.outterSearch{border-style: solid;border-width: 1px;border-color: #aaaaaa;padding: 5px;}
+.panel.search{ margin-bottom: 0;background: black;padding: 8px;text-align: center;}
+ul.addList{ margin-top: 5px;}
+ul.addList > li{text-align: center}
+.panel.search h4{color: white;font-size:14px;margin-bottom: 4px;}
 
+ul.regionsList li{ display: block;float: left;margin: 5px;width: 135px;height: 105px;text-align: center;background: #C2C2C2;}
+ul.regionsList li a{ display: block;padding: 5px;text-decoration: none;color: black;}
+ul.regionsList li a:hover{opacity:.7;filter:alpha(opacity=70); /* For IE8 and earlier */}
+ul.regionsList li a:visited,.regionsList li a:active{ color: black;}
+ul.regionsList li a img{display: block;margin: 0}
+ul.regionsList li p{margin: .3em 0 0 0;font-size: .9em;line-height: 1.2;height: 2em;}
 /* -----------------------------------------
    Footer Style
 ----------------------------------------- */
@@ -53,8 +93,18 @@ footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45p
 .footer{ background: #222;padding: .75em 0;}
 .footer ul.footerNav > li > a{ color: white;}
 .footer ul.footerNav >li > a:hover{color:#04b51d!important}
-
-
+/* -----------------------------------------
+   Featured Tournament Panel
+----------------------------------------- */
+.panel.greenBG{background: #259F00;margin-bottom: 0;text-align: center;padding: 2px;}
+.panel.greenBG h4{font-family: "Bauhaus 93";font-size: 20px;font-weight: normal;color: white;line-height: 20px;margin: 0;}
+.panel.greenBG hr{ margin: 0;}
+.featureList ul{ text-align: left;margin-left: 1em;color: white;margin-top: 5px;}
+.featureList ul > li{}
+.featureList ul li a{ color: white;font-weight: bold;}
+.featureList ul li a:hover{}
+.featureList ul li a:active{}
+.featureList ul li a:visited{}
 @media screen and (max-width: 980px) 
 {
     #welcomeStage{border: solid 1px #aaaaaa;padding: 5px;background: white;width: auto;height: auto;}
@@ -68,7 +118,7 @@ background: -o-radial-gradient(center, ellipse cover,  #c04c27 0%,#6f201b 100%);
 background: -ms-radial-gradient(center, ellipse cover,  #c04c27 0%,#6f201b 100%); /* IE10+ */
 background: radial-gradient(ellipse at center,  #c04c27 0%,#6f201b 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c04c27', endColorstr='#6f201b',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-;width: auto;margin: 0;padding: 10px;}
+width: auto;margin: 0;padding: 10px;}
     .content{ margin-top: 1em;}
     
 }
