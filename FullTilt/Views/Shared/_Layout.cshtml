@@ -14,8 +14,10 @@
   <meta name="viewport" content="width=device-width" />    
         <title>Full Tilt Soccer - @ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />                    
-    @Styles.Render("~/Style/foundation")        
+    @Styles.Render("~/Style/fancybox")  
+    @Styles.Render("~/Style/foundation")      
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")     
     <!--[if gte IE 9]>
   <style type="text/css">
     .gradient {
@@ -94,12 +96,10 @@
          </div>
      </div>  
 
-     <!-- End Footer -->   
-    @Scripts.Render("~/bundles/jquery")     
+     <!-- End Footer -->       
     @Scripts.Render("~/bundles/foundationDebug")    
-    @Scripts.Render("~/bundles/raty")     
-      
-        
+    @Scripts.Render("~/bundles/raty")             
+    @Scripts.Render("~/bundles/fancybox")           
     @RenderSection("scripts", required: false)        
 </body>
 </html>

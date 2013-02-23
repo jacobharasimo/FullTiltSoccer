@@ -10,19 +10,23 @@
 }
 
 
-    <div class="paidTournamentListing">
+    <div class="panel paidListing">
         <div class="tournamentImage">
             <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" class="tournamentLogo" />  
             <br />  
             <div>
                 <div id="@tournament.TournamentID" class="tournamentRaiting"></div>
-                <div style="display:inline-block;" class="tournamentAverageRaiting">(<span title="Number of Votes">@averageResults.NumberOfVotes</span>)</div>
+                <div class="tournamentAverageRaiting">(<span title="Number of Votes">@averageResults.NumberOfVotes</span>)</div>
             </div>
         </div>    
         <div class="tournamentDescription">
             <h3>@tournament.TournamentName</h3>
             <p>@tournament.TournamentDescription</p>        
         </div>                   
+        
+
+        
+
         <!-- AddThis Button BEGIN -->
         <div class="addthis_toolbox addthis_default_style" addthis:url="@Request.Url.Scheme://@Request.Url.Authority/Tournament/Detials?TournamentID=@tournament.TournamentID">
             <a class="addthis_button_preferred_1"></a>

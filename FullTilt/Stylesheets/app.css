@@ -1,5 +1,3 @@
-/* Artfully masterminded by ZURB  */
-
 /* -------------------------------------------------- 
    Table of Contents
 -----------------------------------------------------
@@ -13,26 +11,10 @@
 ----------------------------------------- */
 .advertisingLink img{ border: none;}
 .content{ margin-bottom: 4em;}
-.clearfix:after {
-	content: ".";
-	display: block;
-	clear: both;
-	visibility: hidden;
-	line-height: 0;
-	height: 0;
-}
- 
-.clearfix {
-	display: inline-block;
-}
- 
-html[xmlns] .clearfix {
-	display: block;
-}
- 
-* html .clearfix {
-	height: 1%;
-}
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+ .clearfix {display: inline-block;}
+ html[xmlns] .clearfix {display: block;}
+ * html .clearfix {height: 1%;}
 /* -----------------------------------------
    Override Styles
 ----------------------------------------- */
@@ -50,10 +32,16 @@ html{ background: black;}
 ul > li{list-style: none}
 .outterBorder{border-style: solid;border-width: 1px;border-color: #aaa;padding: 5px;}
 .tight{ padding: 0;margin: 0;}
+h1.custom{font-family: 'Bauhaus 93';font-size: 33px;line-height: 33px;}
+h1.custom.small{font-size: 28px;margin: 0px;}
+h1.shadow{text-shadow: 1px 1px 3px rgba(0,0,0, 0.7);filter: dropshadow(color=#BEBEBE, offx=1, offy=1);}
+h1.orange{color: #f87811;}
+hr.noTop{ margin-top: 0;}
+#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {background-image: url('/Scripts/fancybox/fancybox_sprite.png');}
+.fancybox-overlay {background: url('/Scripts/fancybox/fancybox_overlay.png');}
 /* -----------------------------------------
    welcome page
 ----------------------------------------- */
-.welcomeContent h1{font-family: "Bauhaus 93";font-size: 28px;color: #F87811;margin-bottom:1em;margin-top: 0;}
 .welcomeContent p a{ text-decoration: underline;}
 .welcomeContent p{line-height:125%;font-size: 12px;}
 .welcomeContent{margin-top: 52px;margin-left: 88px;overflow:hidden;text-overflow: ellipsis;width: 518px;}
@@ -75,13 +63,14 @@ ul > li{list-style: none}
 ul.addList{ margin-top: 5px;}
 ul.addList > li{text-align: center}
 .panel.search h4{color: white;font-size:14px;margin-bottom: 4px;}
-
-ul.regionsList li{ display: block;float: left;margin: 5px;width: 135px;height: 105px;text-align: center;background: #C2C2C2;}
-ul.regionsList li a{ display: block;padding: 5px;text-decoration: none;color: black;}
-ul.regionsList li a:hover{opacity:.7;filter:alpha(opacity=70); /* For IE8 and earlier */}
-ul.regionsList li a:visited,.regionsList li a:active{ color: black;}
+ul.regionList > li{ text-align: center;}
+.block-grid.four-up.regionList >li{ padding: 5px;}
+ul.regionList > li a{ display: block;}
+ul.regionList > li a img{ width: 100%;}
+ul.regionList li a:hover img{opacity:.7;filter:alpha(opacity=70); /* For IE8 and earlier */}
 ul.regionsList li a img{display: block;margin: 0}
 ul.regionsList li p{margin: .3em 0 0 0;font-size: .9em;line-height: 1.2;height: 2em;}
+.addList img{ width: 100%;}
 /* -----------------------------------------
    Footer Style
 ----------------------------------------- */
@@ -105,6 +94,23 @@ footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45p
 .featureList ul li a:hover{}
 .featureList ul li a:active{}
 .featureList ul li a:visited{}
+/* -----------------------------------------
+   Paid Tournament Panel
+----------------------------------------- */
+.panel.paidListing{position: relative}
+img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;}
+.panel.paidListing .tournamentImage{ float: left;width: 50%;margin-right: 18px;}
+.panel.paidListing .tournamentDescription h3{font-weight: bold;margin-bottom: 1em;text-transform:uppercase;font-size: 18px;margin-top: 0;}
+.panel.paidListing .readMore{ position: absolute;right: 15px;bottom: 10px;}
+.panel.paidListing .readMore{ color: #539FD3;text-decoration: none;}
+.panel.paidListing .readMore:hover{ text-decoration: underline;}
+.panel.paidListing .readMore:visited{ color: #539FD3;}
+.panel.paidListing .addthis_toolbox{position: absolute;bottom: 10px;right: 100px;width: 162px;}
+.addthis_toolbox *,.addthis_toolbox *:before,.addthis_toolbox *:after{box-sizing: content-box;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;}
+.atm *, .atm *:before, .atm *:after{box-sizing: content-box;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;}
+.panel.paidListing .tournamentRaiting{ display: inline-block;vertical-align: middle;}
+.panel.paidListing .tournamentAverageRaiting{display:inline-block;vertical-align: middle;}
+.results h1{ margin-bottom: .2em;}
 @media screen and (max-width: 980px) 
 {
     #welcomeStage{border: solid 1px #aaaaaa;padding: 5px;background: white;width: auto;height: auto;}

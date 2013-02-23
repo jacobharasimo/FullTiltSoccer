@@ -3,7 +3,7 @@
     ViewBag.Title = ViewBag.Country + " Tournaments";
 }
 <div class="row">
-    <div class="two columns">
+    <div class="three columns">
         <div class="outterBorder">
             <div class="panel search">
                 <h4>SEARCH BY REGION</h4>
@@ -18,8 +18,8 @@
         </div>
         @Html.Partial("_LeftAddList")
     </div>
-    <div class="seven columns tight">
-        <h1>@ViewBag.Country</h1>
+    <div class="six columns tight">
+        <h1 class="custom shadow">@ViewBag.Country</h1>
         @{
             Html.RenderPartial("_regionGridView");           
         }

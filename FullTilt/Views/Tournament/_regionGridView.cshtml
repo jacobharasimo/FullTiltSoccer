@@ -1,9 +1,9 @@
 ﻿@using DataAccess
-<ul class="regionsList clearfix">
+<ul class="block-grid four-up regionList">
     @foreach (GetAllRegionsByCountryResult r in ViewBag.Regions)
     {        
         <li>            
-            <a href="@Url.Action("Region", "Tournament", new {Region = r.RegionName })">
+            <a href="@Url.Action("Region", "Tournament", new {Region = r.RegionName })" title="@r.RegionName">
                 <img src="~/@r.Image" alt="@r.RegionName" title="@r.RegionName" />
                 <p>@r.RegionName</p>
             </a>

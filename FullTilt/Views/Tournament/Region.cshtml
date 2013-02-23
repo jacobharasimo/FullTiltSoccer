@@ -3,31 +3,33 @@
     ViewBag.Title = ViewBag.Country + " Tournaments";
     
 }
-<div class="leftColumn addSpace">
-    <div class="outterSearch">
-        <div class="innerSearch">
-            <h2>SEARCH BY REGION</h2>
-            <select id="regionSelection">
-                <option>-Please Select-</option>
-                @foreach (GetFellowRegionsByRegionResult r in ViewBag.Regions)
-                {
-                    if (r.RegionName == Request["Region"])
+<div class="row">
+    <div class="three columns">
+        <div class="outterBorder">
+            <div class="panel search">
+                <h4>SEARCH BY REGION</h4>
+                <select id="regionSelection">
+                    <option>-Please Select-</option>
+                    @foreach (GetFellowRegionsByRegionResult r in ViewBag.Regions)
                     {
-                        <option value="@r.RegionName" selected="selected">@r.RegionName</option>   
-                    }
-                    else
-                    {
-                        <option value="@r.RegionName">@r.RegionName</option>   
-                    }
+                        if (r.RegionName == Request["Region"])
+                        {
+                            <option value="@r.RegionName" selected="selected">@r.RegionName</option>   
+                        }
+                        else
+                        {
+                            <option value="@r.RegionName">@r.RegionName</option>   
+                        }
 
-                }     
-            </select>
+                    }                 
+                </select>
+            </div>
         </div>
+        @Html.Partial("_LeftAddList")
     </div>
-      @Html.Partial("_LeftAddList")
-</div>
-<div class="leftColumn content">
-    <h1>@ViewBag.Region</h1>
+    <div class="six columns tight results">
+        <h1 class="custom shadow">@ViewBag.Region</h1>
+        <hr class="noTop"/>
     @foreach (GetAllTournamentsByRegionResult t in ViewBag.PaidTournaments)
     {
 
@@ -53,28 +55,30 @@
     {
         Html.RenderPartial("_FreeTournament", ViewData["Tournament"] = t);
     }    
-</div>
-<div class="leftColumn addSpace">
-    @Html.Partial("_FeaturedTournaments")
+    </div>
+    <div class="three columns">
+        @Html.Partial("_FeaturedTournaments")
+    </div>
 </div>
 <div class="clear"></div>
 
+
 @section Scripts {
-   <script>
-        $(document).ready(function () {
-            $("#regionSelection").change(function () {
-                window.location = ('/Tournament/Region?Region=' + $(this).val());
-            });
-            $(".readMore").fancybox({
-                maxWidth: 800,
-                maxHeight: 450,
-                fitToView: false,
-                width: '70%',                
-                autoSize: false,
-                closeClick: false,
-                openEffect: 'none',
-                closeEffect: 'none'
-            });
-        });
+   <script type="text/javascript">
+       $(document).ready(function () {
+           $("#regionSelection").change(function () {
+               window.location = ('/Tournament/Region?Region=' + $(this).val());
+           });           
+           $(".readMore").fancybox({
+           maxWidth: 800,
+           maxHeight: 450,
+           fitToView: false,
+           width: '70%',                
+           autoSize: false,
+           closeClick: false,
+           openEffect: 'none',
+           closeEffect: 'none'
+           });
+       });
     </script>   
 }
