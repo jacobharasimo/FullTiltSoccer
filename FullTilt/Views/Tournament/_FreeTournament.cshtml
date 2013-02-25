@@ -1,32 +1,53 @@
 ﻿@using DataAccess
+
 @{
     var tournament = new GetAllTournamentsByRegionResult();
     tournament = ViewData["Tournament"] as GetAllTournamentsByRegionResult;    
 }
 
-<div class="freeTournamentListing">    
-    <div>
-        <ul>
-            <h3>@tournament.TournamentName</h3>
-            <li style="float: left;width: 50%;">
-                <ul>
+<div class="panel freeTournamentListing">
+    <h3>@tournament.TournamentName</h3>        
+    <ul class="block-grid two-up">
+        <li>
+            <ul>
+                <li><strong>Date:</strong> @tournament.TournamentDate</li>
+                <li><strong>Location:</strong> @tournament.TournamentLocation</li>
+                <li><strong>Contact Info:</strong> @tournament.ContactName</li>
+                <li>                    
+                    <strong>Email:</strong> 
+                    <span class="has-tip tip-top noradius" title="@tournament.ContactEmail.Trim()"><a class="emailAddress" title="@tournament.ContactEmail.Trim()" href="mailto:@tournament.ContactEmail.Trim()">@tournament.ContactEmail.Trim()</a></span>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>
+                    <strong>
+                        @tournament.TournamentGender 
+                        @if (!string.IsNullOrEmpty(@tournament.TournamentFormat))
+                        {
+                            <span>/</span> @tournament.TournamentFormat
+                        }
+                        
+                    </strong>
+                </li>
+                <li><strong>Fee:</strong>
+                    @if (tournament.TournamentTeamFee.HasValue)
+                    {
+                         <span>$</span>@tournament.TournamentTeamFee
+                    }
+                </li>    
+
+                <li>
                     
-                    <li><strong>Date:</strong> @tournament.TournamentDate</li>
-                    <li><strong>Location:</strong> @tournament.TournamentLocation</li>
-                    <li><strong>Contact Info:</strong> @tournament.ContactName</li>
-                    <li><strong>Email:</strong> <a class="emailAddress" title="@tournament.ContactEmail.Trim()" href="mailto:@tournament.ContactEmail.Trim()">@tournament.ContactEmail.Trim()</a></li>
-                </ul>
-            </li>
-            <li style="float: right;width: 50%;">
-                <ul>
-                    
-                    <li><strong>@tournament.TournamentGender / @tournament.TournamentFormat</strong></li>
-                    <li><strong>Fee:</strong> $@tournament.TournamentTeamFee</li>
-                    <li><strong>Association:</strong> @tournament.TournamentHostingClub</li>
-                    <li><strong>URL:</strong> <a title="@tournament.TournamentClubSite.Trim()" href="@tournament.TournamentClubSite.Trim()">@tournament.TournamentClubSite.Trim()</a></li>
-                </ul>
-            </li>
-        </ul>        
-    </div>    
-    <div class="clear"></div>
+                    <strong>Association:</strong> 
+                    <span class="has-tip tip-top noradius" title="@tournament.TournamentHostingClub.Trim()"><a class="tournamentHostingClub">@tournament.TournamentHostingClub.Trim()</a></span>                    
+                </li>
+                <li>                    
+                    <strong>URL:</strong> 
+                    <span class="has-tip tip-top noradius" title="@tournament.TournamentClubSite.Trim()"><a title="@tournament.TournamentClubSite.Trim()" class="tournamentClubSite" href="@tournament.TournamentClubSite.Trim()">@tournament.TournamentClubSite.Trim()</a></span>                    
+                </li>
+            </ul>
+        </li>
+    </ul>                
 </div>

@@ -68,6 +68,10 @@ namespace FullTilt.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            if (System.Configuration.ConfigurationManager.AppSettings["RegistrationOpen"] != "true")
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

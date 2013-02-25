@@ -15,6 +15,7 @@
  .clearfix {display: inline-block;}
  html[xmlns] .clearfix {display: block;}
  * html .clearfix {height: 1%;}
+ .center{ text-align: center;}
 /* -----------------------------------------
    Override Styles
 ----------------------------------------- */
@@ -28,7 +29,7 @@
 .top-bar ul.right > li.divider{ margin-top: 2.5%;}
 .top-bar{ background: black;}
 .footer.bottom{background: black;bottom:0}
-html{ background: black;}
+
 ul > li{list-style: none}
 .outterBorder{border-style: solid;border-width: 1px;border-color: #aaa;padding: 5px;}
 .tight{ padding: 0;margin: 0;}
@@ -88,7 +89,7 @@ footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45p
 .panel.greenBG{background: #259F00;margin-bottom: 0;text-align: center;padding: 2px;}
 .panel.greenBG h4{font-family: "Bauhaus 93";font-size: 20px;font-weight: normal;color: white;line-height: 20px;margin: 0;}
 .panel.greenBG hr{ margin: 0;}
-.featureList ul{ text-align: left;margin-left: 1em;color: white;margin-top: 5px;}
+.featureList ul{ text-align: left;margin-left: 1em;color: white;margin-top: 5px;min-height: 2em;}
 .featureList ul > li{}
 .featureList ul li a{ color: white;font-weight: bold;}
 .featureList ul li a:hover{}
@@ -98,7 +99,7 @@ footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45p
    Paid Tournament Panel
 ----------------------------------------- */
 .panel.paidListing{position: relative}
-img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;}
+img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;width: 100%;}
 .panel.paidListing .tournamentImage{ float: left;width: 50%;margin-right: 18px;}
 .panel.paidListing .tournamentDescription h3{font-weight: bold;margin-bottom: 1em;text-transform:uppercase;font-size: 18px;margin-top: 0;}
 .panel.paidListing .readMore{ position: absolute;right: 15px;bottom: 10px;}
@@ -111,6 +112,21 @@ img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;}
 .panel.paidListing .tournamentRaiting{ display: inline-block;vertical-align: middle;}
 .panel.paidListing .tournamentAverageRaiting{display:inline-block;vertical-align: middle;}
 .results h1{ margin-bottom: .2em;}
+/* -----------------------------------------
+   free Tournament Panel
+----------------------------------------- */
+.panel.freeTournamentListing{ border: none;background: transparent;}
+.panel.freeTournamentListing .emailAddress{width: 75%;overflow: hidden;display: inline-block;}
+.panel.freeTournamentListing .tournamentClubSite{width: 80%;overflow: hidden;display: inline-block;}
+.panel.freeTournamentListing .tournamentHostingClub{width: 55%;overflow: hidden;display: inline-block;height:1.2em}
+.six.columns.tight.results hr:last-child {display: none;}
+/* -----------------------------------------
+   Contact Page
+----------------------------------------- */
+.row.grey{ background: #F2F2F2;}
+.row.grey .columns.eight{ background: white;}
+#contact_left h3{ margin-bottom: 0;font-size: 22px;}
+.custom.dropdown{ width: 100%!important;}
 @media screen and (max-width: 980px) 
 {
     #welcomeStage{border: solid 1px #aaaaaa;padding: 5px;background: white;width: auto;height: auto;}

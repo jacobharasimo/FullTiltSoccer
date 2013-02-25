@@ -2,98 +2,67 @@
 @{
     ViewBag.Title = "Contact Us";
 }
-
-<div id="contact_left">
-    <h3>Sales</h3>
-    <a href="mailto:sales@fulltiltsoccer.com">sales@fulltiltsoccer.com</a>
+<div class="row grey">
+    <div class="columns four">
+        <div id="contact_left">
+            <h3>Sales</h3>
+            <a href="mailto:sales@fulltiltsoccer.com">sales@fulltiltsoccer.com</a>
     
-    <h3>Coaches Corner</h3>
-    <a href="mailto:coaches@fulltiltsoccer.com">coaches@fulltiltsoccer.com</a>
+            <h3>Coaches Corner</h3>
+            <a href="mailto:coaches@fulltiltsoccer.com">coaches@fulltiltsoccer.com</a>
     
-    <h3>Camps Information</h3>
-    <a href="mailto:camps@fulltiltsoccer.com">camps@fulltiltsoccer.com</a>
+            <h3>Camps Information</h3>
+            <a href="mailto:camps@fulltiltsoccer.com">camps@fulltiltsoccer.com</a>
     
-    <h3>Tournament Information</h3>
-    <a href="mailto:tournament@fulltiltsoccer.com">tournament@fulltiltsoccer.com</a>
+            <h3>Tournament Information</h3>
+            <a href="mailto:tournament@fulltiltsoccer.com">tournament@fulltiltsoccer.com</a>
     
-    <h3>General Information</h3>
-    <a href="mailto:info@fulltiltsoccer.com">info@fulltiltsoccer.com</a>
-</div>
-<div id="contact_right">
-    <h1>CONTACT US</h1>
-    <p>Full Tilt Soccer is a new service offering free and paid listings to all Soccer Associations and Tournament organizors. We are still growing and evolving but at this time we ask that you email us at <a href="mailto:info@fulltiltsoccer.com">info@fulltiltsoccer.com</a> to receive info about how to have your Tournament posted or select one of our other contacts for more info about the other features on this site.</p>
-    
-@using (Html.BeginForm()) { 
-    @Html.ValidationSummary(true) 
-    <fieldset>
-        <div class="editor-label"> 
-            @Html.LabelFor(model => model.To) 
-        </div> 
-        <div class="editor-field"> 
-             @Html.DropDownListFor(x => x.To, Model.ToList, "- Choose One -")
-             @Html.ValidationMessageFor(model => model.To) 
-        </div> 
-        <div class="editor-label"> 
-            @Html.LabelFor(model => model.From) 
-        </div> 
-        <div class="editor-field"> 
-            @Html.TextBoxFor(model => model.From) 
-            @Html.ValidationMessageFor(model => model.From) 
-        </div> 
-        <div class="editor-label"> 
-            @Html.LabelFor(model => model.Subject) 
-        </div> 
-        <div class="editor-field"> 
-            @Html.TextBoxFor(model => model.Subject) 
-            @Html.ValidationMessageFor(model => model.Subject) 
-        </div> 
-        <div class="editor-label"> 
-            @Html.LabelFor(model => model.Message) 
-        </div> 
-        <div class="editor-field"> 
-            @Html.TextBoxFor(model => model.Message) 
-            @Html.ValidationMessageFor(model => model.Message) 
-        </div> 
-        <p> 
-            <input type="submit" value="Send" /> 
-        </p> 
-    </fieldset> 
-}    
-    
-    @*
-    <form method="post" class="contactUsForm" action="">
-        <div class="formLine">
-            <label for="contactWho">Contact: </label>
-            <select name="contactWho" class="contact_list email_fileds" style="height:28px;width:170px;">
-                <option selected="selected" value="">- Choose One -</option>
-                <option value="sales@fulltiltsoccer.com">Sales</option>
-                <option value="coaches@fulltiltsoccer.com">Coaches Corner</option>
-                <option value="camps@fulltiltsoccer.com">Camps Information</option>
-                <option value="tournament@fulltiltsoccer.com">Tournament Information</option>
-                <option value="info@fulltiltsoccer.com">General Information</option>
-            </select>
+            <h3>General Information</h3>
+            <a href="mailto:info@fulltiltsoccer.com">info@fulltiltsoccer.com</a>
         </div>
-
-        <div class="formLine">
-            <label for="Email">E-mail: </label>
-            <input type="text" name="Email" class="email_fileds" style="width:327px;">
+    </div>
+    <div class="columns eight">
+        <div id="contact_right">
+            <h1 class="custom shadow">CONTACT US</h1>
+            <p>Full Tilt Soccer is a new service offering free and paid listings to all Soccer Associations and Tournament organizors. We are still growing and evolving but at this time we ask that you email us at <a href="mailto:info@fulltiltsoccer.com">info@fulltiltsoccer.com</a> to receive info about how to have your Tournament posted or select one of our other contacts for more info about the other features on this site.</p>
+     
+            @using (Html.BeginForm("Index", "Contact", FormMethod.Post, new { @class = "custom" }))
+            { 
+                @Html.ValidationSummary(true) 
+                <div class="row">
+                    <div class="six columns">                
+                        @Html.LabelFor(model => model.To)                 
+                        @Html.DropDownListFor(x => x.To, Model.ToList, "- Choose One -")
+                        @Html.ValidationMessageFor(model => model.To) 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        @Html.LabelFor(model => model.From)                 
+                        @Html.TextBoxFor(model => model.From) 
+                        @Html.ValidationMessageFor(model => model.From) 
+                    </div>
+                    <div class="six columns">
+                        @Html.LabelFor(model => model.Subject)                 
+                        @Html.TextBoxFor(model => model.Subject) 
+                        @Html.ValidationMessageFor(model => model.Subject) 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        @Html.LabelFor(model => model.Message)                 
+                        @Html.TextAreaFor(model => model.Message, new { cols = "20", rows = "5" }) 
+                        @Html.ValidationMessageFor(model => model.Message) 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="twelve columns">
+                        <input type="submit" class="button right" value="Send" /> 
+                    </div>
+                    </div>                                
+                }           
         </div>
-
-        <div class="formLine">
-            <label for="Subject">Subject: </label>
-            <input type="text" name="Subject" class="email_fileds" style="width:327px;">
-        </div>
-
-        <div class="formLine">
-            <label for="Message" class="message">Message: </label>
-            <textarea name="Message" rows="2" cols="20" class="email_fileds" style="height:140px;width:388px;"></textarea>
-        </div>
-
-        <div class="formLine">
-            <input type="submit" name="submitButton" value="SEND" class="sendButton">    
-        </div>
-    </form>
-*@
+    </div>
 </div>
 <div class="clear"></div>
 @section scripts{
