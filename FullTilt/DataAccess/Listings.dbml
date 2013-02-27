@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FullTiltSoccer" Class="MainDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=JACOB-PC\SQLSERVER;Initial Catalog=FullTiltSoccer;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FullTiltSoccerConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=JACOB-PC\SQLSERVER;Initial Catalog=FullTiltRS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FullTiltSoccerConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Camp" Member="Camps">
     <Type Name="Camp">
       <Column Name="CampID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
