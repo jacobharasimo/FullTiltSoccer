@@ -1,15 +1,10 @@
 ﻿@using DataAccess
-
-
 @{
     var tournament = new GetAllTournamentsByRegionResult();
     tournament = ViewData["Tournament"] as GetAllTournamentsByRegionResult;
     var accessLayer = new ClientAccessService();
     var averageResults = accessLayer.GetAverageTournamentRating(tournament.TournamentID);
-    
 }
-
-
     <div class="panel paidListing">
         <div class="tournamentImage">
             <img src="@tournament.TournamentImageUrl" alt="@tournament.TournamentName" title="@tournament.TournamentName" class="tournamentLogo" />  
@@ -23,12 +18,8 @@
             <h3>@tournament.TournamentName</h3>
             <p>@tournament.TournamentDescription</p>        
         </div>                   
-        
-
-        
-
         <!-- AddThis Button BEGIN -->
-        <div class="addthis_toolbox addthis_default_style" addthis:url="@Request.Url.Scheme://@Request.Url.Authority/Tournament/Detials?TournamentID=@tournament.TournamentID">
+        <div class="addthis_toolbox addthis_default_style" addthis:url="@Request.Url.Scheme://@Request.Url.Authority/Tournament/Details?TournamentID=@tournament.TournamentID">
             <a class="addthis_button_preferred_1"></a>
             <a class="addthis_button_preferred_2"></a>
             <a class="addthis_button_preferred_3"></a>
@@ -36,8 +27,6 @@
             <a class="addthis_button_compact"></a>
             <a class="addthis_counter addthis_bubble_style"></a>
         </div>
-        
-        
         <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5089c7de27cc4aa5"></script>
         <!-- AddThis Button END -->             
         <a href="@Url.Action("Details", "Tournament", new { TournamentID = tournament.TournamentID, Layout = false })" class=" readMore fancybox.ajax" >read more...</a>    

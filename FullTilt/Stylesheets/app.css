@@ -29,7 +29,6 @@
 .top-bar ul.right > li.divider{ margin-top: 2.5%;}
 .top-bar{ background: black;}
 .footer.bottom{background: black;bottom:0}
-
 ul > li{list-style: none}
 .outterBorder{border-style: solid;border-width: 1px;border-color: #aaa;padding: 5px;}
 .tight{ padding: 0;margin: 0;}
@@ -47,36 +46,36 @@ hr.noTop{ margin-top: 0;}
 .welcomeContent p{line-height:125%;font-size: 12px;}
 .welcomeContent{margin-top: 52px;margin-left: 88px;overflow:hidden;text-overflow: ellipsis;width: 518px;}
 #welcomeStage{border-style: none;border-color: inherit;height: 430px;background-image: url(/images/welcom_stage.jpg);background-repeat: no-repeat;float: left;color: white;font-size: 12px;width: 100%;}
-.adds .row{margin:.5em 0}
 #upcommingEvents{ border: solid 1px #aaaaaa;padding: 5px;text-align: center;}
 #upcommingEvents h2{font-family: "Bauhaus 93";font-size: 24px;color: #FFFFFF;font-weight: normal;margin: 0px;}
 #upcommingEvents h4{font-family: "Myriad Pro";font-size: 14px;font-weight: normal;color: #FFFFFF;padding: 0px;margin: 0px;}
-.green.box{background: #259F00;height: 100%;padding: 5px 0;}
 #upcommingEvents hr {width: 90%;margin: 1em auto;}
 #upcommingEvents ul{ text-align: left;padding: 0 10px;color: white;}
 #upcommingEvents ul > li{ list-style: none;}
+.adds .row{margin:.5em 0}
 .adds .row a{ display: block;}
+.green.box{background: #259F00;height: 100%;padding: 5px 0;}
 /* -----------------------------------------
    Region Search panel
 ----------------------------------------- */
 .outterSearch{border-style: solid;border-width: 1px;border-color: #aaaaaa;padding: 5px;}
 .panel.search{ margin-bottom: 0;background: black;padding: 8px;text-align: center;}
+.panel.search h4{color: white;font-size:14px;margin-bottom: 4px;}
 ul.addList{ margin-top: 5px;}
 ul.addList > li{text-align: center}
-.panel.search h4{color: white;font-size:14px;margin-bottom: 4px;}
 ul.regionList > li{ text-align: center;}
-.block-grid.four-up.regionList >li{ padding: 5px;}
 ul.regionList > li a{ display: block;}
 ul.regionList > li a img{ width: 100%;}
 ul.regionList li a:hover img{opacity:.7;filter:alpha(opacity=70); /* For IE8 and earlier */}
 ul.regionsList li a img{display: block;margin: 0}
 ul.regionsList li p{margin: .3em 0 0 0;font-size: .9em;line-height: 1.2;height: 2em;}
+.block-grid.four-up.regionList >li{ padding: 5px;}
 .addList img{ width: 100%;}
 /* -----------------------------------------
    Footer Style
 ----------------------------------------- */
 .footer ul.footerNav > li.divider {background: #000;-webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.1);-moz-box-shadow: 1px 0 0 rgba(255,255,255,0.1);box-shadow: 1px 0 0 rgba(255,255,255,0.1);height: 100%;margin-right: 1px;width: 1px;height: 20px;padding: 0;}
-footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45px;list-style: none;}
+
 .footer ul.footerNav > li{ display: inline-block;vertical-align: middle;padding: 0 1em;}
 .footer ul.footerNav{ display: inline;}
 .footer .row{ text-align: center;}
@@ -90,11 +89,7 @@ footer ul.footerNav{margin-left: 0;display: inline;height: 45px;line-height: 45p
 .panel.greenBG h4{font-family: "Bauhaus 93";font-size: 20px;font-weight: normal;color: white;line-height: 20px;margin: 0;}
 .panel.greenBG hr{ margin: 0;}
 .featureList ul{ text-align: left;margin-left: 1em;color: white;margin-top: 5px;min-height: 2em;}
-.featureList ul > li{}
 .featureList ul li a{ color: white;font-weight: bold;}
-.featureList ul li a:hover{}
-.featureList ul li a:active{}
-.featureList ul li a:visited{}
 /* -----------------------------------------
    Paid Tournament Panel
 ----------------------------------------- */
@@ -120,6 +115,13 @@ img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;width: 100%;}
 .panel.freeTournamentListing .tournamentClubSite{width: 80%;overflow: hidden;display: inline-block;}
 .panel.freeTournamentListing .tournamentHostingClub{width: 55%;overflow: hidden;display: inline-block;height:1.2em}
 .six.columns.tight.results hr:last-child {display: none;}
+/* -----------------------------------------
+   Paid listing inner panel
+----------------------------------------- */
+.fullTournamentDetails .largeTournamentImage{margin: 20px;width: 100%;}
+.fullTournamentDetails h1{ font-weight: bold;font-size: 28px;margin-bottom: 1em;}
+.fullTournamentDetails .details strong{ font-weight: bold;}
+.fullTournamentDetails .details{float: right;width: 476px;}
 /* -----------------------------------------
    Contact Page
 ----------------------------------------- */

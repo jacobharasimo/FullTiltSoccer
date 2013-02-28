@@ -8,46 +8,53 @@
     GetTournamentByTournamentIDResult Tournament = ViewBag.Tournament;
 }
 <div class="fullTournamentDetails">
-    <img src="@Tournament.TournamentImageUrl" alt="@Tournament.TournamentName" title="@Tournament.TournamentName" class="largeTournamentImage"/>    
-    <ul class="details">
-        <li>&nbsp;</li>
-        <li><h1>@Tournament.TournamentName</h1></li>
-        <li><strong>@Tournament.TournamentGender 
-                @if(!string.IsNullOrEmpty(Tournament.TournamentAgeGroup))
-                {
-                    <span>/</span>                
-                }
-                 @Tournament.TournamentAgeGroup</strong></li>
-        <li><strong>Format:</strong> @Tournament.TournamentFormat
-        </li>
-        <li><strong>Date:</strong> @Tournament.TournamentDate @Tournament.TournamentTime</li>                
-        <li>&nbsp;</li>
-        <li class="description"><strong>Description:</strong> @Tournament.TournamentDescription</li>
-        <li>&nbsp;</li>
-        <li>@Tournament.TournamentHostingClub
-            @if (@Tournament.TournamentLocation != null)
-            {
-                <span> , </span>
-            }
-            
-            @Tournament.TournamentLocation</li>
-        <li>&nbsp;</li>
-        <li><strong>Contact Information</strong>
-            <ul>
-                <li>@Tournament.ContactName</li>
-                <li>Email: <a href="mailto:@Tournament.ContactEmail" title="@Tournament.ContactEmail">@Tournament.ContactEmail</a></li>
-                <li>@Tournament.ContactNumber</li>
-                <li><a href="@Tournament.TournamentClubSite" title="@Tournament.TournamentClubSite">@Tournament.TournamentClubSite</a></li>
+    @if (ViewBag.UseLayout)
+    {
+        <div class="row">
+            <a href="@Tournament.RegionID">< Back to Site</a>
+        </div>        
+    }
+    
+    <div class="row">
+        <div class="columns four">
+            <img src="@Tournament.TournamentImageUrl" alt="@Tournament.TournamentName" title="@Tournament.TournamentName" class="largeTournamentImage"/>                
+        </div>
+        <div class="columns eight">
+            <h1>@Tournament.TournamentName</h1>
+            <ul class="block-grid two-up">
+                
+                <li><strong>@Tournament.TournamentGender 
+                        @if(!string.IsNullOrEmpty(Tournament.TournamentAgeGroup))
+                        {
+                            <span>/</span>                
+                        }
+                        @Tournament.TournamentAgeGroup</strong></li>
+                        
+                <li><strong>Format:</strong> @Tournament.TournamentFormat</li>
+                
+                <li><strong>Date:</strong> @Tournament.TournamentDate @Tournament.TournamentTime</li>           
+                <li><strong>Club: </strong>@Tournament.TournamentHostingClub</li>
+                <li><strong>Location: </strong>@Tournament.TournamentLocation</li>
+                <li><strong>Register Deadline: </strong>@Tournament.TournamentRegistrationDeadline</li>
+                <li><strong>Fee: </strong>$@Tournament.TournamentTeamFee</li>
+                
             </ul>
-        </li>
-        <li>Register By: @Tournament.TournamentRegistrationDeadline</li>
-        <li>
-            @if (@Tournament.TournamentTeamFee!=null)
-                {
-                    <span>$</span>                
-                }
-                @Tournament.TournamentTeamFee
-        </li>        
-    </ul>
-    <div class="clear"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns twelve">         
+            <h5>Description</h5> @Tournament.TournamentDescription
+        </div>        
+    </div>
+    <div class="row">
+        <div class="columns six">
+            <h5>Contact Information</h5>
+            <ul>
+                <li>Name: @Tournament.ContactName</li>
+                <li>Email: <a href="mailto:@Tournament.ContactEmail" title="@Tournament.ContactEmail">@Tournament.ContactEmail</a></li>
+                <li>Phone: @Tournament.ContactNumber</li>
+                <li>Website: <a href="@Tournament.TournamentClubSite" title="@Tournament.TournamentClubSite">@Tournament.TournamentClubSite</a></li>
+            </ul>
+        </div>        
+    </div>
 </div>
