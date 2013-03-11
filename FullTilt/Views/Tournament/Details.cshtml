@@ -34,8 +34,9 @@
                 
                 <li><strong>Date:</strong> @Tournament.TournamentDate @Tournament.TournamentTime</li>           
                 <li><strong>Club: </strong>@Tournament.TournamentHostingClub</li>
+                
+                <li><strong>Register Deadline: </strong>@DateTime.Parse(Tournament.TournamentRegistrationDeadline.ToString()).ToShortDateString()</li>
                 <li><strong>Location: </strong>@Tournament.TournamentLocation</li>
-                <li><strong>Register Deadline: </strong>@Tournament.TournamentRegistrationDeadline</li>
                 <li><strong>Fee: </strong>$@Tournament.TournamentTeamFee</li>
                 
             </ul>

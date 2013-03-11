@@ -34,7 +34,7 @@ ul > li{list-style: none}
 .tight{ padding: 0;margin: 0;}
 h1.custom{font-family: 'Bauhaus 93';font-size: 33px;line-height: 33px;}
 h1.custom.small{font-size: 28px;margin: 0px;}
-h1.shadow{text-shadow: 1px 1px 3px rgba(0,0,0, 0.7);filter: dropshadow(color=#BEBEBE, offx=1, offy=1);}
+h1.shadow{text-shadow: 1px 1px 3px rgba(0,0,0, 0.5);filter: dropshadow(color=#BEBEBE, offx=1, offy=1);}
 h1.orange{color: #f87811;}
 hr.noTop{ margin-top: 0;}
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {background-image: url('/Scripts/fancybox/fancybox_sprite.png');}
