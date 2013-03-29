@@ -1,5 +1,5 @@
 C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\bin\DataAccess.dll
 C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\bin\DataAccess.pdb
-C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Release\ResolveAssemblyReference.cache
+C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Release\DataAccess.csprojResolveAssemblyReference.cache
 C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Release\DataAccess.dll
 C:\inetpub\wwwroot\FullTiltSoccer\FullTilt\DataAccess\obj\Release\DataAccess.pdb

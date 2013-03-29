@@ -2,110 +2,104 @@
     ViewBag.Title = "Coaches Corner";
     Layout = "~/Views/Shared/_InnerLayout.cshtml";
 }
-
-<div class="welcomeMessage">
-    @Html.Raw(ViewBag.WelcomeMessage)
-</div>    
-<div class="line"></div>
-<div class="searchControls">
-    <ul class="ageSearchControl">
-        <li><span class="ageBlock age10"></span>Age 10</li>
-        <li><span class="ageBlock age11"></span>Age 11</li>
-        <li><span class="ageBlock age12"></span>Age 12</li>
-        <li><span class="ageBlock age13"></span>Age 13</li>
-        <li><span class="ageBlock age14"></span>Age 14</li>
-        <li><span class="ageBlock age15"></span>Age 15</li>
-        <li><span class="ageBlock age16"></span>Age 16</li>
-    </ul>
-    <ul class="ageSearchControl alt">
-        <li>
-            <span>Country </span>
-            @Html.DropDownList("Countries")
-        </li>
-        <li>
-            <span>Region </span>
-            @Html.DropDownList("Regions")
-        </li>
-        <li>
-            <span>Age </span>
-            @Html.DropDownList("Age")
-        </li>
-        <li>            
-            <a id="clearButton" href="#">Reset</a>
-        </li>
-    </ul>
-        
+<div class="row">
+    <div class="columns twelve">
+        <div class="welcomeMessage">
+            @Html.Raw(ViewBag.WelcomeMessage)
+        </div>    
+        <hr />
+    </div>
 </div>
-<div class="results">            
+
+<div class="row">
+    <div class="columns twelve">        
+            <ul class="block-grid four-up ageSearchControl">
+                <li>
+                    <label for="Countries">Country </label>
+                    @Html.DropDownList("Countries")
+                </li>
+                <li>
+                    <label for="Regions">Region </label>
+                    @Html.DropDownList("Regions")
+                </li>
+                <li>
+                    <label for="Age">Age </label>
+                    @Html.DropDownList("Age")
+                </li>
+                <li>            <br />
+                    <a id="clearButton" class="button" href="#">Reset</a>
+                </li>                
+            </ul>    
+        <span class="results right"> @ViewBag.CoachesCorner.Count Result@{if(ViewBag.CoachesCorner.Count>1){<span>s</span>} }</span>    
+        
+    </div>
+</div>
+<div class="row">
+    <div class="columns twelve">            
     @if (ViewBag.CoachesCorner.Count > 0)
     {
           <ul>
+              
         @foreach (var listing in ViewBag.CoachesCorner)
         {
-            <li class="coachesCornerListing @String.Format("{0}{1}", "age", listing.AgeGroup)">
-                <table style="width:100%;border-collapse:collapse;" class="topGap">
-                <tbody>
-                    <tr class="ageListingHead">
-                        <td class="ageListingHeadLeft">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><h3>@listing.AgeGroup</h3></td>
-                                        <td class="titleName"><h3>@listing.TeamName / @listing.Gender</h3></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                        <td class="ageListingHeadRight">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td><h3>Date Posted:</h3></td>
-                                        <td>@listing.DatePosted.ToShortDateString()</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    <tr class="ageListingBody">
-                        <td class="ageListingBodyLeft">
-                            <h3>@listing.TeamName/@listing.ClubName</h3>
-                            <p>@listing.Description</p>
-                        </td>
-                        <td class="ageListingBodyRight">
-                        <table style="width:100%;border-collapse:collapse;">
-                            <tbody>
-                            <tr title="@listing.City">
-                                <td class="leftRow"><h3>City:</h3></td>
-                                <td><span class="coachesCornerTruncate" style="white-space: nowrap;">@listing.City</span></td>
-                            </tr>
-                                <tr title="Ontario, Canada    ">
-                                    <td class="leftRow"><h3>Region:</h3></td>
-                                    <td><span class="coachesCornerTruncate" style="white-space: nowrap;">Ontario, Canada    </span></td>
-                                </tr>
-                                <tr title="@listing.Contactname">
-                                    <td class="leftRow"><h3>Contact:</h3></td>
-                                    <td><span class="coachesCornerTruncate">@listing.Contactname</span></td>
-                                </tr>
-                                <tr title="@listing.PhoneNumber">
-                                    <td class="leftRow"><h3>Phone:</h3></td>
-                                    <td><span class="coachesCornerTruncate">@listing.PhoneNumber</span></td>
-                                </tr>
-                                <tr title="Coach @listing.Email">
-                                    <td class="leftRow"><h3>Email:</h3></td>
-                                    <td><a class="coachesCornerTruncate" href="mailto:@listing.Email">@listing.Email</a></td>
-                                </tr>
-                                <tr title="@listing.Website">
-                                    <td class="leftRow"><h3>Website:</h3></td>
-                                    <td><a class="coachesCornerTruncate" href="@listing.Website">@listing.Website</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </li>
+            <li>
+                <div class="panel coachesCorner ">
+                    <div class="row">
+                        <div class="columns twelve">
+                            <h3 class="has-tip tip-top noradius"  title="@listing.TeamName/@listing.ClubName">@listing.TeamName/@listing.ClubName</h3>
+                        </div>                        
+                    </div>
+                    
+                    <div class="row">
+                        <div class="columns six">
+                            <strong>Age:</strong> @listing.AgeGroup
+                        </div>
+                        <div class="columns six">
+                            <strong>Gender:</strong> @listing.Gender
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns six">
+                            <strong>City:</strong> @listing.City
+                        </div>
+                        <div class="columns six right">
+                            <strong>Posted: </strong>@listing.DatePosted.ToShortDateString()
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="columns twelve">
+                            <p><strong>Description: </strong>@listing.Description</p>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="columns six">
+                            <strong>Name:</strong> @listing.Contactname
+                        </div>
+                        <div class="columns six">
+                             <img class="phone" src="Images/phone_icon.png" />: <a href="tel:@listing.PhoneNumber">@listing.PhoneNumber</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columns six">
+                            <div class="columns two nopadding">
+                                <img class="email" src="Images/email.png" />: 
+                            </div>
+                            <div class="columns ten noverflow nopadding">
+                                <a class="has-tip tip-top noradius"  title="@listing.Email" href="mailto:@listing.Email">@listing.Email</a>
+                            </div>
+                            
+                        </div>
+                        <div class="columns six">
+                            <div class="columns four noleftpadding">
+                                <strong>Website: </strong>
+                            </div>
+                            <div class="columns eight noverflow">
+                                <a class="has-tip tip-top noradius nowrap"  title="@listing.Website" href="@listing.Website">@listing.Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
         }   
     </ul>       
     }
@@ -115,13 +109,15 @@
     }
   
 </div>
+</div>
 
 @section scripts
 {
     <script type="text/javascript">
-        $("#clearButton").button({ disabled: true }); ;
+        $("#clearButton").addClass('disabled');        
+
         if (window.location.toString().indexOf('?') != -1) {
-            $("#clearButton").button("option", "disabled", false);
+            $("#clearButton").removeClass('disabled');
         }
         if($("#Countries").find(":selected").val()=="0") {
             $("#Regions").attr("disabled", "disabled");
@@ -130,16 +126,34 @@
             $("#Age").attr("disabled", "disabled");
         }
         $("#Countries").change(function () {
-            window.location = ('/CoachesCorner?Country=' + $("#Countries").val());                
+            if ($(this).val() != 0) {
+                window.location = ('/CoachesCorner?Country=' + $("#Countries").val());
+            }
+            else {
+                window.location = ('/CoachesCorner');
+            }
         });
         $("#Regions").change(function () {
-            window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val());                
+            if ($(this).val() != 0) {
+                window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val());
+            }
+            else {
+                window.location = ('/CoachesCorner?Country=' + $("#Countries").val());
+            }
         });
         $("#Age").change(function () {
-            window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val() + '&Age=' + $("#Age").val());
+            if ($(this).val() != 0) {
+                window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val() + '&Age=' + $("#Age").val());
+            }
+            else {
+                window.location = ('/CoachesCorner?Country=' + $("#Countries").val() + '&Region=' + $("#Regions").val());
+            }
+            
         });
         $("#clearButton").click(function () {
-            window.location = ('/CoachesCorner');
+            if (!$(this).hasClass("disabled")) {
+                window.location = ('/CoachesCorner');
+            }            
         });
     </script>
 }

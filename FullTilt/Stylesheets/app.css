@@ -16,6 +16,15 @@
  html[xmlns] .clearfix {display: block;}
  * html .clearfix {height: 1%;}
  .center{ text-align: center;}
+.noverflow {
+    overflow: hidden;
+}
+.nopadding {
+    padding: 0;
+}
+.noleftpadding {
+    padding-left:0;
+}
 /* -----------------------------------------
    Override Styles
 ----------------------------------------- */
@@ -122,6 +131,61 @@ img.tournamentLogo{ border: 1px solid #acacac;padding: 5px;width: 100%;}
 .fullTournamentDetails h1{ font-weight: bold;font-size: 28px;margin-bottom: 1em;}
 .fullTournamentDetails .details strong{ font-weight: bold;}
 .fullTournamentDetails .details{float: right;width: 476px;}
+/* -----------------------------------------
+   Coaches Corner
+----------------------------------------- */
+.age10 {
+background-color: #208f56;
+}
+.age11 {
+background-color: #448ccb;
+}
+.age12 {
+background-color: #D0252B;
+}
+.age13 {
+background-color: #FEF66A;
+}
+.age14 {
+background-color: #75439b;
+}
+.age15 {
+background-color: #d35f37;
+}
+.age16 {
+background-color: #c22d6f;
+}
+.square {
+    height:1em;width:1em;display:inline-block;margin-right:5px;vertical-align: middle;
+}
+
+.coachesCorner h3 {
+    margin-top:0;
+    margin-bottom:.5em;
+    white-space:nowrap;
+    overflow: hidden;
+}
+.coachesCorner img.phone {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1em;
+}
+
+.coachesCorner img.email {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1em;
+}
+.nowrap{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.coachesCorner hr {
+    margin: .5em .5em;
+}
+.coachesCorner p {
+    margin: 1em 0;
+}
 /* -----------------------------------------
    Contact Page
 ----------------------------------------- */

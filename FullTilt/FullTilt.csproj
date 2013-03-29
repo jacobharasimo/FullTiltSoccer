@@ -16,6 +16,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -193,10 +197,12 @@
     <Content Include="Images\Camps\IASA soccer28dce2613c5e4d98b662e855109e92e0.JPG" />
     <Content Include="Images\cancel-off.png" />
     <Content Include="Images\cancel-on.png" />
+    <Content Include="Images\email.png" />
     <Content Include="Images\footer_nav_spacer.jpg" />
     <Content Include="Images\iasa_add.jpg" />
     <Content Include="Images\logo_lg.jpg" />
     <Content Include="Images\logo_lg.png" />
+    <Content Include="Images\phone_icon.png" />
     <Content Include="Images\Region\Alberta.jpg" />
     <Content Include="Images\Region\Bandera_Western_Isles.jpg" />
     <Content Include="Images\Region\Berkshire_flag.jpg" />
